@@ -13,6 +13,7 @@
 		43BC28E62C9A54450069C6CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28E52C9A54450069C6CD /* ContentView.swift */; };
 		43BC28E82C9A54490069C6CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28E72C9A54490069C6CD /* Assets.xcassets */; };
 		43BC28EC2C9A54490069C6CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28EB2C9A54490069C6CD /* Preview Assets.xcassets */; };
+		43BC28F32C9B79740069C6CD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28F22C9B79740069C6CD /* Launch Screen.storyboard */; };
 		C10508062C9B4BE000B22737 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508052C9B4BE000B22737 /* CarouselView.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		43BC28E72C9A54490069C6CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43BC28E92C9A54490069C6CD /* ShoesForTow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShoesForTow.entitlements; sourceTree = "<group>"; };
 		43BC28EB2C9A54490069C6CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		43BC28F22C9B79740069C6CD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C10508052C9B4BE000B22737 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,7 @@
 				43BC28E92C9A54490069C6CD /* ShoesForTow.entitlements */,
 				43BC28E22C9A54450069C6CD /* ShoesForTow.xcdatamodeld */,
 				43BC28EA2C9A54490069C6CD /* Preview Content */,
+				43BC28F22C9B79740069C6CD /* Launch Screen.storyboard */,
 			);
 			path = ShoesForTow;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43BC28F32C9B79740069C6CD /* Launch Screen.storyboard in Resources */,
 				43BC28EC2C9A54490069C6CD /* Preview Assets.xcassets in Resources */,
 				43BC28E82C9A54490069C6CD /* Assets.xcassets in Resources */,
 			);
@@ -293,6 +297,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -331,6 +336,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
