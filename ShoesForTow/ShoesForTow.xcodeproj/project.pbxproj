@@ -14,6 +14,9 @@
 		43BC28E82C9A54490069C6CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28E72C9A54490069C6CD /* Assets.xcassets */; };
 		43BC28EC2C9A54490069C6CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28EB2C9A54490069C6CD /* Preview Assets.xcassets */; };
 		43BC28F32C9B79740069C6CD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28F22C9B79740069C6CD /* Launch Screen.storyboard */; };
+		43BC28F62C9B7DB60069C6CD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28F52C9B7DB60069C6CD /* LoginView.swift */; };
+		43BC29012C9BE30F0069C6CD /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC29002C9BE30F0069C6CD /* Font+Extensions.swift */; };
+		43BC29042C9BE8270069C6CD /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC29032C9BE8270069C6CD /* Color+Extension.swift */; };
 		C10508062C9B4BE000B22737 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508052C9B4BE000B22737 /* CarouselView.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,17 @@
 		43BC28E92C9A54490069C6CD /* ShoesForTow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShoesForTow.entitlements; sourceTree = "<group>"; };
 		43BC28EB2C9A54490069C6CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		43BC28F22C9B79740069C6CD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		43BC28F52C9B7DB60069C6CD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		43BC28F82C9BE2850069C6CD /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		43BC28F92C9BE2860069C6CD /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		43BC28FA2C9BE2860069C6CD /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		43BC28FB2C9BE2860069C6CD /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		43BC28FC2C9BE2860069C6CD /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		43BC28FD2C9BE2860069C6CD /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		43BC28FE2C9BE2860069C6CD /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		43BC29002C9BE30F0069C6CD /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
+		43BC29022C9BE5ED0069C6CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		43BC29032C9BE8270069C6CD /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		C10508052C9B4BE000B22737 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +74,11 @@
 		43BC28DD2C9A54450069C6CD /* ShoesForTow */ = {
 			isa = PBXGroup;
 			children = (
+				43BC29022C9BE5ED0069C6CD /* Info.plist */,
+				43BC28FF2C9BE2D50069C6CD /* Commonds */,
+				43BC28F72C9BE2460069C6CD /* Fonts */,
 				43BC28DE2C9A54450069C6CD /* ShoesForTowApp.swift */,
+				43BC28F42C9B7D9B0069C6CD /* Login */,
 				43BC28E02C9A54450069C6CD /* Persistence.swift */,
 				43BC28E52C9A54450069C6CD /* ContentView.swift */,
 				C10508052C9B4BE000B22737 /* CarouselView.swift */,
@@ -79,6 +97,37 @@
 				43BC28EB2C9A54490069C6CD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		43BC28F42C9B7D9B0069C6CD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				43BC28F52C9B7DB60069C6CD /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		43BC28F72C9BE2460069C6CD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				43BC28FC2C9BE2860069C6CD /* Montserrat-Black.ttf */,
+				43BC28F82C9BE2850069C6CD /* Montserrat-Bold.ttf */,
+				43BC28FA2C9BE2860069C6CD /* Montserrat-ExtraBold.ttf */,
+				43BC28FD2C9BE2860069C6CD /* Montserrat-Light.ttf */,
+				43BC28FE2C9BE2860069C6CD /* Montserrat-Medium.ttf */,
+				43BC28F92C9BE2860069C6CD /* Montserrat-Regular.ttf */,
+				43BC28FB2C9BE2860069C6CD /* Montserrat-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		43BC28FF2C9BE2D50069C6CD /* Commonds */ = {
+			isa = PBXGroup;
+			children = (
+				43BC29002C9BE30F0069C6CD /* Font+Extensions.swift */,
+				43BC29032C9BE8270069C6CD /* Color+Extension.swift */,
+			);
+			path = Commonds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,11 +201,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43BC28F62C9B7DB60069C6CD /* LoginView.swift in Sources */,
 				C10508062C9B4BE000B22737 /* CarouselView.swift in Sources */,
 				43BC28E42C9A54450069C6CD /* ShoesForTow.xcdatamodeld in Sources */,
+				43BC29012C9BE30F0069C6CD /* Font+Extensions.swift in Sources */,
 				43BC28DF2C9A54450069C6CD /* ShoesForTowApp.swift in Sources */,
 				43BC28E62C9A54450069C6CD /* ContentView.swift in Sources */,
 				43BC28E12C9A54450069C6CD /* Persistence.swift in Sources */,
+				43BC29042C9BE8270069C6CD /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,13 +343,18 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShoesForTow/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -308,11 +365,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = miguel.ShoesForTow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -330,13 +388,18 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShoesForTow/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -347,11 +410,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = miguel.ShoesForTow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
