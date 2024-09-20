@@ -20,6 +20,14 @@
 		43BC29072C9CCE390069C6CD /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC29062C9CCE390069C6CD /* RegisterView.swift */; };
 		43BC29092C9CD0850069C6CD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC29082C9CD0850069C6CD /* Router.swift */; };
 		43BC290B2C9D13D60069C6CD /* TabBarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC290A2C9D13D60069C6CD /* TabBarCustom.swift */; };
+		43BC290D2C9D44E20069C6CD /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC290C2C9D44E20069C6CD /* TextFieldCustom.swift */; };
+		43BC290E2C9D58E60069C6CD /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28FC2C9BE2860069C6CD /* Montserrat-Black.ttf */; };
+		43BC290F2C9D58EA0069C6CD /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28F82C9BE2850069C6CD /* Montserrat-Bold.ttf */; };
+		43BC29102C9D58ED0069C6CD /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28FA2C9BE2860069C6CD /* Montserrat-ExtraBold.ttf */; };
+		43BC29112C9D58F00069C6CD /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28FD2C9BE2860069C6CD /* Montserrat-Light.ttf */; };
+		43BC29122C9D58F30069C6CD /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28FE2C9BE2860069C6CD /* Montserrat-Medium.ttf */; };
+		43BC29132C9D58F50069C6CD /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28F92C9BE2860069C6CD /* Montserrat-Regular.ttf */; };
+		43BC29142C9D58F80069C6CD /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28FB2C9BE2860069C6CD /* Montserrat-SemiBold.ttf */; };
 		C10508062C9B4BE000B22737 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508052C9B4BE000B22737 /* CarouselView.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +55,7 @@
 		43BC29062C9CCE390069C6CD /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		43BC29082C9CD0850069C6CD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		43BC290A2C9D13D60069C6CD /* TabBarCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCustom.swift; sourceTree = "<group>"; };
+		43BC290C2C9D44E20069C6CD /* TextFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
 		C10508052C9B4BE000B22737 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +144,7 @@
 				43BC29002C9BE30F0069C6CD /* Font+Extensions.swift */,
 				43BC29032C9BE8270069C6CD /* Color+Extension.swift */,
 				43BC290A2C9D13D60069C6CD /* TabBarCustom.swift */,
+				43BC290C2C9D44E20069C6CD /* TextFieldCustom.swift */,
 			);
 			path = Commonds;
 			sourceTree = "<group>";
@@ -205,8 +215,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43BC29132C9D58F50069C6CD /* Montserrat-Regular.ttf in Resources */,
+				43BC29112C9D58F00069C6CD /* Montserrat-Light.ttf in Resources */,
+				43BC290F2C9D58EA0069C6CD /* Montserrat-Bold.ttf in Resources */,
+				43BC29102C9D58ED0069C6CD /* Montserrat-ExtraBold.ttf in Resources */,
+				43BC29142C9D58F80069C6CD /* Montserrat-SemiBold.ttf in Resources */,
 				43BC28F32C9B79740069C6CD /* Launch Screen.storyboard in Resources */,
+				43BC290E2C9D58E60069C6CD /* Montserrat-Black.ttf in Resources */,
 				43BC28EC2C9A54490069C6CD /* Preview Assets.xcassets in Resources */,
+				43BC29122C9D58F30069C6CD /* Montserrat-Medium.ttf in Resources */,
 				43BC28E82C9A54490069C6CD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43BC290D2C9D44E20069C6CD /* TextFieldCustom.swift in Sources */,
 				43BC29072C9CCE390069C6CD /* RegisterView.swift in Sources */,
 				43BC28F62C9B7DB60069C6CD /* LoginView.swift in Sources */,
 				43BC29092C9CD0850069C6CD /* Router.swift in Sources */,

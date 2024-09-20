@@ -23,7 +23,9 @@ struct TabBarCustom: View {
                     .foregroundStyle(Color.fontGray)
             }
             Spacer()
-            Text("Crear Cuenta")
+            Text("Crear cuenta")
+                .font(.poppins(weight: .extraBold, .size16))
+                .foregroundStyle(Color.rosaFont)
             Spacer()
             Rectangle()
                 .frame(width: 20, height: 20)
