@@ -9,12 +9,20 @@ import SwiftUI
 
 @main
 struct ShoesForTowApp: App {
-    let persistenceController = PersistenceController.shared
+    @ObservedObject var router = Router()
 
     var body: some Scene {
         WindowGroup {
-            LoginView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-        }
+            NavigationStack(path: $router.navPath) {
+                LoginView()
+                    .navigationDestination(for: Router.Destination.self) { destination in
+                        switch destination {
+                        case .registerView:
+                            RegisterView()
+                        }
+                    }
+            }
+            .environmentObject(router)
+         }
     }
 }
