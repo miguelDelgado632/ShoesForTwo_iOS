@@ -28,7 +28,15 @@
 		43BC29122C9D58F30069C6CD /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28FE2C9BE2860069C6CD /* Montserrat-Medium.ttf */; };
 		43BC29132C9D58F50069C6CD /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28F92C9BE2860069C6CD /* Montserrat-Regular.ttf */; };
 		43BC29142C9D58F80069C6CD /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28FB2C9BE2860069C6CD /* Montserrat-SemiBold.ttf */; };
-		C10508062C9B4BE000B22737 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508052C9B4BE000B22737 /* CarouselView.swift */; };
+		C10508062C9B4BE000B22737 /* CircularImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508052C9B4BE000B22737 /* CircularImageCarouselView.swift */; };
+		C10508082C9B6ED600B22737 /* ShoeSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508072C9B6ED600B22737 /* ShoeSlideView.swift */; };
+		C105080A2C9B734800B22737 /* HomeFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508092C9B734700B22737 /* HomeFavoritesView.swift */; };
+		C105080C2C9DE44D00B22737 /* AnglesComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C105080B2C9DE44D00B22737 /* AnglesComponentView.swift */; };
+		C105080E2C9E00F400B22737 /* ShoeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C105080D2C9E00F400B22737 /* ShoeModel.swift */; };
+		C10508102C9E014300B22737 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C105080F2C9E014300B22737 /* PrimaryButton.swift */; };
+		C10508122C9E2B9000B22737 /* TabContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508112C9E2B9000B22737 /* TabContainerView.swift */; };
+		C10508182C9E35D600B22737 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508172C9E35D600B22737 /* CircularImageView.swift */; };
+		C105081A2C9E43EF00B22737 /* HomeFavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508192C9E43EF00B22737 /* HomeFavoritesPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +64,15 @@
 		43BC29082C9CD0850069C6CD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		43BC290A2C9D13D60069C6CD /* TabBarCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCustom.swift; sourceTree = "<group>"; };
 		43BC290C2C9D44E20069C6CD /* TextFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
-		C10508052C9B4BE000B22737 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		C10508052C9B4BE000B22737 /* CircularImageCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageCarouselView.swift; sourceTree = "<group>"; };
+		C10508072C9B6ED600B22737 /* ShoeSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeSlideView.swift; sourceTree = "<group>"; };
+		C10508092C9B734700B22737 /* HomeFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFavoritesView.swift; sourceTree = "<group>"; };
+		C105080B2C9DE44D00B22737 /* AnglesComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnglesComponentView.swift; sourceTree = "<group>"; };
+		C105080D2C9E00F400B22737 /* ShoeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeModel.swift; sourceTree = "<group>"; };
+		C105080F2C9E014300B22737 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		C10508112C9E2B9000B22737 /* TabContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerView.swift; sourceTree = "<group>"; };
+		C10508172C9E35D600B22737 /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
+		C10508192C9E43EF00B22737 /* HomeFavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFavoritesPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +114,10 @@
 				43BC29052C9CCDD80069C6CD /* RegisterCount */,
 				43BC28E02C9A54450069C6CD /* Persistence.swift */,
 				43BC28E52C9A54450069C6CD /* ContentView.swift */,
-				C10508052C9B4BE000B22737 /* CarouselView.swift */,
+				C105080D2C9E00F400B22737 /* ShoeModel.swift */,
+				C10508162C9E35BB00B22737 /* GenralComponents */,
+				C10508132C9E34EE00B22737 /* HomeFavorites */,
+				C10508112C9E2B9000B22737 /* TabContainerView.swift */,
 				43BC28E72C9A54490069C6CD /* Assets.xcassets */,
 				43BC28E92C9A54490069C6CD /* ShoesForTow.entitlements */,
 				43BC28E22C9A54450069C6CD /* ShoesForTow.xcdatamodeld */,
@@ -155,6 +174,35 @@
 				43BC29062C9CCE390069C6CD /* RegisterView.swift */,
 			);
 			path = RegisterCount;
+			sourceTree = "<group>";
+		};
+		C10508132C9E34EE00B22737 /* HomeFavorites */ = {
+			isa = PBXGroup;
+			children = (
+				C10508142C9E354F00B22737 /* Components */,
+				C10508092C9B734700B22737 /* HomeFavoritesView.swift */,
+				C10508192C9E43EF00B22737 /* HomeFavoritesPresenter.swift */,
+			);
+			name = HomeFavorites;
+			sourceTree = "<group>";
+		};
+		C10508142C9E354F00B22737 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C10508072C9B6ED600B22737 /* ShoeSlideView.swift */,
+				C10508052C9B4BE000B22737 /* CircularImageCarouselView.swift */,
+				C105080B2C9DE44D00B22737 /* AnglesComponentView.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		C10508162C9E35BB00B22737 /* GenralComponents */ = {
+			isa = PBXGroup;
+			children = (
+				C105080F2C9E014300B22737 /* PrimaryButton.swift */,
+				C10508172C9E35D600B22737 /* CircularImageView.swift */,
+			);
+			path = GenralComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,14 +287,22 @@
 				43BC29072C9CCE390069C6CD /* RegisterView.swift in Sources */,
 				43BC28F62C9B7DB60069C6CD /* LoginView.swift in Sources */,
 				43BC29092C9CD0850069C6CD /* Router.swift in Sources */,
-				C10508062C9B4BE000B22737 /* CarouselView.swift in Sources */,
+				C10508062C9B4BE000B22737 /* CircularImageCarouselView.swift in Sources */,
+				C105080A2C9B734800B22737 /* HomeFavoritesView.swift in Sources */,
+				C10508122C9E2B9000B22737 /* TabContainerView.swift in Sources */,
 				43BC28E42C9A54450069C6CD /* ShoesForTow.xcdatamodeld in Sources */,
 				43BC29012C9BE30F0069C6CD /* Font+Extensions.swift in Sources */,
+				C10508102C9E014300B22737 /* PrimaryButton.swift in Sources */,
 				43BC28DF2C9A54450069C6CD /* ShoesForTowApp.swift in Sources */,
+				C105080C2C9DE44D00B22737 /* AnglesComponentView.swift in Sources */,
+				C10508182C9E35D600B22737 /* CircularImageView.swift in Sources */,
 				43BC28E62C9A54450069C6CD /* ContentView.swift in Sources */,
 				43BC28E12C9A54450069C6CD /* Persistence.swift in Sources */,
 				43BC29042C9BE8270069C6CD /* Color+Extension.swift in Sources */,
 				43BC290B2C9D13D60069C6CD /* TabBarCustom.swift in Sources */,
+				C105080E2C9E00F400B22737 /* ShoeModel.swift in Sources */,
+				C10508082C9B6ED600B22737 /* ShoeSlideView.swift in Sources */,
+				C105081A2C9E43EF00B22737 /* HomeFavoritesPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +452,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -441,7 +497,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;

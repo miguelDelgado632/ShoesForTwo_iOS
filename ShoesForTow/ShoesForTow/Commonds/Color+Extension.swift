@@ -11,7 +11,7 @@ enum ColorName: String {
   case fontGray = "#595959"
   case fontPurple = "#563a82"
   case backgroundColor = "#f1eefa"
-  case rosaFont = "#b64485"
+  case fontRed = "#b64485"
 }
 
 extension Color {
@@ -21,8 +21,8 @@ extension Color {
   static let fontPurple: Color = .init(colorName: .fontPurple)
   /// backgroundColor = "#f1eefa"
   static let backgroundColor: Color = .init(colorName: .backgroundColor)
-  /// rosaFont = "#b64485"
-  static let rosaFont: Color = .init(colorName: .rosaFont)
+  /// fontRed = "#b64485"
+  static let fontRed: Color = .init(colorName: .fontRed)
 
   
 

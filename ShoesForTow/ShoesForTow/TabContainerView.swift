@@ -1,0 +1,94 @@
+//
+//  TabContainerView.swift
+//  ShoesForTow
+//
+//  Created by Raul Alberto Torres Contreras on 20/09/24.
+//
+
+import SwiftUI
+
+struct TabContainerView: View {
+  @Environment(\.presentationMode) var presentationMode
+  @ObservedObject var presenter: TabContainerPresenter = .init(navigation: .init())
+  private let texts: TabContainerTexts = .init()
+
+  var body: some View {
+    TabView(selection: $presenter.tabSelection) {
+      HomeFavoritesView()
+        .tabItem {
+          makeTabItem(icon: "heart.fill", title: texts.favoritesTitle)
+        }
+        .tag(1)
+
+      Text("Tab Content 2")
+        .tabItem {
+          makeTabItem(icon: "bolt.heart.fill", title: texts.matchTitle)
+        }
+        .tag(2)
+
+      Text("Tab Content 3")
+        .tabItem {
+          makeTabItem(icon: "person.circle", title: texts.profile)
+        }
+        .tag(3)
+    }
+    .navigationBarBackButtonHidden()
+  }
+
+  private func makeTabItem(icon: String, title: String) -> some View {
+    VStack(spacing: .zero) {
+      Image(systemName: icon)
+      Text(title)
+        .foregroundColor(.fontPurple)
+        .font(.poppins(weight: .medium, .size10))
+    }
+  }
+}
+
+#Preview {
+  TabContainerView()
+}
+
+fileprivate struct TabContainerTexts {
+  var favoritesTitle: String { "Favoritos" }
+  var matchTitle: String { "Match" }
+  var profile: String { "Profile" }
+}
+
+import Combine
+final class TabContainerPresenter: ObservableObject {
+  @Published private var selection = 1
+  @Published var tabSelection: Int = 1
+  @Published var navigation: ShoesForTwoNavigation
+  @Published var shouldDismiss: Bool = false
+
+  init(navigation: ShoesForTwoNavigation) {
+    self.navigation = navigation
+  }
+}
+
+final class ShoesForTwoNavigation: ObservableObject {
+  @Published var isFavoriteViewActive: Bool = false
+  @Published var isPrivacyPoliticsAcive: Bool = false
+  @Published var isSavedViewActive: Bool = false
+  @Published var shouldShowTabHomeView: Bool = false
+
+  func updateActiveView(_ tag: Int) {
+    switch tag {
+    case 1:
+      isFavoriteViewActive = false
+    case 2:
+      isPrivacyPoliticsAcive = false
+    case 3:
+      isSavedViewActive = false
+    default: break
+    }
+  }
+
+  func resetValues() {
+    isFavoriteViewActive = false
+    isPrivacyPoliticsAcive = false
+    isSavedViewActive = false
+    shouldShowTabHomeView = false
+  }
+}

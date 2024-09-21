@@ -10,10 +10,11 @@ import SwiftUI
 struct LoginView: View {
     
     @EnvironmentObject var router: Router
+    @ObservedObject var presenter: LoginViewPresenter = .init()
     @State private var email: String = ""
     @State private var password: String = ""
-    
-    
+
+
     var body: some View {
             VStack {
                 Image("logoLogin_icon")
@@ -44,16 +45,15 @@ struct LoginView: View {
                 
                 VStack(spacing: 27) {
                     Button {
+                      router.navigate(to: .tabHomeView)
                     } label: {
                         Text("Ingresar")
                             .font(.poppins(weight: .light, .size16))
                             .foregroundStyle(Color.fontPurple)
-                        
-                        
                     }
                     .frame(width: 176, height: 35)
                     .background(Color.backgroundColor)
-                    .disabled(!email.isValidEmail)
+//                    .disabled(!email.isValidEmail)
                     
                     Button {
                         router.navigate(to: .registerView)
@@ -70,6 +70,14 @@ struct LoginView: View {
             }
             .padding(.top, 197)
     }
+}
+
+final class LoginViewPresenter: ObservableObject {
+  @Published var navigation: ShoesForTwoNavigation = .init()
+
+  func showHomeScreen() {
+    navigation.shouldShowTabHomeView = true
+  }
 }
 
 extension String {
