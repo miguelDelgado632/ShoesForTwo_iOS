@@ -16,6 +16,7 @@ struct RegisterView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var selectedGender: String = ""
+    @State private var shoesSize: String? = nil
 
     var body: some View {
         VStack {
@@ -47,16 +48,25 @@ struct RegisterView: View {
                 .frame(width: 320, height: 35, alignment: .leading)
                 .font(.poppins(weight: .extraBold, .size14))
                 .padding(.top, 34)
-            ShowGender(selectedGender: $selectedGender)
-            ZStack {
-                Rectangle()
-                    .frame(width: 335, height: 35)
-                    .border(Color.fontGray)
-                    .foregroundStyle(Color.white)
-                DropDownMenu()
-                    .frame(width: 335, height: 35)
-            }
-            
+            ShowGender(genders: .constant(["Hombre", "Mujer", "Otro"]),
+                       selectedGender: $selectedGender)
+            DropDownPicker(
+                            selection: $shoesSize,
+                            options: [
+                                "Apple",
+                                "Google",
+                                "Amazon",
+                                "Facebook",
+                                "Instagram"
+                            ]
+                        )
+            .padding(.top, 29)
+            Text("¿Que zapato buscas?")
+                .frame(width: 320, height: 35, alignment: .leading)
+                .font(.poppins(weight: .extraBold, .size14))
+                .padding(.top, 34)
+            ShowGender(genders: .constant(["Izquierdo", "Derecho"]),
+                       selectedGender: $selectedGender)
             
             
             Spacer()
@@ -71,12 +81,12 @@ struct RegisterView: View {
 }
 
 struct ShowGender: View {
-    @State private var genders = ["Hombre", "Mujer", "Otro"]
+    @Binding var genders: [String]// = ["Hombre", "Mujer", "Otro"]
     @State private var allSelectedGenders = Set<String>()
     @Binding var selectedGender: String
 
     var body: some View {
-        HStack {
+        HStack(spacing: 40) {
             ForEach(genders, id: \.self) { gender in
                 Button {
                     if allSelectedGenders.contains(gender) {
@@ -103,31 +113,5 @@ struct ShowGender: View {
         }
         .frame(width: 335, alignment: .leading)
         
-    }
-}
-
-
-struct DropDownMenu: View {
-    var friuts = ["apple1", "banana", "orange", "kiwi", "apple", "banana", "orange", "kiwi", "apple", "banana", "orange", "kiwi", "banana", "orange", "kiwi", "banana", "orange", "kiwi"]
-    @State private var selectedFruit: String = ""
-
-    var body: some View {
-        VStack {
-            Picker("fruits", selection: $selectedFruit) {
-                ForEach(friuts, id: \.self) { fruit in
-                    Text(fruit)
-                        .foregroundStyle(Color.red)
-                        .background(Color.red)
-                        .border(Color.black)
-                }
-            }
-            .frame(width: 335, height: 35, alignment: .leading)
-            .speechAdjustedPitch(3.0)
-            .pickerStyle(.menu)
-            .tint(Color.fontGray)
-            .border(Color.black)
-            .menuIndicator(Visibility.hidden)
-        }
-        .frame(width: 335, height: 35, alignment: .leading)
     }
 }

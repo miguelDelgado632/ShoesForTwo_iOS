@@ -28,6 +28,7 @@
 		43BC29122C9D58F30069C6CD /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28FE2C9BE2860069C6CD /* Montserrat-Medium.ttf */; };
 		43BC29132C9D58F50069C6CD /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28F92C9BE2860069C6CD /* Montserrat-Regular.ttf */; };
 		43BC29142C9D58F80069C6CD /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43BC28FB2C9BE2860069C6CD /* Montserrat-SemiBold.ttf */; };
+		43BC29162C9DCD290069C6CD /* DropDownPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC29152C9DCD290069C6CD /* DropDownPicker.swift */; };
 		C10508062C9B4BE000B22737 /* CircularImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508052C9B4BE000B22737 /* CircularImageCarouselView.swift */; };
 		C10508082C9B6ED600B22737 /* ShoeSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508072C9B6ED600B22737 /* ShoeSlideView.swift */; };
 		C105080A2C9B734800B22737 /* HomeFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508092C9B734700B22737 /* HomeFavoritesView.swift */; };
@@ -64,6 +65,7 @@
 		43BC29082C9CD0850069C6CD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		43BC290A2C9D13D60069C6CD /* TabBarCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCustom.swift; sourceTree = "<group>"; };
 		43BC290C2C9D44E20069C6CD /* TextFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
+		43BC29152C9DCD290069C6CD /* DropDownPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownPicker.swift; sourceTree = "<group>"; };
 		C10508052C9B4BE000B22737 /* CircularImageCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageCarouselView.swift; sourceTree = "<group>"; };
 		C10508072C9B6ED600B22737 /* ShoeSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeSlideView.swift; sourceTree = "<group>"; };
 		C10508092C9B734700B22737 /* HomeFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFavoritesView.swift; sourceTree = "<group>"; };
@@ -163,7 +165,6 @@
 				43BC29002C9BE30F0069C6CD /* Font+Extensions.swift */,
 				43BC29032C9BE8270069C6CD /* Color+Extension.swift */,
 				43BC290A2C9D13D60069C6CD /* TabBarCustom.swift */,
-				43BC290C2C9D44E20069C6CD /* TextFieldCustom.swift */,
 			);
 			path = Commonds;
 			sourceTree = "<group>";
@@ -199,6 +200,8 @@
 		C10508162C9E35BB00B22737 /* GenralComponents */ = {
 			isa = PBXGroup;
 			children = (
+				43BC290C2C9D44E20069C6CD /* TextFieldCustom.swift */,
+				43BC29152C9DCD290069C6CD /* DropDownPicker.swift */,
 				C105080F2C9E014300B22737 /* PrimaryButton.swift */,
 				C10508172C9E35D600B22737 /* CircularImageView.swift */,
 			);
@@ -298,6 +301,7 @@
 				C10508182C9E35D600B22737 /* CircularImageView.swift in Sources */,
 				43BC28E62C9A54450069C6CD /* ContentView.swift in Sources */,
 				43BC28E12C9A54450069C6CD /* Persistence.swift in Sources */,
+				43BC29162C9DCD290069C6CD /* DropDownPicker.swift in Sources */,
 				43BC29042C9BE8270069C6CD /* Color+Extension.swift in Sources */,
 				43BC290B2C9D13D60069C6CD /* TabBarCustom.swift in Sources */,
 				C105080E2C9E00F400B22737 /* ShoeModel.swift in Sources */,
