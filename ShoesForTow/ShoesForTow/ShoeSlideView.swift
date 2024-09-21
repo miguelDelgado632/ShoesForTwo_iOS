@@ -50,22 +50,20 @@ struct ShoeSlideView: View {
 }
 
 #Preview {
-  //  let systemImageNames: [String] = ["star", "heart", "moon", "sun.max", "cloud"]
   return ShoeSlideView(currentSelection: .constant(0),
-                       //                       systemImageNames: systemImageNames,
                        shoes: .constant(Shoe.mockedData()))
 }
 
 private struct LateralArrowsView: View {
   var body: some View {
     HStack(alignment: .center) {
-      Image(systemName: "arrowtriangle.left")
+      Image("flecha_izq")
         .resizable()
-        .frame(width: 20, height: 150)
+        .frame(width: 15, height: 40)
       Spacer()
-      Image(systemName: "arrowtriangle.right")
+      Image("flecha_der")
         .resizable()
-        .frame(width: 20, height: 150)
+        .frame(width: 15, height: 40)
     }
     .padding(.horizontal, 16)
   }

@@ -16,19 +16,19 @@ struct TabContainerView: View {
     TabView(selection: $presenter.tabSelection) {
       HomeFavoritesView()
         .tabItem {
-          makeTabItem(icon: "heart.fill", title: texts.favoritesTitle)
+          makeTabItem(icon: "icono_favoritos", title: texts.favoritesTitle)
         }
         .tag(1)
 
       Text("Tab Content 2")
         .tabItem {
-          makeTabItem(icon: "bolt.heart.fill", title: texts.matchTitle)
+          makeTabItem(icon: "icono_match", title: texts.matchTitle)
         }
         .tag(2)
 
       Text("Tab Content 3")
         .tabItem {
-          makeTabItem(icon: "person.circle", title: texts.profile)
+          makeTabItem(icon: "icono_perfil", title: texts.profile)
         }
         .tag(3)
     }
@@ -37,7 +37,10 @@ struct TabContainerView: View {
 
   private func makeTabItem(icon: String, title: String) -> some View {
     VStack(spacing: .zero) {
-      Image(systemName: icon)
+      Image(icon)
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 20, height: 20)
       Text(title)
         .foregroundColor(.fontPurple)
         .font(.poppins(weight: .medium, .size10))
@@ -52,7 +55,7 @@ struct TabContainerView: View {
 fileprivate struct TabContainerTexts {
   var favoritesTitle: String { "Favoritos" }
   var matchTitle: String { "Match" }
-  var profile: String { "Profile" }
+  var profile: String { "Perfil" }
 }
 
 import Combine
