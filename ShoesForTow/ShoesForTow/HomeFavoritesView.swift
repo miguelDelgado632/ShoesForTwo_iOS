@@ -65,11 +65,15 @@ struct HomeFavoritesView: View {
     HStack {
       Spacer()
       Button(action: {}, label: {
-        CircularImageView(systemImageName: "heart", size: constants.mainButtonsSize)
+        CircularImageView(imageName: "icono_like",
+                          size: constants.mainButtonsSize,
+                          addBorder: false)
       }).buttonStyle(.plain)
       Spacer()
       Button(action: {}, label: {
-        CircularImageView(systemImageName: "bolt.heart.fill", size: constants.mainButtonsSize)
+        CircularImageView(imageName: "icono_match_circular",
+                          size: constants.mainButtonsSize,
+                          addBorder: false)
       }).buttonStyle(.plain)
       Spacer()
     }
