@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43B2224B2C9F6B660035B655 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2224A2C9F6B660035B655 /* ImagePickerView.swift */; };
+		43B2224E2C9F6C950035B655 /* PickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2224D2C9F6C950035B655 /* PickerCoordinator.swift */; };
+		43B222502C9F7FC80035B655 /* PHPickerSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2224F2C9F7FC70035B655 /* PHPickerSwiftUI.swift */; };
+		43B222522C9F90A70035B655 /* SetPerfilImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222512C9F90A70035B655 /* SetPerfilImageView.swift */; };
+		43B222542C9F93200035B655 /* CheckTermsAndConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222532C9F93200035B655 /* CheckTermsAndConditions.swift */; };
+		43B222562C9F93650035B655 /* ShowGenderRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222552C9F93650035B655 /* ShowGenderRegister.swift */; };
 		43BC28DF2C9A54450069C6CD /* ShoesForTowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28DE2C9A54450069C6CD /* ShoesForTowApp.swift */; };
 		43BC28E12C9A54450069C6CD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28E02C9A54450069C6CD /* Persistence.swift */; };
 		43BC28E42C9A54450069C6CD /* ShoesForTow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28E22C9A54450069C6CD /* ShoesForTow.xcdatamodeld */; };
@@ -41,6 +47,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43B2224A2C9F6B660035B655 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		43B2224D2C9F6C950035B655 /* PickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCoordinator.swift; sourceTree = "<group>"; };
+		43B2224F2C9F7FC70035B655 /* PHPickerSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPickerSwiftUI.swift; sourceTree = "<group>"; };
+		43B222512C9F90A70035B655 /* SetPerfilImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPerfilImageView.swift; sourceTree = "<group>"; };
+		43B222532C9F93200035B655 /* CheckTermsAndConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTermsAndConditions.swift; sourceTree = "<group>"; };
+		43B222552C9F93650035B655 /* ShowGenderRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowGenderRegister.swift; sourceTree = "<group>"; };
 		43BC28DB2C9A54450069C6CD /* ShoesForTow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoesForTow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BC28DE2C9A54450069C6CD /* ShoesForTowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesForTowApp.swift; sourceTree = "<group>"; };
 		43BC28E02C9A54450069C6CD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -88,6 +100,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43B2224C2C9F6C1E0035B655 /* ImagePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				43B2224A2C9F6B660035B655 /* ImagePickerView.swift */,
+				43B2224D2C9F6C950035B655 /* PickerCoordinator.swift */,
+				43B2224F2C9F7FC70035B655 /* PHPickerSwiftUI.swift */,
+			);
+			path = ImagePickerView;
+			sourceTree = "<group>";
+		};
 		43BC28D22C9A54450069C6CD = {
 			isa = PBXGroup;
 			children = (
@@ -110,15 +132,15 @@
 				43BC28DE2C9A54450069C6CD /* ShoesForTowApp.swift */,
 				43BC29082C9CD0850069C6CD /* Router.swift */,
 				43BC29022C9BE5ED0069C6CD /* Info.plist */,
+				C10508162C9E35BB00B22737 /* GenralComponents */,
 				43BC28FF2C9BE2D50069C6CD /* Commonds */,
 				43BC28F72C9BE2460069C6CD /* Fonts */,
 				43BC28F42C9B7D9B0069C6CD /* Login */,
 				43BC29052C9CCDD80069C6CD /* RegisterCount */,
+				C10508132C9E34EE00B22737 /* HomeFavorites */,
 				43BC28E02C9A54450069C6CD /* Persistence.swift */,
 				43BC28E52C9A54450069C6CD /* ContentView.swift */,
 				C105080D2C9E00F400B22737 /* ShoeModel.swift */,
-				C10508162C9E35BB00B22737 /* GenralComponents */,
-				C10508132C9E34EE00B22737 /* HomeFavorites */,
 				C10508112C9E2B9000B22737 /* TabContainerView.swift */,
 				43BC28E72C9A54490069C6CD /* Assets.xcassets */,
 				43BC28E92C9A54490069C6CD /* ShoesForTow.entitlements */,
@@ -173,6 +195,9 @@
 			isa = PBXGroup;
 			children = (
 				43BC29062C9CCE390069C6CD /* RegisterView.swift */,
+				43B222512C9F90A70035B655 /* SetPerfilImageView.swift */,
+				43B222532C9F93200035B655 /* CheckTermsAndConditions.swift */,
+				43B222552C9F93650035B655 /* ShowGenderRegister.swift */,
 			);
 			path = RegisterCount;
 			sourceTree = "<group>";
@@ -200,6 +225,7 @@
 		C10508162C9E35BB00B22737 /* GenralComponents */ = {
 			isa = PBXGroup;
 			children = (
+				43B2224C2C9F6C1E0035B655 /* ImagePickerView */,
 				43BC290C2C9D44E20069C6CD /* TextFieldCustom.swift */,
 				43BC29152C9DCD290069C6CD /* DropDownPicker.swift */,
 				C105080F2C9E014300B22737 /* PrimaryButton.swift */,
@@ -287,7 +313,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				43BC290D2C9D44E20069C6CD /* TextFieldCustom.swift in Sources */,
+				43B222502C9F7FC80035B655 /* PHPickerSwiftUI.swift in Sources */,
 				43BC29072C9CCE390069C6CD /* RegisterView.swift in Sources */,
+				43B222522C9F90A70035B655 /* SetPerfilImageView.swift in Sources */,
+				43B222542C9F93200035B655 /* CheckTermsAndConditions.swift in Sources */,
 				43BC28F62C9B7DB60069C6CD /* LoginView.swift in Sources */,
 				43BC29092C9CD0850069C6CD /* Router.swift in Sources */,
 				C10508062C9B4BE000B22737 /* CircularImageCarouselView.swift in Sources */,
@@ -295,17 +324,20 @@
 				C10508122C9E2B9000B22737 /* TabContainerView.swift in Sources */,
 				43BC28E42C9A54450069C6CD /* ShoesForTow.xcdatamodeld in Sources */,
 				43BC29012C9BE30F0069C6CD /* Font+Extensions.swift in Sources */,
+				43B222562C9F93650035B655 /* ShowGenderRegister.swift in Sources */,
 				C10508102C9E014300B22737 /* PrimaryButton.swift in Sources */,
 				43BC28DF2C9A54450069C6CD /* ShoesForTowApp.swift in Sources */,
 				C105080C2C9DE44D00B22737 /* AnglesComponentView.swift in Sources */,
 				C10508182C9E35D600B22737 /* CircularImageView.swift in Sources */,
 				43BC28E62C9A54450069C6CD /* ContentView.swift in Sources */,
+				43B2224B2C9F6B660035B655 /* ImagePickerView.swift in Sources */,
 				43BC28E12C9A54450069C6CD /* Persistence.swift in Sources */,
 				43BC29162C9DCD290069C6CD /* DropDownPicker.swift in Sources */,
 				43BC29042C9BE8270069C6CD /* Color+Extension.swift in Sources */,
 				43BC290B2C9D13D60069C6CD /* TabBarCustom.swift in Sources */,
 				C105080E2C9E00F400B22737 /* ShoeModel.swift in Sources */,
 				C10508082C9B6ED600B22737 /* ShoeSlideView.swift in Sources */,
+				43B2224E2C9F6C950035B655 /* PickerCoordinator.swift in Sources */,
 				C105081A2C9E43EF00B22737 /* HomeFavoritesPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

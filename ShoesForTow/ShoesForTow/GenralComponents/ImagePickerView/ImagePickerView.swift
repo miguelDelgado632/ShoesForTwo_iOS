@@ -1,0 +1,31 @@
+//
+//  ImagePickerView.swift
+//  ShoesForTow
+//
+//  Created by Miguel angel Delgado Alcantara on 21/09/24.
+//
+
+import SwiftUI
+
+struct ImagePickerView: UIViewControllerRepresentable {
+
+    @Binding var selectedImage: UIImage?
+    @Environment(\.presentationMode) var isPresented
+    var sourceType: UIImagePickerController.SourceType
+
+    func makeUIViewController(context: Context) -> UIImagePickerController {
+        let imagePicker = UIImagePickerController()
+                imagePicker.sourceType = self.sourceType
+                imagePicker.delegate = context.coordinator // confirming the delegate
+                return imagePicker
+        }
+
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
+
+    }
+
+    // Connecting the Coordinator class with this struct
+        func makeCoordinator() -> PickerCoordinator {
+            return PickerCoordinator(picker: self)
+        }
+}
