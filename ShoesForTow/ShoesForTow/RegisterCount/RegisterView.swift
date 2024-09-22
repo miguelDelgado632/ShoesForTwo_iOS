@@ -11,26 +11,17 @@ import PhotosUI
 struct RegisterView: View {
     
     @EnvironmentObject var router: Router
-    
-    @State private var name: String = ""
-    @State private var apellido: String = ""
-    @State private var email: String = ""
-    @State private var password: String = ""
-    @State private var selectedGender: String = ""
-    @State private var shoesSize: String? = nil
-    @State private var selectedImage: UIImage?
-    @State private var checkTermisAndConditios: Bool = false
-    
+    @ObservedObject var presenter: RegisterPresenter = .init()
     
     var body: some View {
         ScrollView {
             VStack {
                 TabBarCustom()
-                TextFieldCustom(nameTextField: "Nombres", text: $name)
+                TextFieldCustom(nameTextField: "Nombres", text: $presenter.name)
                     .padding(.top, 45)
-                TextFieldCustom(nameTextField: "Apellidos", text: $apellido)
+                TextFieldCustom(nameTextField: "Apellidos", text: $presenter.apellido)
                     .padding(.top, 11)
-                TextField("Correo", text: $email)
+                TextField("Correo", text: $presenter.email)
                     .font(.poppins(weight: .light, .size16))
                     .textContentType(.emailAddress)       // !IMPORTANT FOR EMAILS
                     .disableAutocorrection(true)          // !IMPORTANT FOR EMAILS
@@ -41,7 +32,7 @@ struct RegisterView: View {
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 335, height: 35)
                     .padding(.top, 11)
-                SecureField("Contraseña", text: $password)
+                SecureField("Contraseña", text: $presenter.password)
                     .font(.poppins(weight: .light, .size16))
                     .foregroundStyle(Color.fontGray)
                     .border(Color.fontGray)
@@ -54,9 +45,9 @@ struct RegisterView: View {
                     .font(.poppins(weight: .extraBold, .size14))
                     .padding(.top, 34)
                 ShowGenderRegister(genders: .constant(["Hombre", "Mujer", "Otro"]),
-                                   selectedGender: $selectedGender)
+                                   selectedGender: $presenter.selectedGender)
                 DropDownPicker(
-                    selection: $shoesSize,
+                    selection: $presenter.shoesSize,
                     options: [
                         "Apple",
                         "Google",
@@ -71,11 +62,11 @@ struct RegisterView: View {
                     .font(.poppins(weight: .extraBold, .size14))
                     .padding(.top, 34)
                 ShowGenderRegister(genders: .constant(["Izquierdo", "Derecho"]),
-                                   selectedGender: $selectedGender)
+                                   selectedGender: $presenter.selectedGender)
                 
-                SetPerfilImageView(selectedImage: $selectedImage)
+                SetPerfilImageView(selectedImage: $presenter.selectedImage)
                 
-                CheckTermsAndConditions(checkTermisAndConditios: $checkTermisAndConditios)
+                CheckTermsAndConditions(checkTermisAndConditios: $presenter.checkTermisAndConditios)
                 
                 Button {
                     router.navigateBack()

@@ -21,6 +21,7 @@ struct ShoesForTowApp: App {
               RegisterView()
             case .tabHomeView:
               TabContainerView()
+                
             }
           }
       }

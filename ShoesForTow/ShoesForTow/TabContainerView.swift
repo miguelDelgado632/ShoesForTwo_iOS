@@ -26,7 +26,7 @@ struct TabContainerView: View {
         }
         .tag(2)
 
-      Text("Tab Content 3")
+        PerfilMenuView()
         .tabItem {
           makeTabItem(icon: "icono_perfil", title: texts.profile)
         }
