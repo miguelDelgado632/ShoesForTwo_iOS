@@ -33,6 +33,7 @@ struct TabContainerView: View {
         .tag(3)
     }
     .navigationBarBackButtonHidden()
+    .accentColor(.fontPurple)
   }
 
   private func makeTabItem(icon: String, title: String) -> some View {

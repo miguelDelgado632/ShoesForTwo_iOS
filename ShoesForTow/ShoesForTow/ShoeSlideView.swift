@@ -22,7 +22,6 @@ struct ShoeSlideView: View {
           VStack(spacing: .zero) {
             Image(systemName: shoe.images[constants.middleImageIndex])
               .resizable()
-              .aspectRatio(contentMode: .fit)
               .frame(width: constants.imageSize, height: constants.imageSize)
 
             VStack(spacing: .zero) {

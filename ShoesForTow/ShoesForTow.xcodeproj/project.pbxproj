@@ -44,6 +44,9 @@
 		C10508122C9E2B9000B22737 /* TabContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508112C9E2B9000B22737 /* TabContainerView.swift */; };
 		C10508182C9E35D600B22737 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508172C9E35D600B22737 /* CircularImageView.swift */; };
 		C105081A2C9E43EF00B22737 /* HomeFavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508192C9E43EF00B22737 /* HomeFavoritesPresenter.swift */; };
+		C105081C2C9FC10B00B22737 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C105081B2C9FC10B00B22737 /* MatchView.swift */; };
+		C105081E2C9FC28100B22737 /* Image+Entensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C105081D2C9FC28100B22737 /* Image+Entensions.swift */; };
+		C10508202C9FCD6600B22737 /* ShoeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C105081F2C9FCD6600B22737 /* ShoeDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +90,9 @@
 		C10508112C9E2B9000B22737 /* TabContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerView.swift; sourceTree = "<group>"; };
 		C10508172C9E35D600B22737 /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		C10508192C9E43EF00B22737 /* HomeFavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFavoritesPresenter.swift; sourceTree = "<group>"; };
+		C105081B2C9FC10B00B22737 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
+		C105081D2C9FC28100B22737 /* Image+Entensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Entensions.swift"; sourceTree = "<group>"; };
+		C105081F2C9FCD6600B22737 /* ShoeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +138,7 @@
 				43BC28DE2C9A54450069C6CD /* ShoesForTowApp.swift */,
 				43BC29082C9CD0850069C6CD /* Router.swift */,
 				43BC29022C9BE5ED0069C6CD /* Info.plist */,
-				C10508162C9E35BB00B22737 /* GenralComponents */,
+				C10508162C9E35BB00B22737 /* GeneralComponents */,
 				43BC28FF2C9BE2D50069C6CD /* Commonds */,
 				43BC28F72C9BE2460069C6CD /* Fonts */,
 				43BC28F42C9B7D9B0069C6CD /* Login */,
@@ -142,6 +148,7 @@
 				43BC28E52C9A54450069C6CD /* ContentView.swift */,
 				C105080D2C9E00F400B22737 /* ShoeModel.swift */,
 				C10508112C9E2B9000B22737 /* TabContainerView.swift */,
+				C105081B2C9FC10B00B22737 /* MatchView.swift */,
 				43BC28E72C9A54490069C6CD /* Assets.xcassets */,
 				43BC28E92C9A54490069C6CD /* ShoesForTow.entitlements */,
 				43BC28E22C9A54450069C6CD /* ShoesForTow.xcdatamodeld */,
@@ -186,6 +193,7 @@
 			children = (
 				43BC29002C9BE30F0069C6CD /* Font+Extensions.swift */,
 				43BC29032C9BE8270069C6CD /* Color+Extension.swift */,
+				C105081D2C9FC28100B22737 /* Image+Entensions.swift */,
 				43BC290A2C9D13D60069C6CD /* TabBarCustom.swift */,
 			);
 			path = Commonds;
@@ -222,7 +230,7 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
-		C10508162C9E35BB00B22737 /* GenralComponents */ = {
+		C10508162C9E35BB00B22737 /* GeneralComponents */ = {
 			isa = PBXGroup;
 			children = (
 				43B2224C2C9F6C1E0035B655 /* ImagePickerView */,
@@ -230,8 +238,9 @@
 				43BC29152C9DCD290069C6CD /* DropDownPicker.swift */,
 				C105080F2C9E014300B22737 /* PrimaryButton.swift */,
 				C10508172C9E35D600B22737 /* CircularImageView.swift */,
+				C105081F2C9FCD6600B22737 /* ShoeDetailView.swift */,
 			);
-			path = GenralComponents;
+			path = GeneralComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,10 +327,12 @@
 				43B222522C9F90A70035B655 /* SetPerfilImageView.swift in Sources */,
 				43B222542C9F93200035B655 /* CheckTermsAndConditions.swift in Sources */,
 				43BC28F62C9B7DB60069C6CD /* LoginView.swift in Sources */,
+				C10508202C9FCD6600B22737 /* ShoeDetailView.swift in Sources */,
 				43BC29092C9CD0850069C6CD /* Router.swift in Sources */,
 				C10508062C9B4BE000B22737 /* CircularImageCarouselView.swift in Sources */,
 				C105080A2C9B734800B22737 /* HomeFavoritesView.swift in Sources */,
 				C10508122C9E2B9000B22737 /* TabContainerView.swift in Sources */,
+				C105081E2C9FC28100B22737 /* Image+Entensions.swift in Sources */,
 				43BC28E42C9A54450069C6CD /* ShoesForTow.xcdatamodeld in Sources */,
 				43BC29012C9BE30F0069C6CD /* Font+Extensions.swift in Sources */,
 				43B222562C9F93650035B655 /* ShowGenderRegister.swift in Sources */,
@@ -330,6 +341,7 @@
 				C105080C2C9DE44D00B22737 /* AnglesComponentView.swift in Sources */,
 				C10508182C9E35D600B22737 /* CircularImageView.swift in Sources */,
 				43BC28E62C9A54450069C6CD /* ContentView.swift in Sources */,
+				C105081C2C9FC10B00B22737 /* MatchView.swift in Sources */,
 				43B2224B2C9F6B660035B655 /* ImagePickerView.swift in Sources */,
 				43BC28E12C9A54450069C6CD /* Persistence.swift in Sources */,
 				43BC29162C9DCD290069C6CD /* DropDownPicker.swift in Sources */,

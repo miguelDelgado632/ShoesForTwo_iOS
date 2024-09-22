@@ -1,8 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "icono_favoritos.png",
-      "idiom" : "universal"
+      "filename" : "icono_favoritos~universal@1x.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "icono_favoritos~universal@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "icono_favoritos~universal@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
