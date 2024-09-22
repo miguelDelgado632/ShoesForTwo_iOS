@@ -13,6 +13,7 @@ final class Router: ObservableObject {
   public enum Destination: Codable, Hashable {
     case registerView
     case tabHomeView
+    case perfil
   }
 
   @Published var navPath = NavigationPath()

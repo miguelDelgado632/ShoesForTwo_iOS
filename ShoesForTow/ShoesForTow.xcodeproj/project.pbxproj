@@ -17,6 +17,8 @@
 		43B2225C2C9FFF390035B655 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2225B2C9FFF390035B655 /* RegisterPresenter.swift */; };
 		43B222612CA005600035B655 /* PerfilMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222602CA005600035B655 /* PerfilMenuView.swift */; };
 		43B222632CA005730035B655 /* PerfilMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222622CA005730035B655 /* PerfilMenuPresenter.swift */; };
+		43B222662CA01C140035B655 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222652CA01C140035B655 /* PerfilView.swift */; };
+		43B222682CA01CC10035B655 /* PerfilPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222672CA01CC10035B655 /* PerfilPresenter.swift */; };
 		43BC28DF2C9A54450069C6CD /* ShoesForTowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28DE2C9A54450069C6CD /* ShoesForTowApp.swift */; };
 		43BC28E12C9A54450069C6CD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28E02C9A54450069C6CD /* Persistence.swift */; };
 		43BC28E42C9A54450069C6CD /* ShoesForTow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28E22C9A54450069C6CD /* ShoesForTow.xcdatamodeld */; };
@@ -64,6 +66,8 @@
 		43B2225B2C9FFF390035B655 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		43B222602CA005600035B655 /* PerfilMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilMenuView.swift; sourceTree = "<group>"; };
 		43B222622CA005730035B655 /* PerfilMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilMenuPresenter.swift; sourceTree = "<group>"; };
+		43B222652CA01C140035B655 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
+		43B222672CA01CC10035B655 /* PerfilPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilPresenter.swift; sourceTree = "<group>"; };
 		43BC28DB2C9A54450069C6CD /* ShoesForTow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoesForTow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BC28DE2C9A54450069C6CD /* ShoesForTowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesForTowApp.swift; sourceTree = "<group>"; };
 		43BC28E02C9A54450069C6CD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -133,6 +137,15 @@
 			path = PerfilMenu;
 			sourceTree = "<group>";
 		};
+		43B222642CA01BEB0035B655 /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+				43B222652CA01C140035B655 /* PerfilView.swift */,
+				43B222672CA01CC10035B655 /* PerfilPresenter.swift */,
+			);
+			path = Perfil;
+			sourceTree = "<group>";
+		};
 		43BC28D22C9A54450069C6CD = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +175,7 @@
 				43BC29052C9CCDD80069C6CD /* RegisterCount */,
 				C10508132C9E34EE00B22737 /* HomeFavorites */,
 				43B2225D2CA005050035B655 /* PerfilMenu */,
+				43B222642CA01BEB0035B655 /* Perfil */,
 				43BC28E02C9A54450069C6CD /* Persistence.swift */,
 				43BC28E52C9A54450069C6CD /* ContentView.swift */,
 				C105080D2C9E00F400B22737 /* ShoeModel.swift */,
@@ -363,6 +377,8 @@
 				43BC28DF2C9A54450069C6CD /* ShoesForTowApp.swift in Sources */,
 				C105080C2C9DE44D00B22737 /* AnglesComponentView.swift in Sources */,
 				43B222612CA005600035B655 /* PerfilMenuView.swift in Sources */,
+				43B222682CA01CC10035B655 /* PerfilPresenter.swift in Sources */,
+				43B222662CA01C140035B655 /* PerfilView.swift in Sources */,
 				C10508182C9E35D600B22737 /* CircularImageView.swift in Sources */,
 				43BC28E62C9A54450069C6CD /* ContentView.swift in Sources */,
 				C105081C2C9FC10B00B22737 /* MatchView.swift in Sources */,

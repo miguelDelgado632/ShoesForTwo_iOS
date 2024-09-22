@@ -10,14 +10,22 @@ import SwiftUI
 
 final class PerfilMenuPresenter: ObservableObject {
 
-    @EnvironmentObject var router: Router
+    var router: Router?
     
     init() {
-        
     }
 
+    func setup(_ router: Router) {
+        self.router = router
+      }
+
     func showOptions(option: PerfilMenuData) {
-        router.navigate(to: .registerView)
+        switch option {
+        case .perfil:
+            router?.navigate(to: .perfil)
+        default:
+            break
+        }
         print("Option Menu, \(option)")
     }
 }

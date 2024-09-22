@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct PerfilMenuView: View {
-    //@EnvironmentObject var router: Router
+    @EnvironmentObject var router: Router
     @ObservedObject var presenter: PerfilMenuPresenter = .init()
     
     var body: some View {
         ImageTextMenu(action: presenter.showOptions(option:))
+            .onAppear{
+                self.presenter.setup(self.router)
+            }
     }
 }
 
