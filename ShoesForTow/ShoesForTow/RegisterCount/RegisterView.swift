@@ -16,11 +16,13 @@ struct RegisterView: View {
     var body: some View {
         ScrollView {
             VStack {
-                TabBarCustom()
+                TabBarCustom(title: "Crear cuenta")
                 TextFieldCustom(nameTextField: "Nombres", text: $presenter.name)
-                    .padding(.top, 45)
+                    .padding(.top, 35)
+                    .padding(.horizontal, 30)
                 TextFieldCustom(nameTextField: "Apellidos", text: $presenter.apellido)
                     .padding(.top, 11)
+                    .padding(.horizontal, 30)
                 TextField("Correo", text: $presenter.email)
                     .font(.poppins(weight: .light, .size16))
                     .textContentType(.emailAddress)       // !IMPORTANT FOR EMAILS
@@ -30,7 +32,8 @@ struct RegisterView: View {
                     .foregroundStyle(Color.fontGray)
                     .border(Color.fontGray)
                     .textFieldStyle(.roundedBorder)
-                    .frame(width: 335, height: 35)
+                    .padding(.horizontal, 30)
+                    .frame(height: 35)
                     .padding(.top, 11)
                 SecureField("Contraseña", text: $presenter.password)
                     .font(.poppins(weight: .light, .size16))
@@ -38,14 +41,17 @@ struct RegisterView: View {
                     .border(Color.fontGray)
                     .textFieldStyle(.roundedBorder)
                     .textContentType(.password)
-                    .frame(width: 335, height: 35)
+                    .frame(height: 35)
+                    .padding(.horizontal, 30)
                     .padding(.top, 11)
                 Text("Genero")
-                    .frame(width: 320, height: 35, alignment: .leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .font(.poppins(weight: .extraBold, .size14))
                     .padding(.top, 34)
+                    .padding(.horizontal, 30)
                 ShowGenderRegister(genders: .constant(["Hombre", "Mujer", "Otro"]),
                                    selectedGender: $presenter.selectedGender)
+                .padding(.horizontal, 30)
                 DropDownPicker(
                     selection: $presenter.shoesSize,
                     options: [
@@ -58,15 +64,20 @@ struct RegisterView: View {
                 )
                 .padding(.top, 29)
                 Text("¿Que zapato buscas?")
-                    .frame(width: 320, height: 35, alignment: .leading)
+                    .frame(height: 35, alignment: .leading)
                     .font(.poppins(weight: .extraBold, .size14))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 30)
                     .padding(.top, 34)
                 ShowGenderRegister(genders: .constant(["Izquierdo", "Derecho"]),
                                    selectedGender: $presenter.selectedGender)
+                .padding(.horizontal, 30)
                 
                 SetPerfilImageView(selectedImage: $presenter.selectedImage)
+                    .padding(.horizontal, 30)
                 
                 CheckTermsAndConditions(checkTermisAndConditios: $presenter.checkTermisAndConditios)
+                    .padding(.horizontal, 30)
                 
                 Button {
                     router.navigateBack()
@@ -81,6 +92,7 @@ struct RegisterView: View {
             }
             .frame(maxWidth: .infinity)
             .navigationBarBackButtonHidden()
+            .padding(.bottom, 20)
         }
     }
 }

@@ -40,7 +40,7 @@ struct SetPerfilImageView: View {
             ShowSheetCamAndLibrary(sourceType: $sourceType, selectedImage: $selectedImage)
                 .presentationDetents([.medium,.large])
         }
-        .frame(width: 335, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.top, 30)
     }
 }

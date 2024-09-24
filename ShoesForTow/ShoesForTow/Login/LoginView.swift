@@ -31,15 +31,18 @@ struct LoginView: View {
                         .foregroundStyle(Color.fontGray)
                         .border(Color.fontGray)
                         .textFieldStyle(.roundedBorder)
-                        .frame(width: 335, height: 35)
+                        .frame(height: 35)
                         .padding(.top, 11)
+                        .padding(.horizontal, 30)
                     SecureField("Contraseña", text: $password)
                         .font(.poppins(weight: .light, .size16))
                         .foregroundStyle(Color.fontGray)
                         .border(Color.fontGray)
                         .textFieldStyle(.roundedBorder)
                         .textContentType(.password)
-                        .frame(width: 335, height: 35)
+                        .frame(height: 35)
+                        .padding(.top, 11)
+                        .padding(.horizontal, 30)
                 }
                 .padding(.bottom, 47)
                 
@@ -68,6 +71,6 @@ struct LoginView: View {
                 
                 Spacer()
             }
-            .padding(.top, 197)
+            .padding(.top, 40)
     }
 }

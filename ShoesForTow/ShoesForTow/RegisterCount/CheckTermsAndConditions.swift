@@ -31,7 +31,7 @@ struct CheckTermsAndConditions: View {
             }
             Spacer()
         }
-        .frame(width: 335, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.top, 30)
     }
 }

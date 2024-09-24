@@ -19,7 +19,6 @@ struct TextFieldCustom: View {
                 .foregroundStyle(Color.fontGray)
                 .border(Color.fontGray)
                 .textFieldStyle(.roundedBorder)
-                .frame(width: 335, height: 35)
         }
     }
 }

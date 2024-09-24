@@ -55,7 +55,7 @@ struct ImageTextMenu: View {
             }
             Spacer()
         }
-        .padding(.top, 150)
+        .padding(.top, 40)
     }
 }
 

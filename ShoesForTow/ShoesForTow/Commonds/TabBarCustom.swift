@@ -10,6 +10,7 @@ import SwiftUI
 struct TabBarCustom: View {
 
     @EnvironmentObject var router: Router
+    var title: String
 
     var body: some View {
         HStack {
@@ -23,7 +24,7 @@ struct TabBarCustom: View {
                     .foregroundStyle(Color.fontGray)
             }
             Spacer()
-            Text("Crear cuenta")
+            Text(title)
                 .font(.poppins(weight: .extraBold, .size16))
                 .foregroundStyle(Color.fontRed)
             Spacer()
@@ -39,5 +40,5 @@ struct TabBarCustom: View {
 }
 
 #Preview {
-    TabBarCustom()
+    TabBarCustom(title: "test")
 }
