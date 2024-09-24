@@ -11,10 +11,12 @@ extension View {
 
     public func popup<PopupContent: View>(
         isPresented: Binding<Bool>,
+        tapAction: @escaping () -> Void,
         view: @escaping () -> PopupContent) -> some View {
         self.modifier(
             Popup(
                 isPresented: isPresented,
+                tapAction: tapAction,
                 view: view)
         )
     }
@@ -23,11 +25,14 @@ extension View {
 public struct Popup<PopupContent>: ViewModifier where PopupContent: View {
     
     init(isPresented: Binding<Bool>,
+         tapAction: @escaping () -> Void,
          view: @escaping () -> PopupContent) {
         self._isPresented = isPresented
         self.view = view
+        self.tapAction = tapAction
     }
     
+    var tapAction: () -> Void
     /// Controls if the sheet should be presented or not
     @Binding var isPresented: Bool
     
@@ -83,6 +88,7 @@ public struct Popup<PopupContent>: ViewModifier where PopupContent: View {
                 .simultaneousGesture(
                     TapGesture().onEnded {
                         dismiss()
+                        tapAction()
                     })
                 .frameGetter($sheetContentRect)
                 .frame(width: screenWidth)

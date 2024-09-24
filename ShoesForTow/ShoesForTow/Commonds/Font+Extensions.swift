@@ -28,6 +28,7 @@ enum FontSize: CGFloat {
   case size20 = 20.0
   case size52 = 24.0
   case size40 = 40.0
+  case size60 = 60
 }
 
 extension Font {

@@ -34,9 +34,9 @@ struct MatchView: View {
                                    shoePrice: "$500",
                                    backgroundColor: .fontGray)
             }
-
+            
             Button {
-                showingPopup = true // 2
+                showingPopup = true 
             } label: {
                 Text("Invita \("usuario2") a comprar este modelo contigo")
                     .font(.poppins(weight: .regular, .size14))
@@ -83,25 +83,54 @@ struct MatchView: View {
         .onAppear{
             self.presenter.setup(self.router)
         }
-        .popup(isPresented: $showingPopup) {
-                    ZStack {
-                        Rectangle()
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 530)
-                        .border(Color.fontGray)
-                        .foregroundStyle(Color.white)
-                        .padding(.horizontal, 20)
-                        Text("PopUP")
+        .popup(isPresented: $showingPopup, tapAction: presenter.tapActionPopup) {
+            ZStack {
+                Rectangle()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 530)
+                    .border(Color.fontGray)
+                    .foregroundStyle(Color.white)
+                    .padding(.horizontal, 20)
+                VStack {
+                    Image("")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
+                VStack {
+                    Text("Has invitado a usuario 2 a hacer match contigo")
+                        .frame(height: 70)
+                        .font(.poppins(weight: .regular, .size20))
+                        .foregroundStyle(Color.fontPurple)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 32)
+                    
+                    HStack(spacing: -25) {
+                        shoeDetailDataView(name: "usuario 1",
+                                           userImage: "person",
+                                           shoeImage: .leftShoeTest,
+                                           backgroundColor: .fontPurple,
+                                           componentSize: 170)
+                        
+                        shoeDetailDataView(name: "usuario 2",
+                                           userImage: "person.fill",
+                                           shoeImage: .rightShoeTest,
+                                           backgroundColor: .fontGray,
+                                           componentSize: 170)
                     }
                 }
+                
+            }
+        }
+        
     }
     
     private func shoeDetailDataView(name: String,
                                     userImage: String,
                                     shoeImage: TestImages,
-                                    shoeName: String,
-                                    shoePrice: String,
-                                    backgroundColor: Color) -> some View {
+                                    shoeName: String? = nil,
+                                    shoePrice: String? = nil,
+                                    backgroundColor: Color,
+                                    componentSize: CGFloat = 200) -> some View {
         VStack(spacing: .zero) {
             VStack(spacing: 8) {
                 Text(name)
@@ -114,7 +143,7 @@ struct MatchView: View {
                            name: shoeName,
                            price: shoePrice,
                            backgroundColor: backgroundColor,
-                           componentSize: 200)
+                           componentSize: componentSize)
         }
     }
 }
