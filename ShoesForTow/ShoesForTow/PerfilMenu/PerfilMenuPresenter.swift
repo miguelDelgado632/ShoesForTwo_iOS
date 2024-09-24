@@ -22,7 +22,7 @@ final class PerfilMenuPresenter: ObservableObject {
     func showOptions(option: PerfilMenuData) {
         switch option {
         case .perfil:
-            router?.navigate(to: .perfil)
+            router?.navigate(to: .perfilView)
         default:
             break
         }

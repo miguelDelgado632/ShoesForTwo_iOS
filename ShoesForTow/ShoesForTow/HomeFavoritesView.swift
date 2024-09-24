@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeFavoritesView: View {
 
   @ObservedObject var presenter: HomeFavoritesPresenter = .init()
+  @EnvironmentObject var router: Router
   private let texts: HomeTexts = .init()
   private let constants: HomeConstants = .init()
 
@@ -21,6 +22,9 @@ struct HomeFavoritesView: View {
       Spacer()
       mainButtonView
       Spacer()
+    }
+    .onAppear{
+        self.presenter.setup(self.router)
     }
   }
 
@@ -70,7 +74,9 @@ struct HomeFavoritesView: View {
                           addBorder: false)
       }).buttonStyle(.plain)
       Spacer()
-      Button(action: {}, label: {
+      Button(action: {
+          presenter.wsMatch()
+      }, label: {
         CircularImageView(imageName: "icono_match_circular",
                           size: constants.mainButtonsSize,
                           addBorder: false)

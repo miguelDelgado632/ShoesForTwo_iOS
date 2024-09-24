@@ -21,8 +21,10 @@ struct ShoesForTowApp: App {
               RegisterView()
             case .tabHomeView:
               TabContainerView()
-            case .perfil:
+            case .perfilView:
               PerfilView()
+            case .matchView:
+                MatchView()
             }
           }
       }
