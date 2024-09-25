@@ -55,6 +55,9 @@
 		C105081C2C9FC10B00B22737 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C105081B2C9FC10B00B22737 /* MatchView.swift */; };
 		C105081E2C9FC28100B22737 /* Image+Entensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C105081D2C9FC28100B22737 /* Image+Entensions.swift */; };
 		C10508202C9FCD6600B22737 /* ShoeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C105081F2C9FCD6600B22737 /* ShoeDetailView.swift */; };
+		C10508222CA370CD00B22737 /* MatchInvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508212CA370CD00B22737 /* MatchInvitationView.swift */; };
+		C10508242CA372DB00B22737 /* MatchShoeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508232CA372DB00B22737 /* MatchShoeDetailView.swift */; };
+		C10508262CA3868800B22737 /* CompletePurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508252CA3868800B22737 /* CompletePurchaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +112,9 @@
 		C105081B2C9FC10B00B22737 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		C105081D2C9FC28100B22737 /* Image+Entensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Entensions.swift"; sourceTree = "<group>"; };
 		C105081F2C9FCD6600B22737 /* ShoeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeDetailView.swift; sourceTree = "<group>"; };
+		C10508212CA370CD00B22737 /* MatchInvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInvitationView.swift; sourceTree = "<group>"; };
+		C10508232CA372DB00B22737 /* MatchShoeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchShoeDetailView.swift; sourceTree = "<group>"; };
+		C10508252CA3868800B22737 /* CompletePurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePurchaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				C105081B2C9FC10B00B22737 /* MatchView.swift */,
+				C10508212CA370CD00B22737 /* MatchInvitationView.swift */,
 				43B2226A2CA292E80035B655 /* MatchPresenter.swift */,
+				C10508232CA372DB00B22737 /* MatchShoeDetailView.swift */,
 			);
 			path = MatchView;
 			sourceTree = "<group>";
@@ -199,6 +207,7 @@
 				43B222642CA01BEB0035B655 /* Perfil */,
 				43B222692CA292BA0035B655 /* MatchView */,
 				43BC28E02C9A54450069C6CD /* Persistence.swift */,
+				C10508272CA3868F00B22737 /* CompletePurchase */,
 				43BC28E52C9A54450069C6CD /* ContentView.swift */,
 				C105080D2C9E00F400B22737 /* ShoeModel.swift */,
 				C10508112C9E2B9000B22737 /* TabContainerView.swift */,
@@ -299,6 +308,14 @@
 			path = GeneralComponents;
 			sourceTree = "<group>";
 		};
+		C10508272CA3868F00B22737 /* CompletePurchase */ = {
+			isa = PBXGroup;
+			children = (
+				C10508252CA3868800B22737 /* CompletePurchaseView.swift */,
+			);
+			name = CompletePurchase;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -382,6 +399,7 @@
 				43BC29072C9CCE390069C6CD /* RegisterView.swift in Sources */,
 				43B222522C9F90A70035B655 /* SetPerfilImageView.swift in Sources */,
 				43B222542C9F93200035B655 /* CheckTermsAndConditions.swift in Sources */,
+				C10508222CA370CD00B22737 /* MatchInvitationView.swift in Sources */,
 				43BC28F62C9B7DB60069C6CD /* LoginView.swift in Sources */,
 				C10508202C9FCD6600B22737 /* ShoeDetailView.swift in Sources */,
 				43B222632CA005730035B655 /* PerfilMenuPresenter.swift in Sources */,
@@ -393,6 +411,7 @@
 				C10508122C9E2B9000B22737 /* TabContainerView.swift in Sources */,
 				C105081E2C9FC28100B22737 /* Image+Entensions.swift in Sources */,
 				43BC28E42C9A54450069C6CD /* ShoesForTow.xcdatamodeld in Sources */,
+				C10508262CA3868800B22737 /* CompletePurchaseView.swift in Sources */,
 				43BC29012C9BE30F0069C6CD /* Font+Extensions.swift in Sources */,
 				43B2225C2C9FFF390035B655 /* RegisterPresenter.swift in Sources */,
 				43B222562C9F93650035B655 /* ShowGenderRegister.swift in Sources */,
@@ -414,6 +433,7 @@
 				C105080E2C9E00F400B22737 /* ShoeModel.swift in Sources */,
 				C10508082C9B6ED600B22737 /* ShoeSlideView.swift in Sources */,
 				43B2224E2C9F6C950035B655 /* PickerCoordinator.swift in Sources */,
+				C10508242CA372DB00B22737 /* MatchShoeDetailView.swift in Sources */,
 				C105081A2C9E43EF00B22737 /* HomeFavoritesPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -31,7 +31,7 @@ struct SetPerfilImageView: View {
                         .frame(width: 45, height: 45)
                 }
                 Text("Subir Foto")
-                    .font(.poppins(weight: .light, .size14))
+                    .font(.monserrat(weight: .light, .size14))
                     .foregroundStyle(Color.fontGray)
             }
             
@@ -67,14 +67,14 @@ struct ShowSheetCamAndLibrary: View {
                 self.sourceType = true//.camera
                 self.isImagePickerDisplay.toggle()
             }
-            .font(.poppins(weight: .extraBold, .size14))
+            .font(.monserrat(weight: .extraBold, .size14))
             .padding()
             
             Button("photo") {
                 self.sourceType = false//.library
                 self.isImagePickerDisplay.toggle()
             }
-            .font(.poppins(weight: .extraBold, .size14))
+            .font(.monserrat(weight: .extraBold, .size14))
             .padding()
         }
         .navigationBarTitle("Demo")

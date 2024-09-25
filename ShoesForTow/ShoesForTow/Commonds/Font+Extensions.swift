@@ -32,11 +32,11 @@ enum FontSize: CGFloat {
 }
 
 extension Font {
-  static func poppins(weight: FontName, _ size: FontSize) -> Font {
+  static func monserrat(weight: FontName, _ size: FontSize) -> Font {
     Font.custom(weight.rawValue, fixedSize: size.rawValue)
   }
 
-  static func poppins(weight: FontName, _ size: CGFloat) -> Font {
+  static func monserrat(weight: FontName, _ size: CGFloat) -> Font {
     Font.custom(weight.rawValue, fixedSize: size)
   }
 }

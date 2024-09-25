@@ -12,6 +12,7 @@ struct PrimaryButton: View {
   let title: String
   let width: CGFloat
   var height: CGFloat = 30
+  var font: Font = .monserrat(weight: .light, .size20)
 
   private let constants: PrimaryButtonConstants = .init()
 
@@ -19,13 +20,13 @@ struct PrimaryButton: View {
     Button(action: action) {
       Text(title)
         .foregroundColor(.fontGray)
-        .font(.poppins(weight: .light, .size20))
+        .font(font)
     }
     .frame(width: width, alignment: .center)
     .padding(.vertical, constants.verticalPading)
     .background(
       Rectangle()
-        .foregroundColor(.gray.opacity(constants.backgroundOpacity))
+        .foregroundColor(.backgroundColor.opacity(constants.backgroundOpacity))
     )
   }
 }

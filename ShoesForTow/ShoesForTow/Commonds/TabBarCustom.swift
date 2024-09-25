@@ -25,7 +25,7 @@ struct TabBarCustom: View {
             }
             Spacer()
             Text(title)
-                .font(.poppins(weight: .extraBold, .size16))
+                .font(.monserrat(weight: .extraBold, .size16))
                 .foregroundStyle(Color.fontRed)
             Spacer()
             Rectangle()

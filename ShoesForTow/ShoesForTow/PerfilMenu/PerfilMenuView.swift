@@ -46,7 +46,7 @@ struct ImageTextMenu: View {
                             .resizable()
                             .frame(width: 60, height: 60)
                         Text(PerfilMenuData.allCases[index].rawValue)
-                            .font(.poppins(weight: .regular, .size14))
+                            .font(.monserrat(weight: .regular, .size14))
                             .foregroundStyle(Color.fontGray)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)

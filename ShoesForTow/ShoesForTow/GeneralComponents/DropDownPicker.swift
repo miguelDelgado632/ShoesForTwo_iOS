@@ -32,14 +32,14 @@ struct DropDownPicker: View {
                 
                 HStack {
                     Text(selection == nil ? "Select" : selection!)
-                        .font(.poppins(weight: .light, .size16))
+                        .font(.monserrat(weight: .light, .size16))
                         .foregroundColor(Color.fontGray)
                     
                     
                     Spacer(minLength: 0)
                     
                     Image(systemName: state == .top ? "chevron.up" : "chevron.down")
-                        .font(.poppins(weight: .light, .size16))
+                        .font(.monserrat(weight: .light, .size16))
                         .foregroundColor(Color.fontGray)
                         .rotationEffect(.degrees((showDropdown ? -180 : 0)))
                 }
@@ -79,7 +79,7 @@ struct DropDownPicker: View {
                 ForEach(options, id: \.self) { option in
                     HStack {
                         Text(option)
-                            .font(.poppins(weight: .light, .size16))
+                            .font(.monserrat(weight: .light, .size16))
                             .foregroundStyle(Color.fontGray)
                         Spacer()
                         Image(systemName: "checkmark")

@@ -44,7 +44,7 @@ struct TabContainerView: View {
         .frame(width: 20, height: 20)
       Text(title)
         .foregroundColor(.fontPurple)
-        .font(.poppins(weight: .medium, .size10))
+        .font(.monserrat(weight: .medium, .size10))
     }
   }
 }

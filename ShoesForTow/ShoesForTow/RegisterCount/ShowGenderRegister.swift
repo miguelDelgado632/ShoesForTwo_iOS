@@ -31,7 +31,7 @@ struct ShowGenderRegister: View {
                             .foregroundStyle(allSelectedGenders.contains(gender) ? Color.fontGray : Color.white)
                             
                         Text(gender)
-                            .font(.poppins(weight: .light, .size14))
+                            .font(.monserrat(weight: .light, .size14))
                             .foregroundStyle(Color.fontGray)
                     }
                 }

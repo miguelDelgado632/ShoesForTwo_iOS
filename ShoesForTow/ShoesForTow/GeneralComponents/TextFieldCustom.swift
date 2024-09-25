@@ -15,7 +15,7 @@ struct TextFieldCustom: View {
     var body: some View {
         VStack {
             TextField(nameTextField, text: $text)
-                .font(.poppins(weight: .light, .size16))
+                .font(.monserrat(weight: .light, .size16))
                 .foregroundStyle(Color.fontGray)
                 .border(Color.fontGray)
                 .textFieldStyle(.roundedBorder)

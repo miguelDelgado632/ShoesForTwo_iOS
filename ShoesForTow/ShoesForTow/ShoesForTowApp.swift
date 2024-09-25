@@ -25,6 +25,8 @@ struct ShoesForTowApp: App {
               PerfilView()
             case .matchView:
                 MatchView()
+            case .completePurchase(let shoeName):
+              CompletePurchaseView(shoeName: shoeName)
             }
           }
       }

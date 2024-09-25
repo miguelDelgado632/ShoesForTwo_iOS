@@ -15,6 +15,7 @@ final class Router: ObservableObject {
     case tabHomeView
     case perfilView
     case matchView
+    case completePurchase(String)
   }
 
   @Published var navPath = NavigationPath()

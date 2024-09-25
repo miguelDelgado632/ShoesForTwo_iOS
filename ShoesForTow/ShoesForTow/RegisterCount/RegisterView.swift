@@ -24,11 +24,11 @@ struct RegisterView: View {
                     .padding(.top, 11)
                     .padding(.horizontal, 30)
                 TextField("Correo", text: $presenter.email)
-                    .font(.poppins(weight: .light, .size16))
+                    .font(.monserrat(weight: .light, .size16))
                     .textContentType(.emailAddress)       // !IMPORTANT FOR EMAILS
                     .disableAutocorrection(true)          // !IMPORTANT FOR EMAILS
                     .textInputAutocapitalization(.never)  // !IMPORTANT FOR EMAILS
-                    .font(.poppins(weight: .light, .size16))
+                    .font(.monserrat(weight: .light, .size16))
                     .foregroundStyle(Color.fontGray)
                     .border(Color.fontGray)
                     .textFieldStyle(.roundedBorder)
@@ -36,7 +36,7 @@ struct RegisterView: View {
                     .frame(height: 35)
                     .padding(.top, 11)
                 SecureField("Contraseña", text: $presenter.password)
-                    .font(.poppins(weight: .light, .size16))
+                    .font(.monserrat(weight: .light, .size16))
                     .foregroundStyle(Color.fontGray)
                     .border(Color.fontGray)
                     .textFieldStyle(.roundedBorder)
@@ -46,7 +46,7 @@ struct RegisterView: View {
                     .padding(.top, 11)
                 Text("Genero")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.poppins(weight: .extraBold, .size14))
+                    .font(.monserrat(weight: .extraBold, .size14))
                     .padding(.top, 34)
                     .padding(.horizontal, 30)
                 ShowGenderRegister(genders: .constant(["Hombre", "Mujer", "Otro"]),
@@ -65,7 +65,7 @@ struct RegisterView: View {
                 .padding(.top, 29)
                 Text("¿Que zapato buscas?")
                     .frame(height: 35, alignment: .leading)
-                    .font(.poppins(weight: .extraBold, .size14))
+                    .font(.monserrat(weight: .extraBold, .size14))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 30)
                     .padding(.top, 34)
@@ -83,7 +83,7 @@ struct RegisterView: View {
                     router.navigateBack()
                 } label: {
                     Text("Aceptar")
-                        .font(.poppins(weight: .light, .size16))
+                        .font(.monserrat(weight: .light, .size16))
                         .foregroundStyle(Color.fontPurple)
                 }
                 .frame(width: 176, height: 35)

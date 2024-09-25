@@ -49,7 +49,7 @@ struct HomeFavoritesView: View {
   private var shoeSelectorView: some View {
     VStack(spacing: constants.shoeSelectorVerticalSpacing) {
       Text(texts.alsoLikedBy)
-        .font(.poppins(weight: .semiBold, .size20))
+        .font(.monserrat(weight: .semiBold, .size20))
         .foregroundColor(.fontRed)
         .padding(.bottom, constants.alsoLikedTitleBottonPadding)
 

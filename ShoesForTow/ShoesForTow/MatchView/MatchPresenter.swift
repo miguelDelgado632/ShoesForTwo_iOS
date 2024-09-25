@@ -8,19 +8,8 @@
 import SwiftUI
 
 final class MatchPresenter: ObservableObject {
-    
-    var router: Router?
-    
-    init() {
-    }
-    
-    func setup(_ router: Router) {
-        self.router = router
-    }
-
-    func tapActionPopup() {
-        print("Se hizo tap en el popup")
-    }
+        
+    init() { }
     
     func goToSharedInWhatsApp(network: SharedNetwork) {
         let message = "First Whatsapp Share & https://www.google.co.in"

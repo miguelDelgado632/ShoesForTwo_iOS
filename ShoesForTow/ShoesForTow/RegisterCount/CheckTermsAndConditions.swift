@@ -25,7 +25,7 @@ struct CheckTermsAndConditions: View {
                 
             } label: {
                 Text("Terminos y Condiciones")
-                    .font(.poppins(weight: .light, .size14))
+                    .font(.monserrat(weight: .light, .size14))
                     .underline()
                     .foregroundStyle(Color.fontGray)
             }

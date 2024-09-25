@@ -16,8 +16,10 @@ struct ShoeDetailView: View {
   var price: String?
   var backgroundColor: Color = .fontPurple
   var componentSize: CGFloat = 300
-
-  private let backgroundOpacity: CGFloat = 0.2
+  var backgroundOpacity: CGFloat = 0.2
+  var titleFont: Font = .monserrat(weight: .regular, .size14)
+  var subtitleFont: Font = .monserrat(weight: .regular, .size12)
+  var footerFont: Font = .monserrat(weight: .regular, .size16)
 
   private var imageSize: CGFloat {
     componentSize * 0.63
@@ -34,17 +36,17 @@ struct ShoeDetailView: View {
         if let name = name {
           Text(name)
             .foregroundColor(.fontGray)
-            .font(.poppins(weight: .regular, .size14))
+            .font(titleFont)
         }
         if let side = side {
           Text(side)
             .foregroundColor(.fontGray)
-            .font(.poppins(weight: .regular, .size12))
+            .font(subtitleFont)
         }
         if let price = price {
           Text(price)
             .foregroundColor(.fontGray)
-            .font(.poppins(weight: .regular, .size16))
+            .font(footerFont)
         }
       }
     }

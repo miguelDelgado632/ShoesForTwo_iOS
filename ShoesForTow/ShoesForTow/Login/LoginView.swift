@@ -23,11 +23,11 @@ struct LoginView: View {
                     .padding(.bottom, 64)
                 VStack(spacing: 10) {
                     TextField("Correo", text: $email)
-                        .font(.poppins(weight: .light, .size16))
+                        .font(.monserrat(weight: .light, .size16))
                         .textContentType(.emailAddress)       // !IMPORTANT FOR EMAILS
                         .disableAutocorrection(true)          // !IMPORTANT FOR EMAILS
                         .textInputAutocapitalization(.never)  // !IMPORTANT FOR EMAILS
-                        .font(.poppins(weight: .light, .size16))
+                        .font(.monserrat(weight: .light, .size16))
                         .foregroundStyle(Color.fontGray)
                         .border(Color.fontGray)
                         .textFieldStyle(.roundedBorder)
@@ -35,7 +35,7 @@ struct LoginView: View {
                         .padding(.top, 11)
                         .padding(.horizontal, 30)
                     SecureField("Contraseña", text: $password)
-                        .font(.poppins(weight: .light, .size16))
+                        .font(.monserrat(weight: .light, .size16))
                         .foregroundStyle(Color.fontGray)
                         .border(Color.fontGray)
                         .textFieldStyle(.roundedBorder)
@@ -51,7 +51,7 @@ struct LoginView: View {
                       router.navigate(to: .tabHomeView)
                     } label: {
                         Text("Ingresar")
-                            .font(.poppins(weight: .light, .size16))
+                            .font(.monserrat(weight: .light, .size16))
                             .foregroundStyle(Color.fontPurple)
                     }
                     .frame(width: 176, height: 35)
@@ -62,7 +62,7 @@ struct LoginView: View {
                         router.navigate(to: .registerView)
                     } label: {
                         Text("Crear cuenta")
-                            .font(.poppins(weight: .light, .size16))
+                            .font(.monserrat(weight: .light, .size16))
                             .foregroundStyle(Color.fontPurple)
                     }
                     .frame(width: 176, height: 35)
