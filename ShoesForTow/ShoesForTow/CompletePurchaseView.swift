@@ -16,6 +16,9 @@ struct CompletePurchaseView: View {
 
   var body: some View {
     VStack {
+      TabBarCustom(title: "")
+            .padding(.bottom, constants.tabBarPaddingBottom)
+        
       ShoeDetailView(image: .leftShoeTest,
                      name: shoeName,
                      side: "izquierdo",
@@ -24,12 +27,13 @@ struct CompletePurchaseView: View {
                      titleFont: .monserrat(weight: .regular, .size12),
                      subtitleFont: .monserrat(weight: .regular, .size16))
 
-      PrimaryButton(action: {},
+        PrimaryButton(action: { router.navigate(to: .purchaseSendInformationView(shoeName)) },
                     title: constants.buttonTitle,
                     width: constants.buttonWidth,
                     height: constants.buttonHeight,
                     font: .monserrat(weight: .regular, .size16))
       .padding(.top, constants.buttonPaddingTop)
+      Spacer()
     }
     .navigationBarBackButtonHidden()
   }
@@ -45,4 +49,5 @@ private struct CompletePurchaseConstants {
   var buttonPaddingTop: CGFloat { 72 }
   var buttonTitle: String { "Completa tu compra" }
   var shoeOpacity: CGFloat { 0.13 }
+  var tabBarPaddingBottom: CGFloat { 77 }
 }

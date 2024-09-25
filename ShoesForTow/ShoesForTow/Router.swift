@@ -16,6 +16,8 @@ final class Router: ObservableObject {
     case perfilView
     case matchView
     case completePurchase(String)
+    case purchaseSendInformationView(String)
+    case paymentConfirmation(String)
   }
 
   @Published var navPath = NavigationPath()
@@ -31,4 +33,8 @@ final class Router: ObservableObject {
   func navigateToRoot() {
     navPath.removeLast(navPath.count)
   }
+
+    func navigateBackTo(steps: Int) {
+        navPath.removeLast(steps)
+    }
 }

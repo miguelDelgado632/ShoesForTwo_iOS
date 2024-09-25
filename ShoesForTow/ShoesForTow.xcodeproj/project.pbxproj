@@ -21,6 +21,10 @@
 		43B222682CA01CC10035B655 /* PerfilPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222672CA01CC10035B655 /* PerfilPresenter.swift */; };
 		43B2226B2CA292E80035B655 /* MatchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2226A2CA292E80035B655 /* MatchPresenter.swift */; };
 		43B2226E2CA2A7B70035B655 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2226D2CA2A7B70035B655 /* PopupView.swift */; };
+		43B222712CA3F1600035B655 /* PurchaseSendInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222702CA3F1600035B655 /* PurchaseSendInformationView.swift */; };
+		43B222732CA3F5010035B655 /* PurchaseSendInformationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222722CA3F5010035B655 /* PurchaseSendInformationPresenter.swift */; };
+		43B222762CA401770035B655 /* PaymentConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222752CA401770035B655 /* PaymentConfirmationView.swift */; };
+		43B222782CA401910035B655 /* PaymentConfirmationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222772CA401910035B655 /* PaymentConfirmationPresenter.swift */; };
 		43BC28DF2C9A54450069C6CD /* ShoesForTowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28DE2C9A54450069C6CD /* ShoesForTowApp.swift */; };
 		43BC28E12C9A54450069C6CD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28E02C9A54450069C6CD /* Persistence.swift */; };
 		43BC28E42C9A54450069C6CD /* ShoesForTow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28E22C9A54450069C6CD /* ShoesForTow.xcdatamodeld */; };
@@ -75,6 +79,10 @@
 		43B222672CA01CC10035B655 /* PerfilPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilPresenter.swift; sourceTree = "<group>"; };
 		43B2226A2CA292E80035B655 /* MatchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchPresenter.swift; sourceTree = "<group>"; };
 		43B2226D2CA2A7B70035B655 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		43B222702CA3F1600035B655 /* PurchaseSendInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSendInformationView.swift; sourceTree = "<group>"; };
+		43B222722CA3F5010035B655 /* PurchaseSendInformationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSendInformationPresenter.swift; sourceTree = "<group>"; };
+		43B222752CA401770035B655 /* PaymentConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfirmationView.swift; sourceTree = "<group>"; };
+		43B222772CA401910035B655 /* PaymentConfirmationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfirmationPresenter.swift; sourceTree = "<group>"; };
 		43BC28DB2C9A54450069C6CD /* ShoesForTow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoesForTow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BC28DE2C9A54450069C6CD /* ShoesForTowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesForTowApp.swift; sourceTree = "<group>"; };
 		43BC28E02C9A54450069C6CD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -175,6 +183,24 @@
 			path = PopUp;
 			sourceTree = "<group>";
 		};
+		43B2226F2CA3F08A0035B655 /* PurchaseSendInformation */ = {
+			isa = PBXGroup;
+			children = (
+				43B222702CA3F1600035B655 /* PurchaseSendInformationView.swift */,
+				43B222722CA3F5010035B655 /* PurchaseSendInformationPresenter.swift */,
+			);
+			path = PurchaseSendInformation;
+			sourceTree = "<group>";
+		};
+		43B222742CA4013B0035B655 /* PaymentConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				43B222752CA401770035B655 /* PaymentConfirmationView.swift */,
+				43B222772CA401910035B655 /* PaymentConfirmationPresenter.swift */,
+			);
+			path = PaymentConfirmation;
+			sourceTree = "<group>";
+		};
 		43BC28D22C9A54450069C6CD = {
 			isa = PBXGroup;
 			children = (
@@ -206,8 +232,10 @@
 				43B2225D2CA005050035B655 /* PerfilMenu */,
 				43B222642CA01BEB0035B655 /* Perfil */,
 				43B222692CA292BA0035B655 /* MatchView */,
-				43BC28E02C9A54450069C6CD /* Persistence.swift */,
 				C10508272CA3868F00B22737 /* CompletePurchase */,
+				43B2226F2CA3F08A0035B655 /* PurchaseSendInformation */,
+				43B222742CA4013B0035B655 /* PaymentConfirmation */,
+				43BC28E02C9A54450069C6CD /* Persistence.swift */,
 				43BC28E52C9A54450069C6CD /* ContentView.swift */,
 				C105080D2C9E00F400B22737 /* ShoeModel.swift */,
 				C10508112C9E2B9000B22737 /* TabContainerView.swift */,
@@ -396,6 +424,7 @@
 			files = (
 				43BC290D2C9D44E20069C6CD /* TextFieldCustom.swift in Sources */,
 				43B222502C9F7FC80035B655 /* PHPickerSwiftUI.swift in Sources */,
+				43B222762CA401770035B655 /* PaymentConfirmationView.swift in Sources */,
 				43BC29072C9CCE390069C6CD /* RegisterView.swift in Sources */,
 				43B222522C9F90A70035B655 /* SetPerfilImageView.swift in Sources */,
 				43B222542C9F93200035B655 /* CheckTermsAndConditions.swift in Sources */,
@@ -406,6 +435,7 @@
 				43B2226B2CA292E80035B655 /* MatchPresenter.swift in Sources */,
 				43BC29092C9CD0850069C6CD /* Router.swift in Sources */,
 				C10508062C9B4BE000B22737 /* CircularImageCarouselView.swift in Sources */,
+				43B222732CA3F5010035B655 /* PurchaseSendInformationPresenter.swift in Sources */,
 				C105080A2C9B734800B22737 /* HomeFavoritesView.swift in Sources */,
 				43B2225A2C9FFEBF0035B655 /* LoginViewPresenter.swift in Sources */,
 				C10508122C9E2B9000B22737 /* TabContainerView.swift in Sources */,
@@ -432,9 +462,11 @@
 				43BC290B2C9D13D60069C6CD /* TabBarCustom.swift in Sources */,
 				C105080E2C9E00F400B22737 /* ShoeModel.swift in Sources */,
 				C10508082C9B6ED600B22737 /* ShoeSlideView.swift in Sources */,
+				43B222712CA3F1600035B655 /* PurchaseSendInformationView.swift in Sources */,
 				43B2224E2C9F6C950035B655 /* PickerCoordinator.swift in Sources */,
 				C10508242CA372DB00B22737 /* MatchShoeDetailView.swift in Sources */,
 				C105081A2C9E43EF00B22737 /* HomeFavoritesPresenter.swift in Sources */,
+				43B222782CA401910035B655 /* PaymentConfirmationPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
