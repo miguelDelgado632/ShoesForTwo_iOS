@@ -16,9 +16,6 @@ struct CompletePurchaseView: View {
 
   var body: some View {
     VStack {
-      TabBarCustom(title: "")
-            .padding(.bottom, constants.tabBarPaddingBottom)
-        
       ShoeDetailView(image: .leftShoeTest,
                      name: shoeName,
                      side: "izquierdo",
@@ -33,7 +30,6 @@ struct CompletePurchaseView: View {
                     height: constants.buttonHeight,
                     font: .monserrat(weight: .regular, .size16))
       .padding(.top, constants.buttonPaddingTop)
-      Spacer()
     }
     .navigationBarBackButtonHidden()
   }

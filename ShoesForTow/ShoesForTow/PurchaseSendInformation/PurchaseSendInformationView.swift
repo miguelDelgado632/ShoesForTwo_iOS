@@ -16,8 +16,6 @@ struct PurchaseSendInformationView: View {
     var body: some View {
         ScrollView {
             VStack {
-                TabBarCustom(title: "")
-                    .padding(.bottom, 40)
                 Text("Datos de envío")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(.monserrat(weight: .extraBold, .size16))
@@ -62,6 +60,7 @@ struct PurchaseSendInformationView: View {
             }
             .navigationBarBackButtonHidden()
             .padding(.bottom, 20)
+            .padding(.top, 10)
         }
     }
 }

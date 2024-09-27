@@ -11,10 +11,13 @@ struct TabBarCustom: View {
 
     @EnvironmentObject var router: Router
     var title: String
+    var showBack: Bool = true
+    var titleFont: Font = .monserrat(weight: .extraBold, .size16)
 
     var body: some View {
         HStack {
-            Button {
+            if showBack {
+                Button {
                 router.navigateBack()
             } label: {
                 Image(systemName: "chevron.backward")
@@ -23,9 +26,10 @@ struct TabBarCustom: View {
                     .aspectRatio(contentMode: .fit)
                     .foregroundStyle(Color.fontGray)
             }
+        }
             Spacer()
             Text(title)
-                .font(.monserrat(weight: .extraBold, .size16))
+                .font(titleFont)
                 .foregroundStyle(Color.fontRed)
             Spacer()
             Rectangle()

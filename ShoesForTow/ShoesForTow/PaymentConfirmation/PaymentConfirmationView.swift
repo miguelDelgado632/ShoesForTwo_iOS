@@ -16,8 +16,6 @@ struct PaymentConfirmationView: View {
     var body: some View {
         ScrollView {
             VStack {
-                TabBarCustom(title: "")
-                    .padding(.bottom, 40)
                 Text("Confirmación de pago")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(.monserrat(weight: .extraBold, .size16))
@@ -56,8 +54,7 @@ struct PaymentConfirmationView: View {
                         .foregroundStyle(Color.fontRed)
                         .padding(.horizontal, 30)
                     Button {
-                        // hear go to order status
-                        router.navigateBackTo(steps: 4)
+                        router.navigate(to: .seeOrderStatus(shoeName))
                     } label: {
                         Text("Ver status del pedido")
                             .font(.monserrat(weight: .light, .size16))
@@ -73,6 +70,7 @@ struct PaymentConfirmationView: View {
             }
             .navigationBarBackButtonHidden()
             .padding(.bottom, 20)
+            .padding(.top, 10)
         }
     }
 }

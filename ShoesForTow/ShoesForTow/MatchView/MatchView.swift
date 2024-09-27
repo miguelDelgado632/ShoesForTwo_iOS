@@ -18,7 +18,9 @@ struct MatchView: View {
   var body: some View {
     GeometryReader { geometry in
       VStack(alignment: .center, spacing: constants.contentVSpacing) {
-        TabBarCustom(title: texts.title)
+          TabBarCustom(title: texts.title,
+                       showBack: false,
+                       titleFont: .monserrat(weight: .regular, .size16))
 
         HStack(alignment: .center, spacing: constants.shoesMatchSpacing) {
           MatchShoeDetailView(name: "usuario 1",

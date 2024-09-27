@@ -11,6 +11,7 @@ struct ShowGenderRegister: View {
     @Binding var genders: [String]
     @State private var allSelectedGenders = Set<String>()
     @Binding var selectedGender: String
+    var fontSize: FontSize = .size14
     
     var body: some View {
         HStack(spacing: 40) {
@@ -31,12 +32,12 @@ struct ShowGenderRegister: View {
                             .foregroundStyle(allSelectedGenders.contains(gender) ? Color.fontGray : Color.white)
                             
                         Text(gender)
-                            .font(.monserrat(weight: .light, .size14))
+                            .font(.monserrat(weight: .light, fontSize))
                             .foregroundStyle(Color.fontGray)
                     }
                 }
             }
-            Spacer()
+           // Spacer()
         }
         .frame(alignment: .leading)
     }

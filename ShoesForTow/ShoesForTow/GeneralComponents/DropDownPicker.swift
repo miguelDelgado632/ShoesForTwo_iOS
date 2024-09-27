@@ -12,7 +12,7 @@ struct DropDownPicker: View {
     @Binding var selection: String?
     var state: DropDownPickerState = .bottom
     var options: [String]
-    var maxWidth: CGFloat = 180
+    var maxWidth: CGFloat = 335
     
     @State var showDropdown = false
     
@@ -44,7 +44,7 @@ struct DropDownPicker: View {
                         .rotationEffect(.degrees((showDropdown ? -180 : 0)))
                 }
                 .padding(.horizontal, 15)
-                .frame(width: 335, height: 35)
+                .frame(width: maxWidth, height: 35)
                 .background(.white)
                 .contentShape(.rect)
                 .onTapGesture {
@@ -61,7 +61,6 @@ struct DropDownPicker: View {
                 }
             }
             .clipped()
-            //.border(Color.red)
             .background(.white)
             .overlay {
                 RoundedRectangle(cornerRadius: 0)
@@ -71,7 +70,7 @@ struct DropDownPicker: View {
             .frame(height: size.height, alignment: state == .top ? .bottom : .top)
             
         }
-        .frame(width: 335, height: 35)
+        .frame(width: maxWidth, height: 35)
         .zIndex(zindex)
     }
     func OptionsView() -> some View {

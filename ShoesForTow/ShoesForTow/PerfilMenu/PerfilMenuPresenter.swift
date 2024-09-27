@@ -23,6 +23,8 @@ final class PerfilMenuPresenter: ObservableObject {
         switch option {
         case .perfil:
             router?.navigate(to: .perfilView)
+        case .carrito:
+            router?.navigate(to: .carShop)
         default:
             break
         }

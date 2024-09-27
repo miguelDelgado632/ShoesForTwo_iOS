@@ -18,6 +18,8 @@ final class Router: ObservableObject {
     case completePurchase(String)
     case purchaseSendInformationView(String)
     case paymentConfirmation(String)
+    case seeOrderStatus(String)
+    case carShop
   }
 
   @Published var navPath = NavigationPath()

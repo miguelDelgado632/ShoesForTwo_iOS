@@ -11,12 +11,13 @@ import Foundation
 final class PerfilPresenter: ObservableObject {
 
     @Published var nameText: String
-    @Published var size: String
+    @Published var shoesSize: String? = nil
     @Published var shoes: String
+    
 
     init() {
         nameText = " Miguel"
-        size = " 28.5 cm"
+        shoesSize = " 28.5 cm"
         shoes = " Izquierdo"
     }
 
