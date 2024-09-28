@@ -10,7 +10,7 @@ import SwiftUI
 
 final class Router: ObservableObject {
 
-  public enum Destination: Codable, Hashable {
+  public enum Destination: Encodable, Hashable {
     case registerView
     case tabHomeView
     case perfilView
@@ -18,8 +18,11 @@ final class Router: ObservableObject {
     case completePurchase(String)
     case purchaseSendInformationView(String)
     case paymentConfirmation(String)
-    case seeOrderStatus(String)
+    case seeOrderStatus(String, ArriveTo)
     case carShop
+    case myOrder
+    case invitationsView
+    case helpView
   }
 
   @Published var navPath = NavigationPath()

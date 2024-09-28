@@ -15,7 +15,7 @@ struct CarShopView: View {
     var body: some View {
         ScrollView {
             VStack {
-                TabBarCustom(title: "Perfil")
+                TabBarCustom(title: "Carrito")
                 VStack(spacing: 20) {
                     ForEach(presenter.dataString, id: \.self) { name in
                         CardToBuy(nameShoes: name,
@@ -24,7 +24,6 @@ struct CarShopView: View {
                                   colorFontPrice: .fontGray,
                                   actionButton: presenter.gotoContinueBuy)
                     }
-                    
                 }
                 .padding([.horizontal, .top], 40)
                 Spacer()

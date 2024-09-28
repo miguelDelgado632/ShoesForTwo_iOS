@@ -22,7 +22,7 @@ struct PrimaryButton: View {
         .foregroundColor(.fontGray)
         .font(font)
     }
-    .frame(width: width, alignment: .center)
+    .frame(width: width, height: height, alignment: .center)
     .padding(.vertical, constants.verticalPading)
     .background(
       Rectangle()

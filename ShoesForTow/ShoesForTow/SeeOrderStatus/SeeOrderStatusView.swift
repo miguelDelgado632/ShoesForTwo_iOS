@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct SeeOrderStatusView: View {
-
+    
     @ObservedObject var presenter: SeeOrderStatusPresenter = .init()
     @EnvironmentObject var router: Router
-
+    
     let shoeName: String
+    var arriveTo: ArriveTo
     
     var body: some View {
         VStack {
-            Text("Segumiento de pago")
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .font(.monserrat(weight: .extraBold, .size16))
-                .foregroundStyle(Color.fontRed)
-                .padding(.horizontal, 30)
+            switch arriveTo {
+            case .MyOrders:
+                TabBarCustom(title: "Segumiento de pago")
+            case .PaymentConfirmation:
+                Text("Segumiento de pago")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.monserrat(weight: .extraBold, .size16))
+                    .foregroundStyle(Color.fontRed)
+                    .padding(.horizontal, 30)
+            }
+            
             ShoeDetailView(image: .leftShoeTest,
                            name: shoeName,
                            side: "izquierdo",
@@ -38,17 +45,18 @@ struct SeeOrderStatusView: View {
                 .frame(height: 19)
                 .padding(.horizontal, 30)
                 .padding(.top, 60)
-            Button {
-                router.navigateBackTo(steps: 5)
-            } label: {
-                Text("Otro Match")
-                    .font(.monserrat(weight: .light, .size16))
-                    .foregroundStyle(Color.fontPurple)
+            if arriveTo == .PaymentConfirmation {
+                Button {
+                    router.navigateBackTo(steps: 5)
+                } label: {
+                    Text("Otro Match")
+                        .font(.monserrat(weight: .light, .size16))
+                        .foregroundStyle(Color.fontPurple)
+                }
+                .frame(width: 176, height: 35)
+                .background(Color.backgroundColor)
+                .padding(.top, 35)
             }
-            .frame(width: 176, height: 35)
-            .background(Color.backgroundColor)
-            .padding(.top, 35)
-            
             Spacer()
         }
         .navigationBarBackButtonHidden()
@@ -58,5 +66,10 @@ struct SeeOrderStatusView: View {
 }
 
 #Preview {
-    SeeOrderStatusView(shoeName: "Converse 1")
+    SeeOrderStatusView(shoeName: "Converse 1", arriveTo: .MyOrders)
+}
+
+enum ArriveTo: Encodable {
+    case MyOrders
+    case PaymentConfirmation
 }

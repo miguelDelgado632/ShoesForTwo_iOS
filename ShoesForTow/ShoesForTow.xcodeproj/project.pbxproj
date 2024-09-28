@@ -30,6 +30,12 @@
 		43B222802CA69D060035B655 /* CarShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2227F2CA69D060035B655 /* CarShopView.swift */; };
 		43B222822CA69D1E0035B655 /* CarShopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222812CA69D1E0035B655 /* CarShopPresenter.swift */; };
 		43B222842CA6A1D40035B655 /* CardToBuy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222832CA6A1D40035B655 /* CardToBuy.swift */; };
+		43B222872CA7D50A0035B655 /* MyOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222862CA7D50A0035B655 /* MyOrderView.swift */; };
+		43B222892CA7D52D0035B655 /* MyOrderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222882CA7D52D0035B655 /* MyOrderPresenter.swift */; };
+		43B2228C2CA7E2C50035B655 /* InvitationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2228B2CA7E2C50035B655 /* InvitationsView.swift */; };
+		43B2228E2CA7E2DD0035B655 /* InvitationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2228D2CA7E2DD0035B655 /* InvitationsPresenter.swift */; };
+		43B222912CA7EE170035B655 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222902CA7EE170035B655 /* HelpView.swift */; };
+		43B222932CA7EE370035B655 /* HelpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222922CA7EE370035B655 /* HelpPresenter.swift */; };
 		43BC28DF2C9A54450069C6CD /* ShoesForTowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28DE2C9A54450069C6CD /* ShoesForTowApp.swift */; };
 		43BC28E12C9A54450069C6CD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28E02C9A54450069C6CD /* Persistence.swift */; };
 		43BC28E42C9A54450069C6CD /* ShoesForTow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28E22C9A54450069C6CD /* ShoesForTow.xcdatamodeld */; };
@@ -93,6 +99,12 @@
 		43B2227F2CA69D060035B655 /* CarShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarShopView.swift; sourceTree = "<group>"; };
 		43B222812CA69D1E0035B655 /* CarShopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarShopPresenter.swift; sourceTree = "<group>"; };
 		43B222832CA6A1D40035B655 /* CardToBuy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardToBuy.swift; sourceTree = "<group>"; };
+		43B222862CA7D50A0035B655 /* MyOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderView.swift; sourceTree = "<group>"; };
+		43B222882CA7D52D0035B655 /* MyOrderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderPresenter.swift; sourceTree = "<group>"; };
+		43B2228B2CA7E2C50035B655 /* InvitationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsView.swift; sourceTree = "<group>"; };
+		43B2228D2CA7E2DD0035B655 /* InvitationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsPresenter.swift; sourceTree = "<group>"; };
+		43B222902CA7EE170035B655 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+		43B222922CA7EE370035B655 /* HelpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPresenter.swift; sourceTree = "<group>"; };
 		43BC28DB2C9A54450069C6CD /* ShoesForTow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoesForTow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BC28DE2C9A54450069C6CD /* ShoesForTowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesForTowApp.swift; sourceTree = "<group>"; };
 		43BC28E02C9A54450069C6CD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -229,6 +241,33 @@
 			path = CarShop;
 			sourceTree = "<group>";
 		};
+		43B222852CA7D4B30035B655 /* MyOrder */ = {
+			isa = PBXGroup;
+			children = (
+				43B222862CA7D50A0035B655 /* MyOrderView.swift */,
+				43B222882CA7D52D0035B655 /* MyOrderPresenter.swift */,
+			);
+			path = MyOrder;
+			sourceTree = "<group>";
+		};
+		43B2228A2CA7E28F0035B655 /* Invitations */ = {
+			isa = PBXGroup;
+			children = (
+				43B2228B2CA7E2C50035B655 /* InvitationsView.swift */,
+				43B2228D2CA7E2DD0035B655 /* InvitationsPresenter.swift */,
+			);
+			path = Invitations;
+			sourceTree = "<group>";
+		};
+		43B2228F2CA7EDD20035B655 /* HelpView */ = {
+			isa = PBXGroup;
+			children = (
+				43B222902CA7EE170035B655 /* HelpView.swift */,
+				43B222922CA7EE370035B655 /* HelpPresenter.swift */,
+			);
+			path = HelpView;
+			sourceTree = "<group>";
+		};
 		43BC28D22C9A54450069C6CD = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +304,9 @@
 				43B222742CA4013B0035B655 /* PaymentConfirmation */,
 				43B222792CA686BF0035B655 /* SeeOrderStatus */,
 				43B2227E2CA69CDD0035B655 /* CarShop */,
+				43B222852CA7D4B30035B655 /* MyOrder */,
+				43B2228A2CA7E28F0035B655 /* Invitations */,
+				43B2228F2CA7EDD20035B655 /* HelpView */,
 				43BC28E02C9A54450069C6CD /* Persistence.swift */,
 				43BC28E52C9A54450069C6CD /* ContentView.swift */,
 				C105080D2C9E00F400B22737 /* ShoeModel.swift */,
@@ -468,6 +510,7 @@
 				43BC29092C9CD0850069C6CD /* Router.swift in Sources */,
 				43B222842CA6A1D40035B655 /* CardToBuy.swift in Sources */,
 				C10508062C9B4BE000B22737 /* CircularImageCarouselView.swift in Sources */,
+				43B222932CA7EE370035B655 /* HelpPresenter.swift in Sources */,
 				43B222732CA3F5010035B655 /* PurchaseSendInformationPresenter.swift in Sources */,
 				C105080A2C9B734800B22737 /* HomeFavoritesView.swift in Sources */,
 				43B2225A2C9FFEBF0035B655 /* LoginViewPresenter.swift in Sources */,
@@ -491,6 +534,9 @@
 				C10508182C9E35D600B22737 /* CircularImageView.swift in Sources */,
 				43BC28E62C9A54450069C6CD /* ContentView.swift in Sources */,
 				C105081C2C9FC10B00B22737 /* MatchView.swift in Sources */,
+				43B222912CA7EE170035B655 /* HelpView.swift in Sources */,
+				43B222872CA7D50A0035B655 /* MyOrderView.swift in Sources */,
+				43B222892CA7D52D0035B655 /* MyOrderPresenter.swift in Sources */,
 				43B2224B2C9F6B660035B655 /* ImagePickerView.swift in Sources */,
 				43BC28E12C9A54450069C6CD /* Persistence.swift in Sources */,
 				43BC29162C9DCD290069C6CD /* DropDownPicker.swift in Sources */,
@@ -502,7 +548,9 @@
 				43B2224E2C9F6C950035B655 /* PickerCoordinator.swift in Sources */,
 				C10508242CA372DB00B22737 /* MatchShoeDetailView.swift in Sources */,
 				C105081A2C9E43EF00B22737 /* HomeFavoritesPresenter.swift in Sources */,
+				43B2228E2CA7E2DD0035B655 /* InvitationsPresenter.swift in Sources */,
 				43B222782CA401910035B655 /* PaymentConfirmationPresenter.swift in Sources */,
+				43B2228C2CA7E2C50035B655 /* InvitationsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

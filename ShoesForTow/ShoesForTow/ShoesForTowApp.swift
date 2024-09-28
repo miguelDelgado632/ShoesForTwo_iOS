@@ -31,10 +31,16 @@ struct ShoesForTowApp: App {
                 PurchaseSendInformationView(shoeName: shoeName)
             case .paymentConfirmation(let shoeName):
                 PaymentConfirmationView(shoeName: shoeName)
-            case .seeOrderStatus(let shoeName):
-                SeeOrderStatusView(shoeName: shoeName)
+            case .seeOrderStatus(let shoeName, let arriveTo):
+                SeeOrderStatusView(shoeName: shoeName, arriveTo: arriveTo)
             case .carShop:
                 CarShopView()
+            case .myOrder:
+                MyOrderView()
+            case .invitationsView:
+                InvitationsView()
+            case .helpView:
+                HelpView()
             }
           }
       }

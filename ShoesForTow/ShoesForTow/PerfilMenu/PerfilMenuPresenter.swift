@@ -25,8 +25,12 @@ final class PerfilMenuPresenter: ObservableObject {
             router?.navigate(to: .perfilView)
         case .carrito:
             router?.navigate(to: .carShop)
-        default:
-            break
+        case .pedidos:
+            router?.navigate(to: .myOrder)
+        case .invitaciones:
+            router?.navigate(to: .invitationsView)
+        case .help:
+            router?.navigate(to: .helpView)
         }
         print("Option Menu, \(option)")
     }

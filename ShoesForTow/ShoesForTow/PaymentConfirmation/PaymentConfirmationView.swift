@@ -54,7 +54,7 @@ struct PaymentConfirmationView: View {
                         .foregroundStyle(Color.fontRed)
                         .padding(.horizontal, 30)
                     Button {
-                        router.navigate(to: .seeOrderStatus(shoeName))
+                        router.navigate(to: .seeOrderStatus(shoeName, .PaymentConfirmation))
                     } label: {
                         Text("Ver status del pedido")
                             .font(.monserrat(weight: .light, .size16))
