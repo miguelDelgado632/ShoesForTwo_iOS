@@ -36,6 +36,8 @@
 		43B2228E2CA7E2DD0035B655 /* InvitationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2228D2CA7E2DD0035B655 /* InvitationsPresenter.swift */; };
 		43B222912CA7EE170035B655 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222902CA7EE170035B655 /* HelpView.swift */; };
 		43B222932CA7EE370035B655 /* HelpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222922CA7EE370035B655 /* HelpPresenter.swift */; };
+		43B222982CA7F9550035B655 /* PerfilOtherUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222972CA7F9550035B655 /* PerfilOtherUserView.swift */; };
+		43B2229A2CA7F96C0035B655 /* PerfilOtherUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B222992CA7F96B0035B655 /* PerfilOtherUserPresenter.swift */; };
 		43BC28DF2C9A54450069C6CD /* ShoesForTowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28DE2C9A54450069C6CD /* ShoesForTowApp.swift */; };
 		43BC28E12C9A54450069C6CD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28E02C9A54450069C6CD /* Persistence.swift */; };
 		43BC28E42C9A54450069C6CD /* ShoesForTow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43BC28E22C9A54450069C6CD /* ShoesForTow.xcdatamodeld */; };
@@ -105,6 +107,8 @@
 		43B2228D2CA7E2DD0035B655 /* InvitationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsPresenter.swift; sourceTree = "<group>"; };
 		43B222902CA7EE170035B655 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		43B222922CA7EE370035B655 /* HelpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPresenter.swift; sourceTree = "<group>"; };
+		43B222972CA7F9550035B655 /* PerfilOtherUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilOtherUserView.swift; sourceTree = "<group>"; };
+		43B222992CA7F96B0035B655 /* PerfilOtherUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilOtherUserPresenter.swift; sourceTree = "<group>"; };
 		43BC28DB2C9A54450069C6CD /* ShoesForTow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoesForTow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BC28DE2C9A54450069C6CD /* ShoesForTowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesForTowApp.swift; sourceTree = "<group>"; };
 		43BC28E02C9A54450069C6CD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -268,6 +272,15 @@
 			path = HelpView;
 			sourceTree = "<group>";
 		};
+		43B222942CA7F8E90035B655 /* PerfilOtherUser */ = {
+			isa = PBXGroup;
+			children = (
+				43B222972CA7F9550035B655 /* PerfilOtherUserView.swift */,
+				43B222992CA7F96B0035B655 /* PerfilOtherUserPresenter.swift */,
+			);
+			path = PerfilOtherUser;
+			sourceTree = "<group>";
+		};
 		43BC28D22C9A54450069C6CD = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +320,7 @@
 				43B222852CA7D4B30035B655 /* MyOrder */,
 				43B2228A2CA7E28F0035B655 /* Invitations */,
 				43B2228F2CA7EDD20035B655 /* HelpView */,
+				43B222942CA7F8E90035B655 /* PerfilOtherUser */,
 				43BC28E02C9A54450069C6CD /* Persistence.swift */,
 				43BC28E52C9A54450069C6CD /* ContentView.swift */,
 				C105080D2C9E00F400B22737 /* ShoeModel.swift */,
@@ -509,6 +523,7 @@
 				43B2226B2CA292E80035B655 /* MatchPresenter.swift in Sources */,
 				43BC29092C9CD0850069C6CD /* Router.swift in Sources */,
 				43B222842CA6A1D40035B655 /* CardToBuy.swift in Sources */,
+				43B222982CA7F9550035B655 /* PerfilOtherUserView.swift in Sources */,
 				C10508062C9B4BE000B22737 /* CircularImageCarouselView.swift in Sources */,
 				43B222932CA7EE370035B655 /* HelpPresenter.swift in Sources */,
 				43B222732CA3F5010035B655 /* PurchaseSendInformationPresenter.swift in Sources */,
@@ -522,6 +537,7 @@
 				43BC29012C9BE30F0069C6CD /* Font+Extensions.swift in Sources */,
 				43B2225C2C9FFF390035B655 /* RegisterPresenter.swift in Sources */,
 				43B222802CA69D060035B655 /* CarShopView.swift in Sources */,
+				43B2229A2CA7F96C0035B655 /* PerfilOtherUserPresenter.swift in Sources */,
 				43B222562C9F93650035B655 /* ShowGenderRegister.swift in Sources */,
 				C10508102C9E014300B22737 /* PrimaryButton.swift in Sources */,
 				43BC28DF2C9A54450069C6CD /* ShoesForTowApp.swift in Sources */,
