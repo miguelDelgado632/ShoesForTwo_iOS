@@ -69,7 +69,7 @@ struct SeeOrderStatusView: View {
     SeeOrderStatusView(shoeName: "Converse 1", arriveTo: .MyOrders)
 }
 
-enum ArriveTo: Encodable {
+public enum ArriveTo: Encodable {
     case MyOrders
     case PaymentConfirmation
 }

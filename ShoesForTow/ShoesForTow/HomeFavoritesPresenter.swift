@@ -18,17 +18,11 @@ final class HomeFavoritesPresenter: ObservableObject {
     @Published var currentSelection: Int = 0
     @Published var shoes: [Shoe] = Shoe.mockedData()
     @Published var users: [String] = []
-    
-    var router: Router?
-    
+
     private var cancellables: Set<AnyCancellable> = .init()
     
     init() {
         setupObservers()
-    }
-    
-    func setup(_ router: Router) {
-        self.router = router
     }
     
     func filterBy(_ type: FilterType) {
@@ -48,9 +42,5 @@ final class HomeFavoritesPresenter: ObservableObject {
                 self.users = self.shoes[newValue].users
             }
             .store(in: &cancellables)
-    }
-
-    func wsMatch() {
-        router?.navigate(to: .matchView)
     }
 }

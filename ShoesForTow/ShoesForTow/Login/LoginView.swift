@@ -48,7 +48,7 @@ struct LoginView: View {
                 
                 VStack(spacing: 27) {
                     Button {
-                      router.navigate(to: .tabHomeView)
+                      router.tabView = true
                     } label: {
                         Text("Ingresar")
                             .font(.monserrat(weight: .light, .size16))

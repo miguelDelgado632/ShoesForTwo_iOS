@@ -15,7 +15,7 @@ struct ShoesForTowApp: App {
     WindowGroup {
       NavigationStack(path: $router.navPath) {
         LoginView()
-          .navigationDestination(for: Router.Destination.self) { destination in
+          .navigationDestination(for: Destination.self) { destination in
             switch destination {
             case .registerView:
               RegisterView()
@@ -23,12 +23,10 @@ struct ShoesForTowApp: App {
               TabContainerView()
             case .perfilView:
               PerfilView()
-            case .matchView:
-                MatchView()
-            case .completePurchase(let shoeName):
-              CompletePurchaseView(shoeName: shoeName)
-            case .purchaseSendInformationView(let shoeName):
-                PurchaseSendInformationView(shoeName: shoeName)
+//            case .completePurchase(let shoeName):
+//              CompletePurchaseView(shoeName: shoeName)
+//            case .purchaseSendInformationView(let shoeName):
+//                PurchaseSendInformationView(shoeName: shoeName)
             case .paymentConfirmation(let shoeName):
                 PaymentConfirmationView(shoeName: shoeName)
             case .seeOrderStatus(let shoeName, let arriveTo):
@@ -45,6 +43,9 @@ struct ShoesForTowApp: App {
           }
       }
       .environmentObject(router)
+      .fullScreenCover(isPresented: $router.tabView) {
+        TabContainerView()
+      }
     }
   }
 }

@@ -10,22 +10,32 @@ import SwiftUI
 struct HomeFavoritesView: View {
 
   @ObservedObject var presenter: HomeFavoritesPresenter = .init()
-  @EnvironmentObject var router: Router
+  @EnvironmentObject var router: MatchRouter
   private let texts: HomeTexts = .init()
   private let constants: HomeConstants = .init()
 
   var body: some View {
-    VStack(alignment: .center, spacing: .zero) {
-      filtersView
-      Spacer()
-      shoeSelectorView
-      Spacer()
-      mainButtonView
-      Spacer()
+    NavigationStack(path: $router.navPath) {
+      VStack(alignment: .center, spacing: .zero) {
+        filtersView
+        Spacer()
+        shoeSelectorView
+        Spacer()
+        mainButtonView
+        Spacer()
+      }
+      .navigationDestination(for: MatchDestination.self) { destination in
+        switch destination {
+        case .matchView:
+          MatchView()
+        case .completePurchase(let shoeName):
+          CompletePurchaseView(shoeName: shoeName)
+        case .purchaseSendInformationView(let shoeName):
+          PurchaseSendInformationView(shoeName: shoeName)
+        }
+      }
     }
-    .onAppear{
-        self.presenter.setup(self.router)
-    }
+    .navigationViewStyle(.stack)
   }
 
   private var filtersView: some View {
@@ -75,7 +85,8 @@ struct HomeFavoritesView: View {
       }).buttonStyle(.plain)
       Spacer()
       Button(action: {
-          presenter.wsMatch()
+        router.navigate(to: .matchView)
+//        router.navPath.append(Destination.Match.matchView2)
       }, label: {
         CircularImageView(imageName: "icono_match_circular",
                           size: constants.mainButtonsSize,

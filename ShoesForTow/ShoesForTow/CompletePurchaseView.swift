@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CompletePurchaseView: View {
 
-  @EnvironmentObject var router: Router
+  @EnvironmentObject var router: MatchRouter
   let shoeName: String
 
   private let constants: CompletePurchaseConstants = .init()
@@ -24,7 +24,9 @@ struct CompletePurchaseView: View {
                      titleFont: .monserrat(weight: .regular, .size12),
                      subtitleFont: .monserrat(weight: .regular, .size16))
 
-        PrimaryButton(action: { router.navigate(to: .purchaseSendInformationView(shoeName)) },
+      PrimaryButton(action: {
+        router.navigate(to: .purchaseSendInformationView(shoeName))
+      },
                     title: constants.buttonTitle,
                     width: constants.buttonWidth,
                     height: constants.buttonHeight,

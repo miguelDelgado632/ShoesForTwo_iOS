@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MatchView: View {
 
-  @EnvironmentObject var router: Router
+  @EnvironmentObject var router: MatchRouter
   @ObservedObject var presenter: MatchPresenter = .init()
   @State private var showingPopup = false
   private let constants: MatchViewConstants = .init()

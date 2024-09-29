@@ -75,6 +75,12 @@
 		C10508222CA370CD00B22737 /* MatchInvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508212CA370CD00B22737 /* MatchInvitationView.swift */; };
 		C10508242CA372DB00B22737 /* MatchShoeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508232CA372DB00B22737 /* MatchShoeDetailView.swift */; };
 		C10508262CA3868800B22737 /* CompletePurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508252CA3868800B22737 /* CompletePurchaseView.swift */; };
+		C160C8812CA913A600FF77EC /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C8802CA913A600FF77EC /* ImageGridView.swift */; };
+		C160C8842CA920AE00FF77EC /* TabContainerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C8832CA920AE00FF77EC /* TabContainerPresenter.swift */; };
+		C160C8862CA9211F00FF77EC /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C8852CA9211F00FF77EC /* CustomNavigation.swift */; };
+		C160C88B2CA921BA00FF77EC /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C88A2CA921BA00FF77EC /* RouterProtocol.swift */; };
+		C160C88D2CA921EF00FF77EC /* MatchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C88C2CA921EF00FF77EC /* MatchRouter.swift */; };
+		C160C8902CA9226600FF77EC /* ImageGridModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C88F2CA9226600FF77EC /* ImageGridModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +155,12 @@
 		C10508212CA370CD00B22737 /* MatchInvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInvitationView.swift; sourceTree = "<group>"; };
 		C10508232CA372DB00B22737 /* MatchShoeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchShoeDetailView.swift; sourceTree = "<group>"; };
 		C10508252CA3868800B22737 /* CompletePurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePurchaseView.swift; sourceTree = "<group>"; };
+		C160C8802CA913A600FF77EC /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
+		C160C8832CA920AE00FF77EC /* TabContainerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerPresenter.swift; sourceTree = "<group>"; };
+		C160C8852CA9211F00FF77EC /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
+		C160C88A2CA921BA00FF77EC /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		C160C88C2CA921EF00FF77EC /* MatchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRouter.swift; sourceTree = "<group>"; };
+		C160C88F2CA9226600FF77EC /* ImageGridModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,7 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				43BC28DE2C9A54450069C6CD /* ShoesForTowApp.swift */,
-				43BC29082C9CD0850069C6CD /* Router.swift */,
+				C160C8872CA9215700FF77EC /* Router */,
 				43BC29022C9BE5ED0069C6CD /* Info.plist */,
 				C10508162C9E35BB00B22737 /* GeneralComponents */,
 				43BC28FF2C9BE2D50069C6CD /* Commonds */,
@@ -324,7 +336,7 @@
 				43BC28E02C9A54450069C6CD /* Persistence.swift */,
 				43BC28E52C9A54450069C6CD /* ContentView.swift */,
 				C105080D2C9E00F400B22737 /* ShoeModel.swift */,
-				C10508112C9E2B9000B22737 /* TabContainerView.swift */,
+				C160C8822CA9209900FF77EC /* TabContainer */,
 				43BC28E72C9A54490069C6CD /* Assets.xcassets */,
 				43BC28E92C9A54490069C6CD /* ShoesForTow.entitlements */,
 				43BC28E22C9A54450069C6CD /* ShoesForTow.xcdatamodeld */,
@@ -419,6 +431,7 @@
 				C10508172C9E35D600B22737 /* CircularImageView.swift */,
 				C105081F2C9FCD6600B22737 /* ShoeDetailView.swift */,
 				43B222832CA6A1D40035B655 /* CardToBuy.swift */,
+				C160C88E2CA9225600FF77EC /* ImageGrid */,
 			);
 			path = GeneralComponents;
 			sourceTree = "<group>";
@@ -429,6 +442,35 @@
 				C10508252CA3868800B22737 /* CompletePurchaseView.swift */,
 			);
 			name = CompletePurchase;
+			sourceTree = "<group>";
+		};
+		C160C8822CA9209900FF77EC /* TabContainer */ = {
+			isa = PBXGroup;
+			children = (
+				C10508112C9E2B9000B22737 /* TabContainerView.swift */,
+				C160C8832CA920AE00FF77EC /* TabContainerPresenter.swift */,
+				C160C8852CA9211F00FF77EC /* CustomNavigation.swift */,
+			);
+			path = TabContainer;
+			sourceTree = "<group>";
+		};
+		C160C8872CA9215700FF77EC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				43BC29082C9CD0850069C6CD /* Router.swift */,
+				C160C88C2CA921EF00FF77EC /* MatchRouter.swift */,
+				C160C88A2CA921BA00FF77EC /* RouterProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		C160C88E2CA9225600FF77EC /* ImageGrid */ = {
+			isa = PBXGroup;
+			children = (
+				C160C8802CA913A600FF77EC /* ImageGridView.swift */,
+				C160C88F2CA9226600FF77EC /* ImageGridModel.swift */,
+			);
+			path = ImageGrid;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,6 +560,7 @@
 				43B222542C9F93200035B655 /* CheckTermsAndConditions.swift in Sources */,
 				C10508222CA370CD00B22737 /* MatchInvitationView.swift in Sources */,
 				43BC28F62C9B7DB60069C6CD /* LoginView.swift in Sources */,
+				C160C8902CA9226600FF77EC /* ImageGridModel.swift in Sources */,
 				C10508202C9FCD6600B22737 /* ShoeDetailView.swift in Sources */,
 				43B222632CA005730035B655 /* PerfilMenuPresenter.swift in Sources */,
 				43B2226B2CA292E80035B655 /* MatchPresenter.swift in Sources */,
@@ -535,6 +578,7 @@
 				43B2227B2CA6870B0035B655 /* SeeOrderStatusView.swift in Sources */,
 				C10508262CA3868800B22737 /* CompletePurchaseView.swift in Sources */,
 				43BC29012C9BE30F0069C6CD /* Font+Extensions.swift in Sources */,
+				C160C8862CA9211F00FF77EC /* CustomNavigation.swift in Sources */,
 				43B2225C2C9FFF390035B655 /* RegisterPresenter.swift in Sources */,
 				43B222802CA69D060035B655 /* CarShopView.swift in Sources */,
 				43B2229A2CA7F96C0035B655 /* PerfilOtherUserPresenter.swift in Sources */,
@@ -542,6 +586,9 @@
 				C10508102C9E014300B22737 /* PrimaryButton.swift in Sources */,
 				43BC28DF2C9A54450069C6CD /* ShoesForTowApp.swift in Sources */,
 				43B2227D2CA687210035B655 /* SeeOrderStatusPresenter.swift in Sources */,
+				C160C8812CA913A600FF77EC /* ImageGridView.swift in Sources */,
+				C160C88B2CA921BA00FF77EC /* RouterProtocol.swift in Sources */,
+				C160C88D2CA921EF00FF77EC /* MatchRouter.swift in Sources */,
 				43B2226E2CA2A7B70035B655 /* PopupView.swift in Sources */,
 				C105080C2C9DE44D00B22737 /* AnglesComponentView.swift in Sources */,
 				43B222612CA005600035B655 /* PerfilMenuView.swift in Sources */,
@@ -556,6 +603,7 @@
 				43B2224B2C9F6B660035B655 /* ImagePickerView.swift in Sources */,
 				43BC28E12C9A54450069C6CD /* Persistence.swift in Sources */,
 				43BC29162C9DCD290069C6CD /* DropDownPicker.swift in Sources */,
+				C160C8842CA920AE00FF77EC /* TabContainerPresenter.swift in Sources */,
 				43BC29042C9BE8270069C6CD /* Color+Extension.swift in Sources */,
 				43BC290B2C9D13D60069C6CD /* TabBarCustom.swift in Sources */,
 				C105080E2C9E00F400B22737 /* ShoeModel.swift in Sources */,
