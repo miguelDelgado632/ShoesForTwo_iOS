@@ -90,10 +90,13 @@ struct HomeFavoritesView: View {
     HStack {
       Spacer()
       Button(action: {}, label: {
-        CircularImageView(imageName: "icono_like",
+        CircularImageView(imageName: presenter.shoes[presenter.currentSelection].liked ?
+                          "icono_like" :
+                          "icono_like_relleno",
                           size: constants.mainButtonsSize,
                           addBorder: false)
-      }).buttonStyle(.plain)
+      })
+      .buttonStyle(.plain)
       Spacer()
       Button(action: {
         router.navigate(to: .matchView)
@@ -101,7 +104,8 @@ struct HomeFavoritesView: View {
         CircularImageView(imageName: "icono_match_circular",
                           size: constants.mainButtonsSize,
                           addBorder: false)
-      }).buttonStyle(.plain)
+      })
+      .buttonStyle(.plain)
       Spacer()
     }
   }
