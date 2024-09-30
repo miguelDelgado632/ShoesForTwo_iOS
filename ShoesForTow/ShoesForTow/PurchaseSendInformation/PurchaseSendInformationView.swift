@@ -10,7 +10,7 @@ import SwiftUI
 struct PurchaseSendInformationView: View {
     
     @ObservedObject var presenter: PurchaseSendInformationPresenter = .init()
-    @EnvironmentObject var router: Router
+    @EnvironmentObject var router: MatchRouter
     let shoeName: String
     
     var body: some View {

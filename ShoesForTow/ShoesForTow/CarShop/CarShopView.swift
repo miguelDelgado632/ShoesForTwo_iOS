@@ -10,12 +10,12 @@ import SwiftUI
 struct CarShopView: View {
     
     @ObservedObject var presenter: CardShopPresenter = .init()
-    @EnvironmentObject var router: Router
-    
+    @EnvironmentObject var router: ProfileRouter
+
     var body: some View {
         ScrollView {
             VStack {
-                TabBarCustom(title: "Carrito")
+                TabBarCustom(title: "Carrito", customRouter: router)
                 VStack(spacing: 20) {
                     ForEach(presenter.dataString, id: \.self) { name in
                         CardToBuy(nameShoes: name,

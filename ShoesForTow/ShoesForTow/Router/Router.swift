@@ -11,13 +11,6 @@ import SwiftUI
 public enum Destination: Encodable, Hashable {
   case registerView
   case tabHomeView
-  case perfilView
-  case paymentConfirmation(String)
-  case seeOrderStatus(String, ArriveTo)
-  case carShop
-  case myOrder
-  case invitationsView
-  case helpView
 }
 
 final class Router: RouterProtocol {

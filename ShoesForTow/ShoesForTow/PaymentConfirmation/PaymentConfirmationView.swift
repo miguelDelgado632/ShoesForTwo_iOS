@@ -10,7 +10,7 @@ import SwiftUI
 struct PaymentConfirmationView: View {
     
     @ObservedObject var presenter: PaymentConfirmationPresenter = .init()
-    @EnvironmentObject var router: Router
+    @EnvironmentObject var router: MatchRouter
     let shoeName: String
     
     var body: some View {

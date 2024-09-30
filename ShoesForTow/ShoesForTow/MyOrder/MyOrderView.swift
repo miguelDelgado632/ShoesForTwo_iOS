@@ -10,12 +10,12 @@ import SwiftUI
 struct MyOrderView: View {
     
     @ObservedObject var presenter: MyOrderPresenter = .init()
-    @EnvironmentObject var router: Router
+    @EnvironmentObject var router: ProfileRouter
     
     var body: some View {
         ScrollView {
             VStack {
-                TabBarCustom(title: "Mis pedidos")
+                TabBarCustom(title: "Mis pedidos", customRouter: router)
                 VStack(spacing: 20) {
                     ForEach(Array(presenter.dataString.enumerated()), id: \.element) { index, name in
                         Button {

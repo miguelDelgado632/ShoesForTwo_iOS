@@ -9,13 +9,14 @@ import SwiftUI
 
 struct PerfilView: View {
 
+  @EnvironmentObject var router: ProfileRouter
     @ObservedObject var presenter: PerfilPresenter = .init()
     @State private var tapEditarButton: Bool = false
 
     var body: some View {
         GeometryReader { geometry in
         VStack {
-            TabBarCustom(title: "Perfil")
+          TabBarCustom(title: "Perfil", customRouter: router)
             Image("icono_photo_perfil")
                 .resizable()
                 .frame(width: 211, height: 211)

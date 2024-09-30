@@ -9,16 +9,31 @@ import SwiftUI
 
 struct TabBarCustom: View {
 
-    @EnvironmentObject var router: Router
-    var title: String
-    var showBack: Bool = true
-    var titleFont: Font = .monserrat(weight: .extraBold, .size16)
+  @EnvironmentObject var router: Router
+  let title: String
+  let showBack: Bool
+  let titleFont: Font
+  let customRouter: (any RouterProtocol)?
+
+  init(title: String,
+       showBack: Bool = true,
+       titleFont: Font = .monserrat(weight: .extraBold, .size16),
+       customRouter: (any RouterProtocol)? = nil) {
+    self.title = title
+    self.showBack = showBack
+    self.titleFont = titleFont
+    self.customRouter = customRouter
+  }
 
     var body: some View {
         HStack {
             if showBack {
-                Button {
-                router.navigateBack()
+              Button {
+                if let customRouter = customRouter {
+                  customRouter.navigateBack()
+                } else {
+                  router.navigateBack()
+                }
             } label: {
                 Image(systemName: "chevron.backward")
                     .resizable()

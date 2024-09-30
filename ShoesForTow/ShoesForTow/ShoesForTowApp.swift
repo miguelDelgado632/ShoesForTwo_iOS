@@ -21,24 +21,6 @@ struct ShoesForTowApp: App {
               RegisterView()
             case .tabHomeView:
               TabContainerView()
-            case .perfilView:
-              PerfilView()
-//            case .completePurchase(let shoeName):
-//              CompletePurchaseView(shoeName: shoeName)
-//            case .purchaseSendInformationView(let shoeName):
-//                PurchaseSendInformationView(shoeName: shoeName)
-            case .paymentConfirmation(let shoeName):
-                PaymentConfirmationView(shoeName: shoeName)
-            case .seeOrderStatus(let shoeName, let arriveTo):
-                SeeOrderStatusView(shoeName: shoeName, arriveTo: arriveTo)
-            case .carShop:
-                CarShopView()
-            case .myOrder:
-                MyOrderView()
-            case .invitationsView:
-                InvitationsView()
-            case .helpView:
-                HelpView()
             }
           }
       }

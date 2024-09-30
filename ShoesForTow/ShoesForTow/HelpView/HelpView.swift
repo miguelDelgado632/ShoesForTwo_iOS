@@ -10,11 +10,11 @@ import SwiftUI
 struct HelpView: View {
 
     @ObservedObject var presenter: HelpPresenter = .init()
-    @EnvironmentObject var router: Router
+    @EnvironmentObject var router: ProfileRouter
 
     var body: some View {
         VStack {
-            TabBarCustom(title: "Ayuda")
+            TabBarCustom(title: "Ayuda", customRouter: router)
             HStack(spacing: 15) {
                 Image("icono_help")
                     .resizable()
@@ -59,6 +59,7 @@ struct HelpView: View {
             }
             Spacer()
         }
+        .navigationBarBackButtonHidden()
     }
 }
 

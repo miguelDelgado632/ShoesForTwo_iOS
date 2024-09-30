@@ -10,8 +10,11 @@ import SwiftUI
 
 public enum MatchDestination: Encodable, Hashable {
   case matchView
+  case otherUserProfile(String)
   case purchaseSendInformationView(String)
   case completePurchase(String)
+  case paymentConfirmation(String)
+  case seeOrderStatus(String, ArriveTo)
 }
 
 final class MatchRouter: RouterProtocol {

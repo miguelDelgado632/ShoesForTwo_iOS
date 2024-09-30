@@ -8,25 +8,40 @@
 import SwiftUI
 
 struct PerfilMenuView: View {
-    @EnvironmentObject var router: Router
-    @ObservedObject var presenter: PerfilMenuPresenter = .init()
-    
-    var body: some View {
-        ImageTextMenu(action: presenter.showOptions(option:))
-            .onAppear{
-                self.presenter.setup(self.router)
-            }
+  @EnvironmentObject var router: ProfileRouter
+  @ObservedObject var presenter: PerfilMenuPresenter = .init()
+
+  var body: some View {
+    NavigationStack(path: $router.navPath) {
+      ImageTextMenu(action: router.navigate(to:))
+        .navigationDestination(for: ProfileDestination.self) { destination in
+          switch destination {
+          case .profileView:
+            PerfilView()
+          case .carShop:
+            CarShopView()
+          case .myOrder:
+            MyOrderView()
+          case .invitationsView:
+            InvitationsView()
+          case .helpView:
+            HelpView()
+          case .seeOrderStatus(let shoeName, let arriveTo):
+            SeeOrderStatusView(shoeName: shoeName, arriveTo: arriveTo)
+          }
+        }
     }
+  }
 }
 
 #Preview {
-    PerfilMenuView()
+  PerfilMenuView()
 }
 
 struct ImageTextMenu: View {
 
-    var action: (PerfilMenuData) -> Void
-    
+    var action: (ProfileDestination) -> Void
+
     var imagesName = ["perfil_icono",
                       "car_icono",
                       "order_icono",
@@ -39,7 +54,7 @@ struct ImageTextMenu: View {
         VStack(spacing: 35) {
             ForEach(PerfilMenuData.allCases.indices, id: \.self) { index in
                 Button {
-                    action(PerfilMenuData.allCases[index])
+                  action(PerfilMenuData.allCases[index].destination)
                 } label: {
                     HStack(spacing: 33) {
                         Image(imagesName[index])
@@ -65,4 +80,14 @@ enum PerfilMenuData: String, CaseIterable {
     case pedidos = "Mis pedidos"
     case invitaciones = "Invitaciones"
     case help = "Ayuda"
+
+  var destination: ProfileDestination {
+    switch self {
+    case .perfil: return .profileView
+    case .carrito: return .carShop
+    case .pedidos: return .myOrder
+    case .invitaciones: return .invitationsView
+    case .help: return .helpView
+    }
+  }
 }

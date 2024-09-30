@@ -81,6 +81,8 @@
 		C160C88B2CA921BA00FF77EC /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C88A2CA921BA00FF77EC /* RouterProtocol.swift */; };
 		C160C88D2CA921EF00FF77EC /* MatchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C88C2CA921EF00FF77EC /* MatchRouter.swift */; };
 		C160C8902CA9226600FF77EC /* ImageGridModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C88F2CA9226600FF77EC /* ImageGridModel.swift */; };
+		C160C8922CAA372600FF77EC /* OtherUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C8912CAA372600FF77EC /* OtherUserProfileView.swift */; };
+		C160C8942CAA3D2F00FF77EC /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C8932CAA3D2F00FF77EC /* ProfileRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +163,8 @@
 		C160C88A2CA921BA00FF77EC /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		C160C88C2CA921EF00FF77EC /* MatchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRouter.swift; sourceTree = "<group>"; };
 		C160C88F2CA9226600FF77EC /* ImageGridModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridModel.swift; sourceTree = "<group>"; };
+		C160C8912CAA372600FF77EC /* OtherUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserProfileView.swift; sourceTree = "<group>"; };
+		C160C8932CAA3D2F00FF77EC /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +338,7 @@
 				43B2228F2CA7EDD20035B655 /* HelpView */,
 				43B222942CA7F8E90035B655 /* PerfilOtherUser */,
 				43BC28E02C9A54450069C6CD /* Persistence.swift */,
+				C160C8912CAA372600FF77EC /* OtherUserProfileView.swift */,
 				43BC28E52C9A54450069C6CD /* ContentView.swift */,
 				C105080D2C9E00F400B22737 /* ShoeModel.swift */,
 				C160C8822CA9209900FF77EC /* TabContainer */,
@@ -460,6 +465,7 @@
 				43BC29082C9CD0850069C6CD /* Router.swift */,
 				C160C88C2CA921EF00FF77EC /* MatchRouter.swift */,
 				C160C88A2CA921BA00FF77EC /* RouterProtocol.swift */,
+				C160C8932CAA3D2F00FF77EC /* ProfileRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -567,6 +573,7 @@
 				43BC29092C9CD0850069C6CD /* Router.swift in Sources */,
 				43B222842CA6A1D40035B655 /* CardToBuy.swift in Sources */,
 				43B222982CA7F9550035B655 /* PerfilOtherUserView.swift in Sources */,
+				C160C8922CAA372600FF77EC /* OtherUserProfileView.swift in Sources */,
 				C10508062C9B4BE000B22737 /* CircularImageCarouselView.swift in Sources */,
 				43B222932CA7EE370035B655 /* HelpPresenter.swift in Sources */,
 				43B222732CA3F5010035B655 /* PurchaseSendInformationPresenter.swift in Sources */,
@@ -604,6 +611,7 @@
 				43BC28E12C9A54450069C6CD /* Persistence.swift in Sources */,
 				43BC29162C9DCD290069C6CD /* DropDownPicker.swift in Sources */,
 				C160C8842CA920AE00FF77EC /* TabContainerPresenter.swift in Sources */,
+				C160C8942CAA3D2F00FF77EC /* ProfileRouter.swift in Sources */,
 				43BC29042C9BE8270069C6CD /* Color+Extension.swift in Sources */,
 				43BC290B2C9D13D60069C6CD /* TabBarCustom.swift in Sources */,
 				C105080E2C9E00F400B22737 /* ShoeModel.swift in Sources */,

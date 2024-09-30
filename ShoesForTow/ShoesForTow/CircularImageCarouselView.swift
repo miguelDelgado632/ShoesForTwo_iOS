@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CircularImageCarouselView: View {
   @Binding var systemImageNames: [String] 
+  let action: (String) -> Void
   private let constants: CircularImageCarouselConstants = .init()
 
   var body: some View {
@@ -20,10 +21,16 @@ struct CircularImageCarouselView: View {
               GeometryReader { itemGeometry in
                 let scale = getScaleFactor(itemFrame: itemGeometry.frame(in: .global),
                                            parentSize: geometry.size)
-                CircularImageView(systemImageName: systemImageNames[index],
-                                  size: constants.size)
+                Button {
+                  action(systemImageNames[index]) // replace for user ID
+                } label: {
+                  CircularImageView(systemImageName: systemImageNames[index],
+                                    size: constants.size)
+                }
                 .scaleEffect(scale)
                 .animation(.spring(), value: scale) // Animate the scaling effect
+                .buttonStyle(.plain)
+
               }
               .frame(width: constants.size, height: constants.size) // Set the frame of each image
               .tag(index)
@@ -54,7 +61,7 @@ struct CircularImageCarouselView: View {
 
 #Preview {
   @State var systemImageNames: [String] = ["star", "heart", "moon", "sun.max", "cloud"]
-  return CircularImageCarouselView(systemImageNames: $systemImageNames)
+  return CircularImageCarouselView(systemImageNames: $systemImageNames, action: { _ in })
     .overlay(
       Rectangle()
         .frame(maxWidth: 5, maxHeight: .infinity, alignment: .center)

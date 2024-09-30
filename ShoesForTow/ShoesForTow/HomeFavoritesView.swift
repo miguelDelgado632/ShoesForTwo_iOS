@@ -28,10 +28,16 @@ struct HomeFavoritesView: View {
         switch destination {
         case .matchView:
           MatchView()
+        case .otherUserProfile(let userId):
+          OtherUserProfileView(userId: userId, data: .testData())
         case .completePurchase(let shoeName):
           CompletePurchaseView(shoeName: shoeName)
         case .purchaseSendInformationView(let shoeName):
           PurchaseSendInformationView(shoeName: shoeName)
+        case .paymentConfirmation(let shoeName):
+          PaymentConfirmationView(shoeName: shoeName)
+        case .seeOrderStatus(let shoeName, let arriveTo):
+          SeeOrderStatusView(shoeName: shoeName, arriveTo: arriveTo)
         }
       }
     }
@@ -63,7 +69,12 @@ struct HomeFavoritesView: View {
         .foregroundColor(.fontRed)
         .padding(.bottom, constants.alsoLikedTitleBottonPadding)
 
-      CircularImageCarouselView(systemImageNames: $presenter.users)
+      CircularImageCarouselView(
+        systemImageNames: $presenter.users,
+        action: { userId in
+          router.navigate(to: .otherUserProfile(userId))
+        }
+      )
         .frame(height: constants.usersCarouselHeight)
 
       ShoeSlideView(currentSelection: $presenter.currentSelection,
@@ -86,7 +97,6 @@ struct HomeFavoritesView: View {
       Spacer()
       Button(action: {
         router.navigate(to: .matchView)
-//        router.navPath.append(Destination.Match.matchView2)
       }, label: {
         CircularImageView(imageName: "icono_match_circular",
                           size: constants.mainButtonsSize,

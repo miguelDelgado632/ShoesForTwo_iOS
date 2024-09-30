@@ -9,7 +9,8 @@ import SwiftUI
 
 struct TabContainerView: View {
 
-  @State var router = MatchRouter()
+  @State var matchRouter: MatchRouter = .init()
+  @State var profileRouter: ProfileRouter = .init()
   @ObservedObject var presenter: TabContainerPresenter = .init(navigation: .init())
   private let texts: TabContainerTexts = .init()
 
@@ -35,7 +36,8 @@ struct TabContainerView: View {
       }
       .navigationBarBackButtonHidden()
       .accentColor(.fontPurple)
-      .environmentObject(router)
+      .environmentObject(matchRouter)
+      .environmentObject(profileRouter)
   }
 
   private func makeTabItem(icon: String, title: String) -> some View {
