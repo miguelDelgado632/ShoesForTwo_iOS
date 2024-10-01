@@ -18,6 +18,7 @@ final class LoginViewPresenter: ObservableObject {
   func login(_ completion: @escaping () -> Void) {
     isLoading = true
     service.login(data: LoginRequestModel(email: email, password: password))
+      .subscribe(on: RunLoop.main)
       .sink(
         receiveCompletion: { [weak self] completion in
           self?.isLoading = false

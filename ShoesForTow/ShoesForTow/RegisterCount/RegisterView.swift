@@ -80,7 +80,8 @@ struct RegisterView: View {
                     .padding(.horizontal, 30)
                 
                 Button {
-                    router.navigateBack()
+//                    router.navigateBack()
+                  presenter.register()
                 } label: {
                     Text("Aceptar")
                         .font(.monserrat(weight: .light, .size16))

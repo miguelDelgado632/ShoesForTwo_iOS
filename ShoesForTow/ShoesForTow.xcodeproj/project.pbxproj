@@ -80,7 +80,8 @@
 		C125C3F02CAB8E1E0020CEF3 /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125C3EF2CAB8E1E0020CEF3 /* APIClientProtocol.swift */; };
 		C125C3F22CAB8E3C0020CEF3 /* URLSessionAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125C3F12CAB8E3C0020CEF3 /* URLSessionAPIClient.swift */; };
 		C125C3F52CAC7A160020CEF3 /* LoginSerivice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125C3F42CAC7A160020CEF3 /* LoginSerivice.swift */; };
-		C125C3F82CAC7D830020CEF3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125C3F72CAC7D830020CEF3 /* Models.swift */; };
+		C125C3F82CAC7D830020CEF3 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125C3F72CAC7D830020CEF3 /* LoginModels.swift */; };
+		C125C3FA2CAC84C70020CEF3 /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125C3F92CAC84C70020CEF3 /* RegistrationService.swift */; };
 		C160C8812CA913A600FF77EC /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C8802CA913A600FF77EC /* ImageGridView.swift */; };
 		C160C8842CA920AE00FF77EC /* TabContainerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C8832CA920AE00FF77EC /* TabContainerPresenter.swift */; };
 		C160C8862CA9211F00FF77EC /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C8852CA9211F00FF77EC /* CustomNavigation.swift */; };
@@ -168,7 +169,8 @@
 		C125C3EF2CAB8E1E0020CEF3 /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
 		C125C3F12CAB8E3C0020CEF3 /* URLSessionAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAPIClient.swift; sourceTree = "<group>"; };
 		C125C3F42CAC7A160020CEF3 /* LoginSerivice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSerivice.swift; sourceTree = "<group>"; };
-		C125C3F72CAC7D830020CEF3 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		C125C3F72CAC7D830020CEF3 /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
+		C125C3F92CAC84C70020CEF3 /* RegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
 		C160C8802CA913A600FF77EC /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
 		C160C8832CA920AE00FF77EC /* TabContainerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerPresenter.swift; sourceTree = "<group>"; };
 		C160C8852CA9211F00FF77EC /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 			children = (
 				43BC29062C9CCE390069C6CD /* RegisterView.swift */,
 				43B2225B2C9FFF390035B655 /* RegisterPresenter.swift */,
+				C125C3F92CAC84C70020CEF3 /* RegistrationService.swift */,
 				43B222512C9F90A70035B655 /* SetPerfilImageView.swift */,
 				43B222532C9F93200035B655 /* CheckTermsAndConditions.swift */,
 				43B222552C9F93650035B655 /* ShowGenderRegister.swift */,
@@ -478,7 +481,7 @@
 			isa = PBXGroup;
 			children = (
 				C125C3F42CAC7A160020CEF3 /* LoginSerivice.swift */,
-				C125C3F72CAC7D830020CEF3 /* Models.swift */,
+				C125C3F72CAC7D830020CEF3 /* LoginModels.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -642,9 +645,10 @@
 				43B222662CA01C140035B655 /* PerfilView.swift in Sources */,
 				C10508182C9E35D600B22737 /* CircularImageView.swift in Sources */,
 				43BC28E62C9A54450069C6CD /* ContentView.swift in Sources */,
-				C125C3F82CAC7D830020CEF3 /* Models.swift in Sources */,
+				C125C3F82CAC7D830020CEF3 /* LoginModels.swift in Sources */,
 				C105081C2C9FC10B00B22737 /* MatchView.swift in Sources */,
 				43B222912CA7EE170035B655 /* HelpView.swift in Sources */,
+				C125C3FA2CAC84C70020CEF3 /* RegistrationService.swift in Sources */,
 				43B222872CA7D50A0035B655 /* MyOrderView.swift in Sources */,
 				43B222892CA7D52D0035B655 /* MyOrderPresenter.swift in Sources */,
 				43B2224B2C9F6B660035B655 /* ImagePickerView.swift in Sources */,
