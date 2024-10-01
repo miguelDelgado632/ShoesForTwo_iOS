@@ -75,6 +75,10 @@
 		C10508222CA370CD00B22737 /* MatchInvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508212CA370CD00B22737 /* MatchInvitationView.swift */; };
 		C10508242CA372DB00B22737 /* MatchShoeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508232CA372DB00B22737 /* MatchShoeDetailView.swift */; };
 		C10508262CA3868800B22737 /* CompletePurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10508252CA3868800B22737 /* CompletePurchaseView.swift */; };
+		C125C3EB2CAB8D500020CEF3 /* APIEndpointProperties+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125C3EA2CAB8D500020CEF3 /* APIEndpointProperties+Methods.swift */; };
+		C125C3EE2CAB8DB80020CEF3 /* DataEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125C3ED2CAB8DB80020CEF3 /* DataEndpoints.swift */; };
+		C125C3F02CAB8E1E0020CEF3 /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125C3EF2CAB8E1E0020CEF3 /* APIClientProtocol.swift */; };
+		C125C3F22CAB8E3C0020CEF3 /* URLSessionAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125C3F12CAB8E3C0020CEF3 /* URLSessionAPIClient.swift */; };
 		C160C8812CA913A600FF77EC /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C8802CA913A600FF77EC /* ImageGridView.swift */; };
 		C160C8842CA920AE00FF77EC /* TabContainerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C8832CA920AE00FF77EC /* TabContainerPresenter.swift */; };
 		C160C8862CA9211F00FF77EC /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C8852CA9211F00FF77EC /* CustomNavigation.swift */; };
@@ -157,6 +161,10 @@
 		C10508212CA370CD00B22737 /* MatchInvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInvitationView.swift; sourceTree = "<group>"; };
 		C10508232CA372DB00B22737 /* MatchShoeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchShoeDetailView.swift; sourceTree = "<group>"; };
 		C10508252CA3868800B22737 /* CompletePurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePurchaseView.swift; sourceTree = "<group>"; };
+		C125C3EA2CAB8D500020CEF3 /* APIEndpointProperties+Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIEndpointProperties+Methods.swift"; sourceTree = "<group>"; };
+		C125C3ED2CAB8DB80020CEF3 /* DataEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEndpoints.swift; sourceTree = "<group>"; };
+		C125C3EF2CAB8E1E0020CEF3 /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
+		C125C3F12CAB8E3C0020CEF3 /* URLSessionAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAPIClient.swift; sourceTree = "<group>"; };
 		C160C8802CA913A600FF77EC /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
 		C160C8832CA920AE00FF77EC /* TabContainerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerPresenter.swift; sourceTree = "<group>"; };
 		C160C8852CA9211F00FF77EC /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
@@ -341,6 +349,7 @@
 				C160C8912CAA372600FF77EC /* OtherUserProfileView.swift */,
 				43BC28E52C9A54450069C6CD /* ContentView.swift */,
 				C105080D2C9E00F400B22737 /* ShoeModel.swift */,
+				C125C3EC2CAB8D950020CEF3 /* NetworkLayer */,
 				C160C8822CA9209900FF77EC /* TabContainer */,
 				43BC28E72C9A54490069C6CD /* Assets.xcassets */,
 				43BC28E92C9A54490069C6CD /* ShoesForTow.entitlements */,
@@ -447,6 +456,17 @@
 				C10508252CA3868800B22737 /* CompletePurchaseView.swift */,
 			);
 			name = CompletePurchase;
+			sourceTree = "<group>";
+		};
+		C125C3EC2CAB8D950020CEF3 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				C125C3EA2CAB8D500020CEF3 /* APIEndpointProperties+Methods.swift */,
+				C125C3ED2CAB8DB80020CEF3 /* DataEndpoints.swift */,
+				C125C3EF2CAB8E1E0020CEF3 /* APIClientProtocol.swift */,
+				C125C3F12CAB8E3C0020CEF3 /* URLSessionAPIClient.swift */,
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 		C160C8822CA9209900FF77EC /* TabContainer */ = {
@@ -561,6 +581,7 @@
 				43B222502C9F7FC80035B655 /* PHPickerSwiftUI.swift in Sources */,
 				43B222762CA401770035B655 /* PaymentConfirmationView.swift in Sources */,
 				43BC29072C9CCE390069C6CD /* RegisterView.swift in Sources */,
+				C125C3EE2CAB8DB80020CEF3 /* DataEndpoints.swift in Sources */,
 				43B222522C9F90A70035B655 /* SetPerfilImageView.swift in Sources */,
 				43B222822CA69D1E0035B655 /* CarShopPresenter.swift in Sources */,
 				43B222542C9F93200035B655 /* CheckTermsAndConditions.swift in Sources */,
@@ -576,6 +597,7 @@
 				C160C8922CAA372600FF77EC /* OtherUserProfileView.swift in Sources */,
 				C10508062C9B4BE000B22737 /* CircularImageCarouselView.swift in Sources */,
 				43B222932CA7EE370035B655 /* HelpPresenter.swift in Sources */,
+				C125C3F22CAB8E3C0020CEF3 /* URLSessionAPIClient.swift in Sources */,
 				43B222732CA3F5010035B655 /* PurchaseSendInformationPresenter.swift in Sources */,
 				C105080A2C9B734800B22737 /* HomeFavoritesView.swift in Sources */,
 				43B2225A2C9FFEBF0035B655 /* LoginViewPresenter.swift in Sources */,
@@ -585,6 +607,7 @@
 				43B2227B2CA6870B0035B655 /* SeeOrderStatusView.swift in Sources */,
 				C10508262CA3868800B22737 /* CompletePurchaseView.swift in Sources */,
 				43BC29012C9BE30F0069C6CD /* Font+Extensions.swift in Sources */,
+				C125C3EB2CAB8D500020CEF3 /* APIEndpointProperties+Methods.swift in Sources */,
 				C160C8862CA9211F00FF77EC /* CustomNavigation.swift in Sources */,
 				43B2225C2C9FFF390035B655 /* RegisterPresenter.swift in Sources */,
 				43B222802CA69D060035B655 /* CarShopView.swift in Sources */,
@@ -593,6 +616,7 @@
 				C10508102C9E014300B22737 /* PrimaryButton.swift in Sources */,
 				43BC28DF2C9A54450069C6CD /* ShoesForTowApp.swift in Sources */,
 				43B2227D2CA687210035B655 /* SeeOrderStatusPresenter.swift in Sources */,
+				C125C3F02CAB8E1E0020CEF3 /* APIClientProtocol.swift in Sources */,
 				C160C8812CA913A600FF77EC /* ImageGridView.swift in Sources */,
 				C160C88B2CA921BA00FF77EC /* RouterProtocol.swift in Sources */,
 				C160C88D2CA921EF00FF77EC /* MatchRouter.swift in Sources */,
