@@ -25,7 +25,9 @@ final class MatchPresenter: ObservableObject {
       case .email:
         networkStringUrl = "mailto:\("")?subject=\(topic)&body=\(escapedString)"
       case .facebook:
-        shareImageOnFacebook()
+//        shareImageOnFacebook()
+//        openFacebookApp()
+        shareOnFacebook()
         return
       }
       if let whatsappURL = URL(string: networkStringUrl) {
@@ -50,11 +52,53 @@ final class MatchPresenter: ObservableObject {
     // Get the top most view controller to present the UIActivityViewController
     if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
       if let rootViewController = windowScene.windows.first?.rootViewController {
+        rootViewController.modalPresentationStyle = .overCurrentContext
         rootViewController.present(activityViewController, animated: true, completion: nil)
       }
     }
   }
 
+
+  func openFacebookApp() {
+    let facebookURL = URL(string: "fb://profile")!
+
+    if UIApplication.shared.canOpenURL(facebookURL) {
+      UIApplication.shared.open(facebookURL, options: [:], completionHandler: nil)
+    } else {
+      // Open in browser if Facebook app is not installed
+      UIApplication.shared.open(URL(string: "https://facebook.com")!, options: [:], completionHandler: nil)
+    }
+  }
+
+  func shareOnFacebook() {
+    let imageUrl = "https://www.alambassociates.com/wp-content/uploads/2016/10/maxresdefault.jpg"
+    let facebookUrlScheme = "https://www.facebook.com/sharer/sharer.php?u=\(imageUrl)"
+
+    if let url = URL(string: facebookUrlScheme) {
+      UIApplication.shared.open(url)
+    }
+  }
+
+  func shareOnFacebook1() {
+    // The image or URL you want to share
+    let imageUrl = "https://www.alambassociates.com/wp-content/uploads/2016/10/maxresdefault.jpg"
+
+    // URL for sharing on Facebook via browser (default fallback)
+    let facebookUrlScheme = "https://www.facebook.com/sharer/sharer.php?u=\(imageUrl)"
+
+    // Custom URL scheme to open Facebook app
+    if let facebookAppURL = URL(string: "fb://profile") {
+      if UIApplication.shared.canOpenURL(facebookAppURL) {
+        // If Facebook app is installed, open it
+        UIApplication.shared.open(URL(string: facebookUrlScheme)!)
+      } else {
+        // Fallback to browser if the app isn't installed
+        if let url = URL(string: facebookUrlScheme) {
+          UIApplication.shared.open(url)
+        }
+      }
+    }
+  }
 }
 
 enum SharedNetwork {

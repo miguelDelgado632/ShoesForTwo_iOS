@@ -71,7 +71,7 @@ struct MatchView: View {
 
           HStack(spacing: constants.shareHorizontalSpacing) {
             Button(action: {
-              presenter.goToSharedInWhatsApp(network: .email)
+              presenter.goToSharedInWhatsApp(network: .facebook)
             }, label: {
               Image(constants.emailIcon)
                 .resizable()
