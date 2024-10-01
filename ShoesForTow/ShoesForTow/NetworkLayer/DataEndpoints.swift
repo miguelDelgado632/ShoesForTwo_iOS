@@ -9,7 +9,7 @@ import Foundation
 
 enum DataEndpoint: APIEndpoint {
   // MARK: - LOGIN
-  case login
+  case login(LoginRequestModel)
   case register
 
   // MARK: - MATCH
@@ -27,13 +27,13 @@ enum DataEndpoint: APIEndpoint {
   case intications
 
   var baseURL: URL {
-    return URL(string: "https://lineguide.mx/api/v1/index.php")!
+    return URL(string: "https://proyectos-ddbmexico.com/Shoes/api/v1/index.php")!
   }
 
   var path: String {
     switch self {
     case .login:
-      return ""
+      return "/login"
     case .register:
       return ""
     case .shoesInfo:
@@ -68,23 +68,12 @@ enum DataEndpoint: APIEndpoint {
   }
 
   var parameters: [URLQueryItem]? {
-    nil // TODO: REMOVE NIL FOR REAL SERVICE
-//    switch self {
-//    case .register(let data):
-//      return convertToURLQueryItems(from: data)
-//    case .business(let data):
-//      return convertToURLQueryItems(from: data)
-//    case .businessId(let data):
-//      return convertToURLQueryItems(from: data)
-//    case .businessDetail(let data):
-//      return convertToURLQueryItems(from: data)
-//    case .saveFavorite(let data):
-//      return convertToURLQueryItems(from: data)
-//    case .save(let data):
-//      return convertToURLQueryItems(from: data)
-//    case .saveBusinessCategory(let data):
-//      return convertToURLQueryItems(from: data)
-//    }
+    switch self {
+    case .login(let data):
+      return convertToURLQueryItems(from: data)
+    default:
+      return nil
+    }
   }
 
   private func convertToURLQueryItems<T: Encodable>(from encodable: T) -> [URLQueryItem]? {

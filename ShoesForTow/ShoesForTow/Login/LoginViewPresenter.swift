@@ -6,12 +6,35 @@
 //
 
 import Foundation
+import Combine
 
 final class LoginViewPresenter: ObservableObject {
-  @Published var navigation: ShoesForTwoNavigation = .init()
+  @Published var isLoading: Bool = false
+  @Published var email: String = ""
+  @Published var password: String = ""
+  private var cancellables: Set<AnyCancellable> = .init()
+  private let service: LoginService = .init()
 
-  func showHomeScreen() {
-    navigation.shouldShowTabHomeView = true
+  func login(_ completion: @escaping () -> Void) {
+    isLoading = true
+    service.login(data: LoginRequestModel(email: email, password: password))
+      .sink(
+        receiveCompletion: { [weak self] completion in
+          self?.isLoading = false
+        },
+        receiveValue: { [weak self] response in
+          if response.status == 200 {
+            completion()
+          } else {
+            self?.handleError()
+          }
+        }
+      )
+      .store(in: &cancellables)
+  }
+
+  private func handleError() {
+
   }
 }
 
