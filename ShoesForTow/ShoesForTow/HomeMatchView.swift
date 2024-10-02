@@ -1,5 +1,5 @@
 //
-//  HomeFavoritesView.swift
+//  HomeMatchView.swift
 //  ShoesForTow
 //
 //  Created by Raul Alberto Torres Contreras on 18/09/24.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct HomeFavoritesView: View {
+struct HomeMatchView: View {
 
-  @ObservedObject var presenter: HomeFavoritesPresenter = .init()
+  @ObservedObject var presenter: HomeMatchPresenter = .init()
   @EnvironmentObject var router: MatchRouter
   private let texts: HomeTexts = .init()
   private let constants: HomeConstants = .init()
@@ -112,7 +112,7 @@ struct HomeFavoritesView: View {
 }
 
 #Preview {
-    HomeFavoritesView()
+    HomeMatchView()
 }
 
 fileprivate struct HomeTexts {

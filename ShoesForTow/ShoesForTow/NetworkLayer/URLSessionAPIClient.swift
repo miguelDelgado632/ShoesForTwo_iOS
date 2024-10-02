@@ -33,7 +33,7 @@ class URLSessionAPIClient<EndpointType: APIEndpoint>: APIClient {
     print("👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻")
 
     return URLSession.shared.dataTaskPublisher(for: request)
-      .subscribe(on: DispatchQueue.global(qos: .background))
+      .subscribe(on: DispatchQueue.global(qos: .default))
       .tryMap { data, response -> Data in
         guard let httpResponse = response as? HTTPURLResponse,
               (200...299).contains(httpResponse.statusCode) else {

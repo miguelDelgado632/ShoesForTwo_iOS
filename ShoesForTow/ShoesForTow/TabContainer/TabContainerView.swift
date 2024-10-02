@@ -16,13 +16,13 @@ struct TabContainerView: View {
 
   var body: some View {
       TabView(selection: $presenter.tabSelection) {
-        ImageGridView(data: .testData())
+        FavoritesView()
           .tabItem {
             makeTabItem(icon: "icono_favoritos", title: texts.favoritesTitle)
           }
           .tag(1)
 
-        HomeFavoritesView()
+        HomeMatchView()
           .tabItem {
             makeTabItem(icon: "icono_match", title: texts.matchTitle)
           }

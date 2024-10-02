@@ -26,19 +26,3 @@ final class RegistrationService {
     .eraseToAnyPublisher()
   }
 }
-
-
-struct RegistrationRequestModel: Encodable {
-  var name: String
-  var apellido: String
-  var email: String
-  var password: String
-  var selectedGender: String
-  var shoesSize: String?
-  var selectedImage: Data?
-  var checkTermisAndConditios: Bool
-}
-
-struct RegistrationResponseModel: Codable {
-  var status: Int
-}

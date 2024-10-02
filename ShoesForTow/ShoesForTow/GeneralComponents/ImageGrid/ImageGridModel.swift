@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImageGridModel: Hashable {
+struct ImageGridModel: Hashable, Codable {
   let image: String
   let title: String
   let subTitle: String?
