@@ -56,7 +56,6 @@ struct LoginView: View {
             }
             .frame(width: 176, height: 35)
             .background(Color.backgroundColor)
-//            .disabled(!presenter.email.isValidEmail)
 
             Button {
               router.navigate(to: .registerView)
@@ -72,6 +71,12 @@ struct LoginView: View {
           Spacer()
         }
         .padding(.top, 40)
+        .alert("Alerta", isPresented: $presenter.showError) {
+            Button("OK") {}
+        } message: {
+            Text(presenter.errorText)
+        }
+
 
         if presenter.isLoading {
           ProgressView()

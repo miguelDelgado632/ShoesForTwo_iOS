@@ -35,5 +35,5 @@ enum NetworkError: Error {
 
 struct ErrorRequest: Decodable {
   let status: Int
-  let mensaje: String
+  let message: String
 }

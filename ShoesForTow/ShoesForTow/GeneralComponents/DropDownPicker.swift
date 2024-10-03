@@ -18,13 +18,14 @@ struct DropDownPicker: View {
     
     @SceneStorage("drop_down_zindex") private var index = 1000.0
     @State var zindex = 1000.0
+    @State private var tapButton: Bool = false
     
     var body: some View {
         GeometryReader {
             let size = $0.size
             
             VStack(spacing: 0) {
-                
+                ScrollView {
                 
                 if state == .top && showDropdown {
                     OptionsView()
@@ -50,6 +51,7 @@ struct DropDownPicker: View {
                 .onTapGesture {
                     index += 1
                     zindex = index
+                    tapButton.toggle()
                     withAnimation(.snappy) {
                         showDropdown.toggle()
                     }
@@ -60,6 +62,8 @@ struct DropDownPicker: View {
                     OptionsView()
                 }
             }
+                .frame(height: tapButton ? 100 : 40, alignment: state == .top ? .bottom : .top)
+            }
             .clipped()
             .background(.white)
             .overlay {
@@ -67,7 +71,8 @@ struct DropDownPicker: View {
                     .stroke(Color.white)
                     .border(Color.fontGray)
             }
-            .frame(height: size.height, alignment: state == .top ? .bottom : .top)
+            .frame(height:  tapButton ? 100 : 40, alignment: state == .top ? .bottom : .top)
+            //.frame(height: size.height, alignment: state == .top ? .bottom : .top)
             
         }
         .frame(width: maxWidth, height: 35)
@@ -89,6 +94,7 @@ struct DropDownPicker: View {
                     //.contentShape(.rect)
                     .padding(.horizontal, 15)
                     .onTapGesture {
+                        tapButton = false
                         withAnimation(.snappy) {
                             selection = option
                             showDropdown.toggle()
@@ -102,7 +108,7 @@ struct DropDownPicker: View {
     }
 
 #Preview {
-    DropDownPicker(selection: .constant("selectes"), options: ["holas,hola,hola3"])
+    DropDownPicker(selection: .constant("selectes"), options: ["25","25.5","26","26.5","27","27.5","28","28.5","29","29.5","30"])
 }
 
 

@@ -54,13 +54,7 @@ struct RegisterView: View {
                 .padding(.horizontal, 30)
                 DropDownPicker(
                     selection: $presenter.shoesSize,
-                    options: [
-                        "Apple",
-                        "Google",
-                        "Amazon",
-                        "Facebook",
-                        "Instagram"
-                    ]
+                    options: presenter.shoesSizeNumbers
                 )
                 .padding(.top, 29)
                 Text("¿Que zapato buscas?")
@@ -81,7 +75,9 @@ struct RegisterView: View {
                 
                 Button {
 //                    router.navigateBack()
-                  presenter.register()
+                    presenter.register {
+                        router.tabView = true
+                    }
                 } label: {
                     Text("Aceptar")
                         .font(.monserrat(weight: .light, .size16))
@@ -94,6 +90,11 @@ struct RegisterView: View {
             .frame(maxWidth: .infinity)
             .navigationBarBackButtonHidden()
             .padding(.bottom, 20)
+            .alert("Alerta", isPresented: $presenter.showError) {
+                Button("OK") {}
+            } message: {
+                Text(presenter.errorText)
+            }
         }
     }
 }
