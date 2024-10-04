@@ -15,5 +15,6 @@ final class LoginService {
 
   func login(data: LoginRequestModel) -> AnyPublisher<LoginResponse, Error> {
     apiClient.request(.login(data))
+          .eraseToAnyPublisher()
   }
 }

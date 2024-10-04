@@ -26,7 +26,7 @@ final class FavoritesPresenter: ObservableObject {
       .sink { [weak self] completion in
         self?.isLoading = false
       } receiveValue: { [weak self] response in
-        self?.data = response.data
+     //   self?.data = response.data
       }
       .store(in: &cancellables)
   }

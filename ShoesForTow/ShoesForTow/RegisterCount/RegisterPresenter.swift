@@ -35,7 +35,7 @@ final class RegisterPresenter: ObservableObject {
   @Published var showError: Bool = false
 
   private let service: RegistrationService = .init()
-  private var cancellables: Set<AnyCancellable> = .init()
+  private var cancellables: Set<AnyCancellable> = []
   private let sizeNumbers: SizeNumbersGender = .init()
     private var valueSelectFoot: Int = 0
   
@@ -82,6 +82,7 @@ final class RegisterPresenter: ObservableObject {
                   if response.status == 200 {
                       completion()
                   } else {
+                      self?.errorText = response.message ?? "Ocurrio Un error"
                       self?.handleError()
                   }
               }

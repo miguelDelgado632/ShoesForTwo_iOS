@@ -10,7 +10,7 @@ import Foundation
 struct Response<T: Codable>: Codable {
   let status: Int
   let message: String?
-  let data: T
+  let data: T?
 }
 
 // MARK: - RESPONSE
@@ -26,4 +26,15 @@ struct LoginResponseModel: Codable {
 struct LoginRequestModel: Encodable {
   let email: String
   let password: String
+}
+
+
+struct Test1: Codable {
+    var status: Int
+    var message: String
+    var data: [test3]
+}
+
+struct test3: Codable {
+    var id_user: String
 }

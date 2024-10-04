@@ -20,15 +20,9 @@ struct RegistrationRequestModel: Encodable {
 }
 
 struct RegistrationResponseModel: Codable {
-  var status: Int
-  var message: String
-  var data: [RegistrationDataModel]
-}
+    var idUser: String
 
-struct RegistrationDataModel: Codable {
-  let idUser: String
-
-  enum CodingKeys: String, CodingKey {
-    case idUser = "id_user"
-  }
+    enum CodingKeys: String, CodingKey {
+      case idUser = "id_user"
+    }
 }

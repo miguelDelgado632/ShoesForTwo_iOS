@@ -9,10 +9,11 @@ import Foundation
 import Combine
 
 final class RegistrationService {
-  typealias RegistrationResponse = Response<[RegistrationResponseModel]>
+    typealias RegistrationResponse = Response<[RegistrationResponseModel]>
   private let apiClient = URLSessionAPIClient<DataEndpoint>()
 
   func register(data: RegistrationRequestModel) -> AnyPublisher<RegistrationResponse, Error> {
       apiClient.request(.register(data))
+        .eraseToAnyPublisher()
   }
 }
