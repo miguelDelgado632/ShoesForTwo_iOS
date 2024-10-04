@@ -64,7 +64,7 @@ struct RegisterView: View {
                     .padding(.horizontal, 30)
                     .padding(.top, 34)
                 ShowGenderRegister(genders: .constant(["Izquierdo", "Derecho"]),
-                                   selectedGender: $presenter.selectedGender)
+                                   selectedGender: $presenter.selectFoot)
                 .padding(.horizontal, 30)
                 
                 SetPerfilImageView(selectedImage: $presenter.selectedImage)
@@ -76,7 +76,8 @@ struct RegisterView: View {
                 Button {
 //                    router.navigateBack()
                     presenter.register {
-                        router.tabView = true
+                        router.navigateBack()
+                        //router.tabView = true
                     }
                 } label: {
                     Text("Aceptar")

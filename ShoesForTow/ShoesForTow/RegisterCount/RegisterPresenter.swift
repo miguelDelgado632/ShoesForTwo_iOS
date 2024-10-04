@@ -16,11 +16,18 @@ final class RegisterPresenter: ObservableObject {
   @Published var password: String = ""
   @Published var selectedGender: String = "" {
         didSet {
+            numberGender = selectedGender == "Hombre" ? 1 : selectedGender == "Mujer" ? 2 : 3
             shoesSize = nil
             showSizeShoes()
         }
     }
+    @Published var selectFoot: String = "" {
+        didSet {
+            valueSelectFoot = selectFoot == "Izquierdo" ? 1 : 2
+        }
+    }
   @Published var shoesSize: String? = nil
+  @Published var numberGender: Int = 0
   @Published var selectedImage: UIImage?
   @Published var checkTermisAndConditios: Bool = false
   @Published var isLoading: Bool = false
@@ -30,11 +37,12 @@ final class RegisterPresenter: ObservableObject {
   private let service: RegistrationService = .init()
   private var cancellables: Set<AnyCancellable> = .init()
   private let sizeNumbers: SizeNumbersGender = .init()
+    private var valueSelectFoot: Int = 0
   
   var errorText: String = ""
 
     var checkValuesInTextField: Bool {
-        !name.isEmpty && !apellido.isEmpty && email.isValidEmail && !password.isEmpty && !selectedGender.isEmpty && checkTermisAndConditios && shoesSize != nil
+        !name.isEmpty && !apellido.isEmpty && email.isValidEmail && !password.isEmpty && !selectedGender.isEmpty && checkTermisAndConditios && !selectFoot.isEmpty && shoesSize != nil
     }
 
   init() { }
@@ -42,13 +50,15 @@ final class RegisterPresenter: ObservableObject {
   func register(_ completion: @escaping () -> Void) {
       if checkValuesInTextField {
           let data: RegistrationRequestModel = .init(
-            name: name,
-            apellido: apellido,
+            nombre: name,
+            apellidos: apellido,
             email: email,
             password: password,
-            selectedGender: selectedGender,
-            checkTermisAndConditios: checkTermisAndConditios
-          )
+            genero: numberGender,
+            talla: shoesSize ?? "24",
+            pie: valueSelectFoot,
+            foto: selectedImage?.toPngString() ?? "")
+
           
           isLoading = true
           service.register(data: data)

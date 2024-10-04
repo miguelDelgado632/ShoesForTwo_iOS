@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final class LoginService {
-  typealias LoginResponse = Response<LoginResponseModel>
+  typealias LoginResponse = Response<[LoginResponseModel]>
 
   private let apiClient = URLSessionAPIClient<DataEndpoint>()
 

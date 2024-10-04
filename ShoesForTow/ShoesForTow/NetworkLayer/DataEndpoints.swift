@@ -10,7 +10,7 @@ import Foundation
 enum DataEndpoint: APIEndpoint {
   // MARK: - LOGIN
   case login(LoginRequestModel)
-  case register
+  case register(RegistrationRequestModel)
 
   // MARK: - MATCH
   case shoesInfo
@@ -35,7 +35,7 @@ enum DataEndpoint: APIEndpoint {
     case .login:
       return "/login"
     case .register:
-      return ""
+      return "/register"
     case .shoesInfo:
       return ""
     case .inviteMatch:
