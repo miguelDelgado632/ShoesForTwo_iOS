@@ -71,6 +71,8 @@ enum DataEndpoint: APIEndpoint {
     switch self {
     case .login(let data):
       return convertToURLQueryItems(from: data)
+    case .register(let data):
+        return convertToURLQueryItems(from: data)
     default:
       return nil
     }
