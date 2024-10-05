@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ShoeSlideView: View {
   @Binding var currentSelection: Int
-  @Binding var shoes: [Shoe]
+//  @Binding var shoes: [Shoe]
+  @Binding var shoes: [ShoeProductElementModel]
 
   private let constants: ShoeSlideConstants = .init()
 
@@ -18,16 +19,19 @@ struct ShoeSlideView: View {
       LateralArrowsView()
       TabView(selection: $currentSelection) {
         ForEach(shoes.indices, id: \.self) { index in
-          let shoe: Shoe = shoes[index]
+          let shoe: ShoeProductElementModel = shoes[index]
           VStack(spacing: .zero) {
-            Image(systemName: shoe.images[constants.middleImageIndex])
-              .resizable()
+//            Image(systemName: shoe.images[constants.middleImageIndex])
+//              .resizable()
+//              .frame(width: constants.imageSize, height: constants.imageSize)
+
+            ImageDownloaderView(imageUrl: shoe.product.images[constants.middleImageIndex])
               .frame(width: constants.imageSize, height: constants.imageSize)
 
             VStack(spacing: .zero) {
-              Text(shoe.name)
+              Text(shoe.product.name)
                 .font(.monserrat(weight: .medium, .size20))
-              Text("$\(shoe.price)")
+              Text("$\(shoe.product.price)")
                 .font(.monserrat(weight: .medium, .size20))
             }
           }
@@ -50,7 +54,7 @@ struct ShoeSlideView: View {
 
 #Preview {
   return ShoeSlideView(currentSelection: .constant(0),
-                       shoes: .constant(Shoe.mockedData()))
+                       shoes: .constant(.mockedData()))
 }
 
 private struct LateralArrowsView: View {

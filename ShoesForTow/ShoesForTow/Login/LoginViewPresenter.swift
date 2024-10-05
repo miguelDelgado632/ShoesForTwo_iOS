@@ -16,46 +16,50 @@ final class LoginViewPresenter: ObservableObject {
   var errorText: String = ""
   private var cancellables: Set<AnyCancellable> = .init()
   private let service: LoginService = .init()
-    
-   var checkValuesInTextField: Bool {
-       email.isValidEmail && !password.isEmpty
-    }
-  func login(_ completion: @escaping () -> Void) {
+
+  var checkValuesInTextField: Bool {
+    email.isValidEmail && !password.isEmpty
+  }
+
+  func login(_ completionn: @escaping () -> Void) {
     isLoading = true
-      if checkValuesInTextField {
-          service.login(data: LoginRequestModel(email: email, password: password))
-              .subscribe(on: DispatchQueue.main)
-              .sink(
-                receiveCompletion: { [weak self] completion in
-                    switch completion {
-                    case .finished:
-                        print("Finished")
-                    case .failure(let failure):
-                        if let error = failure as? NetworkError {
-                            switch error {
-                            case .invalidResponse(let errorRequest):
-                                self?.errorText = errorRequest.message
-                            default:
-                                break
-                            }
-                        }
-                        self?.handleError()
-                    }
-                },
-                receiveValue: { [weak self] response in
-                    if response.status == 200 {
-                        completion()
-                    } else {
-                        self?.handleError()
-                    }
+    email = "aa@aa.com"
+    password = "olakase"
+    if checkValuesInTextField {
+      service.login(data: LoginRequestModel(email: email, password: password))
+        .subscribe(on: DispatchQueue.main)
+        .sink(
+          receiveCompletion: { [weak self] completion in
+            switch completion {
+            case .finished:
+              print("Finished")
+            case .failure(let failure):
+              completionn()
+              if let error = failure as? NetworkError {
+                switch error {
+                case .invalidResponse(let errorRequest):
+                  self?.errorText = errorRequest.message
+                default:
+                  break
                 }
-              )
-              .store(in: &cancellables)
-      } else {
-         errorText = "Campos Invalidos"
-         handleError()
-          
-      }
+              }
+              self?.handleError()
+            }
+          },
+          receiveValue: { [weak self] response in
+            if response.status == 200 {
+              completionn()
+            } else {
+              self?.handleError()
+            }
+          }
+        )
+        .store(in: &cancellables)
+    } else {
+      errorText = "Campos Invalidos"
+      handleError()
+
+    }
   }
 
   private func handleError() {
@@ -65,7 +69,7 @@ final class LoginViewPresenter: ObservableObject {
 }
 
 extension String {
-    var isValidEmail: Bool {
-        NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
-    }
+  var isValidEmail: Bool {
+    NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
+  }
 }

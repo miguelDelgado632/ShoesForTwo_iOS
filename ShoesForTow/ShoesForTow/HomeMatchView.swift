@@ -16,14 +16,25 @@ struct HomeMatchView: View {
 
   var body: some View {
     NavigationStack(path: $router.navPath) {
-      VStack(alignment: .center, spacing: .zero) {
-        filtersView
-        Spacer()
-        shoeSelectorView
-        Spacer()
-        mainButtonView
-        Spacer()
+      ZStack {
+
+        if presenter.isLoading {
+          ProgressView()
+            .progressViewStyle(CircularProgressViewStyle())
+            .scaleEffect(1.5)
+            .padding()
+        } else if !presenter.shoeProducts.isEmpty {
+          VStack(alignment: .center, spacing: .zero) {
+            filtersView
+            Spacer()
+            shoeSelectorView
+            Spacer()
+            mainButtonView
+            Spacer()
+          }
+        }
       }
+
       .navigationDestination(for: MatchDestination.self) { destination in
         switch destination {
         case .matchView:
@@ -78,9 +89,9 @@ struct HomeMatchView: View {
         .frame(height: constants.usersCarouselHeight)
 
       ShoeSlideView(currentSelection: $presenter.currentSelection,
-                    shoes: $presenter.shoes)
+                    shoes: $presenter.shoeProducts)
 
-      AnglesComponentView(images: $presenter.shoes[presenter.currentSelection].images)
+      AnglesComponentView(images: $presenter.shoeProducts[presenter.currentSelection].product.images)
         .offset(y: constants.anglesComponentOffset)
     }
     .frame(height: constants.shoeSelectorHeight)
@@ -90,11 +101,15 @@ struct HomeMatchView: View {
     HStack {
       Spacer()
       Button(action: {}, label: {
-        CircularImageView(imageName: presenter.shoes[presenter.currentSelection].liked ?
-                          "icono_like" :
-                          "icono_like_relleno",
+        CircularImageView(imageName: "icono_like",
                           size: constants.mainButtonsSize,
                           addBorder: false)
+//        CircularImageView(imageName: presenter.shoes[presenter.currentSelection].liked ?
+//                          "icono_like" :
+//                            "icono_like_relleno",
+//                          size: constants.mainButtonsSize,
+//                          addBorder: false)
+
       })
       .buttonStyle(.plain)
       Spacer()

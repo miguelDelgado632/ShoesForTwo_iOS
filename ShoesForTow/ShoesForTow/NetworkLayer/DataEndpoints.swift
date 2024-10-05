@@ -13,7 +13,7 @@ enum DataEndpoint: APIEndpoint {
   case register(RegistrationRequestModel)
 
   // MARK: - MATCH
-  case shoesInfo
+  case productsInfo(ProductsInfoRequestModel)
   case inviteMatch
   case purchaseInfo
   case paymentConfirmation
@@ -24,7 +24,7 @@ enum DataEndpoint: APIEndpoint {
   case profile
   case shoppingCart
   case myOrders
-  case intications
+  case invitations
 
   var baseURL: URL {
     return URL(string: "https://proyectos-ddbmexico.com/Shoes/api/v1/index.php")!
@@ -36,8 +36,8 @@ enum DataEndpoint: APIEndpoint {
       return "/login"
     case .register:
       return "/register"
-    case .shoesInfo:
-      return ""
+    case .productsInfo:
+      return "/productos"
     case .inviteMatch:
       return ""
     case .purchaseInfo:
@@ -54,7 +54,7 @@ enum DataEndpoint: APIEndpoint {
       return ""
     case .myOrders:
       return ""
-    case .intications:
+    case .invitations:
       return ""
     }
   }
@@ -73,6 +73,8 @@ enum DataEndpoint: APIEndpoint {
       return convertToURLQueryItems(from: data)
     case .register(let data):
         return convertToURLQueryItems(from: data)
+    case .productsInfo(let data):
+      return convertToURLQueryItems(from: data)
     default:
       return nil
     }

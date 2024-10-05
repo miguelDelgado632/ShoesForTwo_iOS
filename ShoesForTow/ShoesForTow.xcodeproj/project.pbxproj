@@ -93,6 +93,8 @@
 		C160C8902CA9226600FF77EC /* ImageGridModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C88F2CA9226600FF77EC /* ImageGridModel.swift */; };
 		C160C8922CAA372600FF77EC /* OtherUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C8912CAA372600FF77EC /* OtherUserProfileView.swift */; };
 		C160C8942CAA3D2F00FF77EC /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C160C8932CAA3D2F00FF77EC /* ProfileRouter.swift */; };
+		C17A33092CAFBE2B0049525B /* ImageDownloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A33082CAFBE2A0049525B /* ImageDownloaderView.swift */; };
+		C17A330B2CB101C70049525B /* HomeMatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A330A2CB101C70049525B /* HomeMatchService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -185,6 +187,8 @@
 		C160C88F2CA9226600FF77EC /* ImageGridModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridModel.swift; sourceTree = "<group>"; };
 		C160C8912CAA372600FF77EC /* OtherUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserProfileView.swift; sourceTree = "<group>"; };
 		C160C8932CAA3D2F00FF77EC /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		C17A33082CAFBE2A0049525B /* ImageDownloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderView.swift; sourceTree = "<group>"; };
+		C17A330A2CB101C70049525B /* HomeMatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMatchService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,6 +438,7 @@
 				C10508142C9E354F00B22737 /* Components */,
 				C10508092C9B734700B22737 /* HomeMatchView.swift */,
 				C10508192C9E43EF00B22737 /* HomeMatchPresenter.swift */,
+				C17A330A2CB101C70049525B /* HomeMatchService.swift */,
 			);
 			name = HomeMatch;
 			sourceTree = "<group>";
@@ -460,6 +465,7 @@
 				C105081F2C9FCD6600B22737 /* ShoeDetailView.swift */,
 				43B222832CA6A1D40035B655 /* CardToBuy.swift */,
 				C160C88E2CA9225600FF77EC /* ImageGrid */,
+				C17A33082CAFBE2A0049525B /* ImageDownloaderView.swift */,
 			);
 			path = GeneralComponents;
 			sourceTree = "<group>";
@@ -656,6 +662,7 @@
 				C105081E2C9FC28100B22737 /* Image+Entensions.swift in Sources */,
 				43BC28E42C9A54450069C6CD /* ShoesForTow.xcdatamodeld in Sources */,
 				43B2227B2CA6870B0035B655 /* SeeOrderStatusView.swift in Sources */,
+				C17A33092CAFBE2B0049525B /* ImageDownloaderView.swift in Sources */,
 				C10508262CA3868800B22737 /* CompletePurchaseView.swift in Sources */,
 				43BC29012C9BE30F0069C6CD /* Font+Extensions.swift in Sources */,
 				C125C3EB2CAB8D500020CEF3 /* APIEndpointProperties+Methods.swift in Sources */,
@@ -664,6 +671,7 @@
 				43B2225C2C9FFF390035B655 /* RegisterPresenter.swift in Sources */,
 				43B222802CA69D060035B655 /* CarShopView.swift in Sources */,
 				43B222562C9F93650035B655 /* ShowGenderRegister.swift in Sources */,
+				C17A330B2CB101C70049525B /* HomeMatchService.swift in Sources */,
 				C10508102C9E014300B22737 /* PrimaryButton.swift in Sources */,
 				43BC28DF2C9A54450069C6CD /* ShoesForTowApp.swift in Sources */,
 				43B2227D2CA687210035B655 /* SeeOrderStatusPresenter.swift in Sources */,

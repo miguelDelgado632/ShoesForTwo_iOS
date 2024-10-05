@@ -57,7 +57,11 @@ fileprivate struct ButtomImageView: View {
   var body: some View {
     Button(action: action,
            label: {
-      CircularImageView(systemImageName: image, size: size)
+      ImageDownloaderView(imageUrl: image)
+        .frame(width: size, height: size)
+        .clipShape(Circle())
+        .overlay(Circle().stroke(Color.black, lineWidth: 1))
+        .shadow(radius: 5)
     })
     .buttonStyle(.plain)
   }
