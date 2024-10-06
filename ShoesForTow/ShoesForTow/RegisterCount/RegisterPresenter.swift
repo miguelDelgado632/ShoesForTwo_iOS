@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 
 final class RegisterPresenter: ObservableObject {
-
   @Published var name: String = ""
   @Published var apellido: String = ""
   @Published var email: String = ""
@@ -80,7 +79,15 @@ final class RegisterPresenter: ObservableObject {
                       }
               } receiveValue: { [weak self] response in
                   if response.status == 200 {
-                      completion()
+                      var idUser = response.data?.first?.idUser
+                      if let id = idUser {
+                          UserDefaults.standard.setIdUser(for: id)
+                          completion()
+                          self?.isLoading = false
+                      } else {
+                          self?.errorText = response.message ?? ""
+                          self?.handleError()
+                      }
                   } else {
                       self?.errorText = response.message ?? "Ocurrio Un error"
                       self?.handleError()

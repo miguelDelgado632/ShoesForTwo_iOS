@@ -21,10 +21,13 @@ final class HomeMatchPresenter: ObservableObject {
   @Published var shoeProducts: [ShoeProductElementModel] = []
   @Published var users: [String] = []
   @Published var isLoading: Bool = false
+  @Published var showError: Bool = false
 
   private var currentFilter: HomeMatchFilterType = .all
   private var cancellables: Set<AnyCancellable> = .init()
   private let service: HomeMatchService = .init()
+
+  var errorText: String = ""
 
   init() {
     getData()
@@ -49,6 +52,21 @@ final class HomeMatchPresenter: ObservableObject {
       .receive(on: DispatchQueue.main)
       .compactMap { $0.data?.mapToShoeProductElementModel() }
       .sink { completion in
+//          switch completion {
+//          case .finished:
+//              print("Finished")
+//              self.handleError()
+//          case .failure(let failure):
+//              if let error = failure as? NetworkError {
+//                  switch error {
+//                  case .invalidResponse(let errorRequest):
+//                      self.errorText = errorRequest.message
+//                  default:
+//                      break
+//                  }
+//              }
+//              self.handleError()
+//          }
         self.isLoading = false
         self.shoeProducts = .mockedData() // TODO: - REMOVE THIS WHEN SUCCESS
       } receiveValue: { shoeProducts in
@@ -57,4 +75,9 @@ final class HomeMatchPresenter: ObservableObject {
       }
       .store(in: &cancellables)
   }
+
+    private func handleError() {
+      showError = true
+      isLoading = false
+    }
 }

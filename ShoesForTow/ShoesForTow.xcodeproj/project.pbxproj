@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4364B5DF2CB26DF100949B13 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364B5DE2CB26DF100949B13 /* UserDefaults+Extensions.swift */; };
 		43B2224B2C9F6B660035B655 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2224A2C9F6B660035B655 /* ImagePickerView.swift */; };
 		43B2224E2C9F6C950035B655 /* PickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2224D2C9F6C950035B655 /* PickerCoordinator.swift */; };
 		43B222502C9F7FC80035B655 /* PHPickerSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2224F2C9F7FC70035B655 /* PHPickerSwiftUI.swift */; };
@@ -98,6 +99,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4364B5DE2CB26DF100949B13 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		43B2224A2C9F6B660035B655 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		43B2224D2C9F6C950035B655 /* PickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCoordinator.swift; sourceTree = "<group>"; };
 		43B2224F2C9F7FC70035B655 /* PHPickerSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPickerSwiftUI.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 				C105081D2C9FC28100B22737 /* Image+Entensions.swift */,
 				43BC290A2C9D13D60069C6CD /* TabBarCustom.swift */,
 				43CB1F9D2CAF775B00C57C76 /* UImage+Extensions.swift */,
+				4364B5DE2CB26DF100949B13 /* UserDefaults+Extensions.swift */,
 			);
 			path = Commonds;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				C10508242CA372DB00B22737 /* MatchShoeDetailView.swift in Sources */,
 				C105081A2C9E43EF00B22737 /* HomeMatchPresenter.swift in Sources */,
 				43B2228E2CA7E2DD0035B655 /* InvitationsPresenter.swift in Sources */,
+				4364B5DF2CB26DF100949B13 /* UserDefaults+Extensions.swift in Sources */,
 				43B222782CA401910035B655 /* PaymentConfirmationPresenter.swift in Sources */,
 				43B2228C2CA7E2C50035B655 /* InvitationsView.swift in Sources */,
 			);

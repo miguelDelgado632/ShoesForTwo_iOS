@@ -11,6 +11,7 @@ struct HomeMatchView: View {
 
   @ObservedObject var presenter: HomeMatchPresenter = .init()
   @EnvironmentObject var router: MatchRouter
+  @EnvironmentObject var router2: Router
   private let texts: HomeTexts = .init()
   private let constants: HomeConstants = .init()
 
@@ -32,9 +33,20 @@ struct HomeMatchView: View {
             mainButtonView
             Spacer()
           }
+          .alert("Alerta", isPresented: $presenter.showError) {
+                    Button("OK") {}
+                } message: {
+                    Text(presenter.errorText)
+                }
+            if presenter.isLoading {
+              ProgressView()
+                .progressViewStyle(CircularProgressViewStyle())
+                .scaleEffect(1.5)
+                .padding()
+            }
+            
         }
       }
-
       .navigationDestination(for: MatchDestination.self) { destination in
         switch destination {
         case .matchView:
@@ -100,7 +112,11 @@ struct HomeMatchView: View {
   private var mainButtonView: some View {
     HStack {
       Spacer()
-      Button(action: {}, label: {
+      Button(action: {
+          UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userID.rawValue)
+          router2.navigateToRoot()
+          router2.tabView = false
+      }, label: {
         CircularImageView(imageName: "icono_like",
                           size: constants.mainButtonsSize,
                           addBorder: false)

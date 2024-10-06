@@ -21,10 +21,10 @@ final class LoginViewPresenter: ObservableObject {
     email.isValidEmail && !password.isEmpty
   }
 
-  func login(_ completionn: @escaping () -> Void) {
+  func login(_ completion: @escaping () -> Void) {
     isLoading = true
-    email = "aa@aa.com"
-    password = "olakase"
+ //   email = "aa@aa.com"
+//    password = "olakase"
     if checkValuesInTextField {
       service.login(data: LoginRequestModel(email: email, password: password))
         .subscribe(on: DispatchQueue.main)
@@ -34,7 +34,6 @@ final class LoginViewPresenter: ObservableObject {
             case .finished:
               print("Finished")
             case .failure(let failure):
-              completionn()
               if let error = failure as? NetworkError {
                 switch error {
                 case .invalidResponse(let errorRequest):
@@ -48,8 +47,17 @@ final class LoginViewPresenter: ObservableObject {
           },
           receiveValue: { [weak self] response in
             if response.status == 200 {
-              completionn()
+                var idUser = response.data?.first?.idUser
+                if let id = idUser {
+                    UserDefaults.standard.setIdUser(for: id)
+                    completion()
+                    self?.isLoading = false
+                } else {
+                    self?.errorText = response.message ?? ""
+                    self?.handleError()
+                }
             } else {
+              self?.errorText = response.message ?? ""
               self?.handleError()
             }
           }

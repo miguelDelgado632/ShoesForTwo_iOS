@@ -13,7 +13,7 @@ final class HomeMatchService {
   private let apiClient = URLSessionAPIClient<DataEndpoint>()
 
   func getData(filter type: HomeMatchFilterType) -> AnyPublisher<Response<ShoeProductModel>, Error> {
-    apiClient.request(.productsInfo(ProductsInfoRequestModel(userId: "", filterType: type.rawValue)))
+      apiClient.request(.productsInfo(ProductsInfoRequestModel(userId: UserDefaults.standard.getUserID(), filterType: type.rawValue)))
       .eraseToAnyPublisher()
   }
 }
