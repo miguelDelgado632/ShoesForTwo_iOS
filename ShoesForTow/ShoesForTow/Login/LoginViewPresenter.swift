@@ -49,6 +49,7 @@ final class LoginViewPresenter: ObservableObject {
             if response.status == 200 {
                 var idUser = response.data?.first?.idUser
                 if let id = idUser {
+                    UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userID.rawValue)
                     UserDefaults.standard.setIdUser(for: id)
                     completion()
                     self?.isLoading = false

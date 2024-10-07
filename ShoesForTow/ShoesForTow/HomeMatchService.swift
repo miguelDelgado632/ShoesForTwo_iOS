@@ -24,7 +24,7 @@ struct ProductsInfoRequestModel: Encodable {
   let filterType: Int
 
   enum CodingKeys: String, CodingKey {
-    case userId = "user_id"
+    case userId = "id_user"
     case filterType = "tipo"
   }
 }
