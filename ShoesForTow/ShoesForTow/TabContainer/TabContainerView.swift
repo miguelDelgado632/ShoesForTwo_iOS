@@ -22,7 +22,8 @@ struct TabContainerView: View {
       TabView(selection: $presenter.tabSelection) {
         FavoritesView()
           .tabItem {
-            makeTabItem(icon: "icono_favoritos", title: texts.favoritesTitle)
+              // presenter.tabSelection == 1 ? "icono_favoritos" : "icono_match" esto es ahora que tengamos los dos iconos
+              makeTabItem(icon: "icono_favoritos", title: texts.favoritesTitle)
           }
           .tag(1)
 

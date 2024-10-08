@@ -35,6 +35,7 @@ final class HomeMatchPresenter: ObservableObject {
 
   func filterBy(_ type: HomeMatchFilterType) {
     currentFilter = type
+    getData()
   }
 
   private func setupObservers() {
