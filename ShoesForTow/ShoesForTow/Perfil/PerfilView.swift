@@ -26,14 +26,17 @@ struct PerfilView: View {
                 HStack(spacing: 0) {
                     Text("Nombre:")
                         .font(.monserrat(weight: .regular, .size18))
+                        .foregroundStyle(Color.fontGray)
                         .frame(width: geometry.size.width / 2, alignment: tapEditarButton ? .center : .trailing)
                     if tapEditarButton {
                         TextField("Name", text: $presenter.nameText)
                             .font(.monserrat(weight: .bold, .size18))
+                            .foregroundStyle(Color.fontGray)
                             .frame(width: geometry.size.width / 2, alignment: .leading)
                     } else {
                        Text(presenter.nameText)
                         .font(.monserrat(weight: .bold, .size18))
+                        .foregroundStyle(Color.fontGray)
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                     }
                     
@@ -41,6 +44,7 @@ struct PerfilView: View {
                 HStack(spacing: 0) {
                    Text("Talla:")
                     .font(.monserrat(weight: .regular, .size18))
+                    .foregroundStyle(Color.fontGray)
                     .frame(width: geometry.size.width / 2, alignment: tapEditarButton ? .center : .trailing)
                     if tapEditarButton {
                         DropDownPicker(
@@ -56,12 +60,14 @@ struct PerfilView: View {
                     } else {
                         Text(presenter.shoesSize ?? "")
                          .font(.monserrat(weight: .bold, .size18))
+                         .foregroundStyle(Color.fontGray)
                          .frame(width: geometry.size.width / 2, alignment: .leading)
                     }
                 }
                 HStack(spacing: 0) {
-                    Text("¿Que zapatos buscas?: ")
+                    Text("¿Qué zapatos buscas?: ")
                         .font(.monserrat(weight: .regular, .size18))
+                        .foregroundStyle(Color.fontGray)
                         .frame(width: geometry.size.width / 2, alignment: tapEditarButton ? .center : .trailing)
                         .multilineTextAlignment(.trailing)
                     if tapEditarButton {
@@ -72,6 +78,7 @@ struct PerfilView: View {
                     } else {
                         Text(presenter.shoes)
                             .font(.monserrat(weight: .bold, .size18))
+                            .foregroundStyle(Color.fontGray)
                             .frame(width: geometry.size.width / 2, alignment: .leading)
                     }
                 }
@@ -81,7 +88,7 @@ struct PerfilView: View {
                 } label: {
                     Text(tapEditarButton ? "Save" : "Editar")
                         .font(.monserrat(weight: .light, .size16))
-                        .foregroundStyle(Color.fontPurple)
+                        .foregroundStyle(Color.fontGray)
                 }
                 .frame(width: 176, height: 35)
                 .background(Color.backgroundColor)

@@ -58,7 +58,7 @@ struct PaymentConfirmationView: View {
                     } label: {
                         Text("Ver status del pedido")
                             .font(.monserrat(weight: .light, .size16))
-                            .foregroundStyle(Color.fontPurple)
+                            .foregroundStyle(Color.fontGray)
                     }
                     .frame(width: 176, height: 35)
                     .background(Color.backgroundColor)

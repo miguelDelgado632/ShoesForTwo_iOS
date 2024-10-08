@@ -14,10 +14,12 @@ struct OtherUserProfileView: View {
 
   private let constants: OtherUserProfileCosntants = .init()
   private let texts: OtherUserProfileTexts = .init()
+  @EnvironmentObject var router: MatchRouter
 
   var body: some View {
     GeometryReader { geometry  in
       VStack(spacing: constants.contentSpacing) {
+        TabBarCustom(title: "", customRouter: router)
         Image(systemName: userId)
           .resizable()
           .aspectRatio(contentMode: .fit)

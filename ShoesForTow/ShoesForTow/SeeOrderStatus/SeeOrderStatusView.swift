@@ -51,7 +51,7 @@ struct SeeOrderStatusView: View {
                 } label: {
                     Text("Otro Match")
                         .font(.monserrat(weight: .light, .size16))
-                        .foregroundStyle(Color.fontPurple)
+                        .foregroundStyle(Color.fontGray)
                 }
                 .frame(width: 176, height: 35)
                 .background(Color.backgroundColor)

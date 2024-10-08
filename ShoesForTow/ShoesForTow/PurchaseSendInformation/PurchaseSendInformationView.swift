@@ -52,7 +52,7 @@ struct PurchaseSendInformationView: View {
                 } label: {
                     Text("Aceptar")
                         .font(.monserrat(weight: .light, .size16))
-                        .foregroundStyle(Color.fontPurple)
+                        .foregroundStyle(Color.fontGray)
                 }
                 .frame(width: 176, height: 35)
                 .background(Color.backgroundColor)

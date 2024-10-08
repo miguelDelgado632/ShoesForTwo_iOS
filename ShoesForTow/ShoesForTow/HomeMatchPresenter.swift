@@ -19,7 +19,7 @@ final class HomeMatchPresenter: ObservableObject {
 
   @Published var currentSelection: Int = 0
   @Published var shoeProducts: [ShoeProductElementModel] = []
-  @Published var users: [String] = []
+  @Published var users: [ShoeProductFavorite] = []
   @Published var isLoading: Bool = false
   @Published var showError: Bool = false
 
@@ -40,7 +40,7 @@ final class HomeMatchPresenter: ObservableObject {
   private func setupObservers() {
     $currentSelection
       .sink { newValue in
-        let otherUsers = self.shoeProducts[newValue].favorites.compactMap({ $0.userId })
+        let otherUsers = self.shoeProducts[newValue].favorites//.compactMap({ $0.userId })
         self.users = otherUsers
       }
       .store(in: &cancellables)

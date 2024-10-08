@@ -14,6 +14,10 @@ struct TabContainerView: View {
   @ObservedObject var presenter: TabContainerPresenter = .init(navigation: .init())
   private let texts: TabContainerTexts = .init()
 
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor(hexString: "#f1eefa")
+    }
+
   var body: some View {
       TabView(selection: $presenter.tabSelection) {
         FavoritesView()

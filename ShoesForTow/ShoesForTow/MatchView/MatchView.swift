@@ -125,7 +125,7 @@ private struct MatchViewConstants {
 }
 
 private struct MatchViewTexts {
-  var title: String { "!Hiciste Match!" }
+  var title: String { "¡Hiciste Match!" }
   var inviteTo: String { "Invita a " }
   var buyThisModel: String { " a comprar este modelo contigo" }
   var shareIn: String { "Compartir en:" }

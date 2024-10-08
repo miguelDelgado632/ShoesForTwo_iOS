@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CircularImageCarouselView: View {
-  @Binding var systemImageNames: [String] 
+  @Binding var systemImageNames: [ShoeProductFavorite]
   let action: (String) -> Void
   private let constants: CircularImageCarouselConstants = .init()
 
@@ -22,9 +22,9 @@ struct CircularImageCarouselView: View {
                 let scale = getScaleFactor(itemFrame: itemGeometry.frame(in: .global),
                                            parentSize: geometry.size)
                 Button {
-                  action(systemImageNames[index]) // replace for user ID
+                    action(systemImageNames[index].userId) // replace for user ID
                 } label: {
-                  CircularImageView(systemImageName: systemImageNames[index],
+                    CircularImageView(systemImageName: systemImageNames[index].picture,
                                     size: constants.size)
                 }
                 .scaleEffect(scale)
@@ -59,14 +59,14 @@ struct CircularImageCarouselView: View {
   }
 }
 
-#Preview {
-  @State var systemImageNames: [String] = ["star", "heart", "moon", "sun.max", "cloud"]
-  return CircularImageCarouselView(systemImageNames: $systemImageNames, action: { _ in })
-    .overlay(
-      Rectangle()
-        .frame(maxWidth: 5, maxHeight: .infinity, alignment: .center)
-    )
-}
+//#Preview {
+//  @State var systemImageNames: [String] = ["star", "heart", "moon", "sun.max", "cloud"]
+//  return CircularImageCarouselView(systemImageNames: $systemImageNames, action: { _ in })
+//    .overlay(
+//      Rectangle()
+//        .frame(maxWidth: 5, maxHeight: .infinity, alignment: .center)
+//    )
+//}
 
 fileprivate struct CircularImageCarouselConstants {
   var size: CGFloat { 50 }

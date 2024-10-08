@@ -91,7 +91,7 @@ struct ShoeProductElement: Codable {
 }
 
 // MARK: - Favorito
-struct ShoeProductFavorite: Codable {
+struct ShoeProductFavorite: Codable, Equatable {
   let productId, userId: String
   let picture: String
   

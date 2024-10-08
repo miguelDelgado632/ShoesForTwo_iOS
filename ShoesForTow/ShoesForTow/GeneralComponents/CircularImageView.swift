@@ -38,32 +38,57 @@ struct CircularImageView: View {
 
   var body: some View {
     // Image view with circular clipping and fixed size using system images
+//      VStack {
+      if isSystemImage {
+          ImageDownloaderView(imageUrl: imageName)
+              .frame(width: size, height: size)
+              .clipShape(Circle())
+              .if(addBorder) { view in
+                  view.overlay(Circle().stroke(Color.black, lineWidth: 1))
+              }
+              .if(addShadow) { view in
+                  view.shadow(radius: 5) // Optional shadow
+              }
+      } else {
+          Image(imageName)
+                 .resizable()
+                 .aspectRatio(contentMode: .fit)
+                 .frame(width: size, height: size)
+                 .clipShape(Circle())
+                 .if(addBorder) { view in
+                   view.overlay(Circle().stroke(Color.black, lineWidth: 1))
+                 }
+                 .if(addShadow) { view in
+                   view.shadow(radius: 5) // Optional shadow
+                 }
+      }
+ //     }
 
-    if isSystemImage {
-      return Image(systemName: imageName)
-        .resizable()
-        .aspectRatio(contentMode: .fit)
-        .frame(width: size, height: size)
-        .clipShape(Circle())
-        .if(addBorder) { view in
-          view.overlay(Circle().stroke(Color.black, lineWidth: 1))
-        }
-        .if(addShadow) { view in
-          view.shadow(radius: 5) // Optional shadow
-        }
-    } else {
-      return Image(imageName)
-        .resizable()
-        .aspectRatio(contentMode: .fit)
-        .frame(width: size, height: size)
-        .clipShape(Circle())
-        .if(addBorder) { view in
-          view.overlay(Circle().stroke(Color.black, lineWidth: 1))
-        }
-        .if(addShadow) { view in
-          view.shadow(radius: 5) // Optional shadow
-        }
-    }
+ //   if isSystemImage {
+ //     return Image(systemName: imageName)
+ //       .resizable()
+ //       .aspectRatio(contentMode: .fit)
+ //       .frame(width: size, height: size)
+ //       .clipShape(Circle())
+ //       .if(addBorder) { view in
+ //         view.overlay(Circle().stroke(Color.black, lineWidth: 1))
+ //       }
+ //       .if(addShadow) { view in
+ //         view.shadow(radius: 5) // Optional shadow
+ //       }
+ //   } else {
+ //     return Image(imageName)
+ //       .resizable()
+ //       .aspectRatio(contentMode: .fit)
+ //       .frame(width: size, height: size)
+ //       .clipShape(Circle())
+ //       .if(addBorder) { view in
+ //         view.overlay(Circle().stroke(Color.black, lineWidth: 1))
+ //       }
+ //       .if(addShadow) { view in
+ //         view.shadow(radius: 5) // Optional shadow
+ //       }
+ //   }
   }
 }
 

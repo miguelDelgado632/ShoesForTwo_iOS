@@ -19,8 +19,8 @@ struct PrimaryButton: View {
   var body: some View {
     Button(action: action) {
       Text(title)
-        .foregroundColor(.fontGray)
         .font(font)
+        .foregroundColor(.fontGray)
     }
     .frame(width: width, height: height, alignment: .center)
     .padding(.vertical, constants.verticalPading)
