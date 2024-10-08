@@ -45,7 +45,7 @@ struct RegisterView: View {
                         .frame(height: 35)
                         .padding(.horizontal, 30)
                         .padding(.top, 11)
-                    Text("Genero")
+                    Text("Género")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.monserrat(weight: .extraBold, .size14))
                         .padding(.top, 34)
@@ -58,7 +58,8 @@ struct RegisterView: View {
                         options: presenter.shoesSizeNumbers
                     )
                     .padding(.top, 29)
-                    Text("¿Que zapato buscas?")
+                    .padding(.horizontal, 30)
+                    Text("¿Qué zapato buscas?")
                         .frame(height: 35, alignment: .leading)
                         .font(.monserrat(weight: .extraBold, .size14))
                         .frame(maxWidth: .infinity, alignment: .leading)

@@ -68,7 +68,7 @@ extension ShoeProductModel {
           sku: product.sku,
           name: product.name,
           price: product.price,
-          images: [product.imgFirst, product.imgPortrait, product.imgSecond, product.imgThird]
+          images: [product.imgFirst, product.imgPortrait, product.imgSecond]
         ),
         favorites: favorites,
         likesId: likes
@@ -84,7 +84,7 @@ struct ShoeProductElement: Codable {
   let like: [[ShoeProductLike]]
   
   enum CodingKeys: String, CodingKey {
-    case products = "productos"
+    case products = "producto"
     case favorites = "favoritos"
     case like
   }
@@ -114,7 +114,8 @@ struct ShoeProductLike: Codable {
 // MARK: - ProductoProducto
 struct ProductShoe: Codable {
   let productId, sku, name, price: String
-  let imgPortrait, imgFirst, imgSecond, imgThird: String
+  let imgPortrait, imgFirst, imgSecond: String
+  let imgThird: String?
   
   enum CodingKeys: String, CodingKey {
     case productId = "id_producto"

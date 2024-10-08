@@ -24,7 +24,7 @@ struct CheckTermsAndConditions: View {
             Button {
                 
             } label: {
-                Text("Terminos y Condiciones")
+                Text("Términos y condiciones")
                     .font(.monserrat(weight: .light, .size14))
                     .underline()
                     .foregroundStyle(Color.fontGray)

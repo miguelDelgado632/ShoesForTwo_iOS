@@ -117,14 +117,19 @@ struct HomeMatchView: View {
           router2.navigateToRoot()
           router2.tabView = false
       }, label: {
-        CircularImageView(imageName: "icono_like",
-                          size: constants.mainButtonsSize,
-                          addBorder: false)
-//        CircularImageView(imageName: presenter.shoes[presenter.currentSelection].liked ?
-//                          "icono_like" :
-//                            "icono_like_relleno",
-//                          size: constants.mainButtonsSize,
-//                          addBorder: false)
+          VStack {
+              CircularImageView(imageName: "icono_like",
+                                size: constants.mainButtonsSize,
+                                addBorder: false)
+              //        CircularImageView(imageName: presenter.shoes[presenter.currentSelection].liked ?
+              //                          "icono_like" :
+              //                            "icono_like_relleno",
+              //                          size: constants.mainButtonsSize,
+              //                          addBorder: false)
+              Text("Like")
+                  .font(Font.monserrat(weight: .regular, .size14))
+                  .foregroundStyle(Color.fontGray)
+          }
 
       })
       .buttonStyle(.plain)
@@ -132,9 +137,14 @@ struct HomeMatchView: View {
       Button(action: {
         router.navigate(to: .matchView)
       }, label: {
-        CircularImageView(imageName: "icono_match_circular",
-                          size: constants.mainButtonsSize,
-                          addBorder: false)
+          VStack {
+              CircularImageView(imageName: "icono_match_circular",
+                                size: constants.mainButtonsSize,
+                                addBorder: false)
+              Text("Match")
+                  .font(Font.monserrat(weight: .regular, .size14))
+                  .foregroundStyle(Color.fontGray)
+          }
       })
       .buttonStyle(.plain)
       Spacer()

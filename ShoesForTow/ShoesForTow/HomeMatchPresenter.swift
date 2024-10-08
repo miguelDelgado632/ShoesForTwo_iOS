@@ -52,26 +52,26 @@ final class HomeMatchPresenter: ObservableObject {
       .receive(on: DispatchQueue.main)
       .compactMap { $0.data?.mapToShoeProductElementModel() }
       .sink { completion in
-//          switch completion {
-//          case .finished:
-//              print("Finished")
-//              self.handleError()
-//          case .failure(let failure):
-//              if let error = failure as? NetworkError {
-//                  switch error {
-//                  case .invalidResponse(let errorRequest):
-//                      self.errorText = errorRequest.message
-//                  default:
-//                      break
-//                  }
-//              }
-//              self.handleError()
-//          }
+          switch completion {
+          case .finished:
+              print("Finished")
+         //     self.handleError()
+          case .failure(let failure):
+              if let error = failure as? NetworkError {
+                  switch error {
+                  case .invalidResponse(let errorRequest):
+                      self.errorText = errorRequest.message
+                  default:
+                      break
+                  }
+              }
+              self.handleError()
+          }
         self.isLoading = false
-        self.shoeProducts = .mockedData() // TODO: - REMOVE THIS WHEN SUCCESS
       } receiveValue: { shoeProducts in
         self.shoeProducts = shoeProducts
         self.setupObservers()
+        self.isLoading = false
       }
       .store(in: &cancellables)
   }
