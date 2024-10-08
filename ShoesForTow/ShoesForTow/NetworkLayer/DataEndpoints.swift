@@ -18,7 +18,7 @@ enum DataEndpoint: APIEndpoint {
   case purchaseInfo
   case paymentConfirmation
   case otherUserProfile
-  case likes
+  case favorites(LikesProductRequestModel)
 
   //MARK: - PROFILE
   case profile
@@ -46,8 +46,8 @@ enum DataEndpoint: APIEndpoint {
       return ""
     case .otherUserProfile:
       return ""
-    case .likes:
-      return ""
+    case .favorites:
+      return "/favoritos"
     case .profile:
       return ""
     case .shoppingCart:
@@ -74,6 +74,8 @@ enum DataEndpoint: APIEndpoint {
     case .register(let data):
         return convertToURLQueryItems(from: data)
     case .productsInfo(let data):
+      return convertToURLQueryItems(from: data)
+    case .favorites(let data):
       return convertToURLQueryItems(from: data)
     default:
       return nil

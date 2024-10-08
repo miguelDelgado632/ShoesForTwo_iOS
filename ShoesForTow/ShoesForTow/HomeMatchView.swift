@@ -108,24 +108,21 @@ struct HomeMatchView: View {
     }
     .frame(height: constants.shoeSelectorHeight)
   }
-
+//presenter.shoeProducts[presenter.currentSelection].likesId.isEmpty
   private var mainButtonView: some View {
     HStack {
       Spacer()
       Button(action: {
-          UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userID.rawValue)
-          router2.navigateToRoot()
-          router2.tabView = false
+//          UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userID.rawValue)
+//          router2.navigateToRoot()
+//          router2.tabView = false
+          presenter.fetchLikes()
+          
       }, label: {
           VStack {
-              CircularImageView(imageName: "icono_like",
-                                size: constants.mainButtonsSize,
-                                addBorder: false)
-              //        CircularImageView(imageName: presenter.shoes[presenter.currentSelection].liked ?
-              //                          "icono_like" :
-              //                            "icono_like_relleno",
-              //                          size: constants.mainButtonsSize,
-              //                          addBorder: false)
+              CircularImageView(imageName: presenter.likesFromUser[presenter.currentSelection]  ? "icono_like_relleno" : "icono_like",
+                                        size: constants.mainButtonsSize,
+                                        addBorder: false)
               Text("Like")
                   .font(Font.monserrat(weight: .regular, .size14))
                   .foregroundStyle(Color.fontGray)

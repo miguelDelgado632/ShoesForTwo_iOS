@@ -16,6 +16,11 @@ final class HomeMatchService {
       apiClient.request(.productsInfo(ProductsInfoRequestModel(userId: UserDefaults.standard.getUserID(), filterType: type.rawValue)))
       .eraseToAnyPublisher()
   }
+
+    func fectchLikes(idProduct: String) -> AnyPublisher<Response<ShoeProductModel>, Error> {
+        apiClient.request(.favorites(LikesProductRequestModel(userId: UserDefaults.standard.getUserID(), idProducto: idProduct)))
+        .eraseToAnyPublisher()
+    }
 }
 
 
@@ -28,3 +33,16 @@ struct ProductsInfoRequestModel: Encodable {
     case filterType = "tipo"
   }
 }
+
+// MARK: - LIKES RESPONSE
+
+struct LikesProductRequestModel: Encodable {
+  let userId: String
+  let idProducto: String
+
+  enum CodingKeys: String, CodingKey {
+    case userId = "id_user"
+    case idProducto = "id_producto"
+  }
+}
+
