@@ -25,7 +25,8 @@ struct MatchShoeDetailView: View {
         Text(name)
           .font(.monserrat(weight: .regular, .size12))
         CircularImageView(systemImageName: userImage,
-                          size: componentSize * constants.userImageSizeMultiplier)
+                          size: componentSize * constants.userImageSizeMultiplier,
+                          addBorder: false)
       }
       .offset(y: componentSize * constants.userImageOffsetMultiplier)
 

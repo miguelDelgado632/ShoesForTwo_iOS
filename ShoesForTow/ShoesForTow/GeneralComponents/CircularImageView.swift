@@ -47,7 +47,7 @@ struct CircularImageView: View {
                   view.overlay(Circle().stroke(Color.black, lineWidth: 1))
               }
               .if(addShadow) { view in
-                  view.shadow(radius: 5) // Optional shadow
+                  view.shadow(radius: 0) // Optional shadow
               }
       } else {
           Image(imageName)
@@ -59,7 +59,7 @@ struct CircularImageView: View {
                    view.overlay(Circle().stroke(Color.black, lineWidth: 1))
                  }
                  .if(addShadow) { view in
-                   view.shadow(radius: 5) // Optional shadow
+                   view.shadow(radius: 0) // Optional shadow
                  }
       }
  //     }

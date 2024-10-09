@@ -27,7 +27,7 @@ struct SetPerfilImageView: View {
                 } else {
                     Image("icono_photo_perfil")
                         .resizable()
-                        .clipShape(Circle())
+                        //.clipShape(Circle())
                         .frame(width: 45, height: 45)
                 }
                 Text("Subir Foto")

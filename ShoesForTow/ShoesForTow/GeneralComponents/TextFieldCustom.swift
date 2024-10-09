@@ -15,10 +15,12 @@ struct TextFieldCustom: View {
     var body: some View {
         VStack {
             TextField(nameTextField, text: $text)
+                .padding(.leading, 10)
+                .frame(height: 35)
                 .font(.monserrat(weight: .light, .size16))
+                .background(Color.backColor)
                 .foregroundStyle(Color.fontGray)
-                .border(Color.fontGray)
-                .textFieldStyle(.roundedBorder)
+                .border(Color.fontGray, width: 0.7)
         }
     }
 }

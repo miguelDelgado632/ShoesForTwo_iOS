@@ -20,7 +20,7 @@ struct MatchView: View {
       VStack(alignment: .center, spacing: constants.contentVSpacing) {
           TabBarCustom(title: texts.title,
                        showBack: false,
-                       titleFont: .monserrat(weight: .regular, .size16))
+                       titleFont: .monserrat(weight: .regular, .size20))
 
         HStack(alignment: .center, spacing: constants.shoesMatchSpacing) {
           MatchShoeDetailView(name: "usuario 1",

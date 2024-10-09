@@ -19,11 +19,11 @@ struct SeeOrderStatusView: View {
         VStack {
             switch arriveTo {
             case .MyOrders:
-                TabBarCustom(title: "Segumiento de pago")
+                TabBarCustom(title: "Seguimiento de pago")
             case .PaymentConfirmation:
-                Text("Segumiento de pago")
+                Text("Seguimiento de pago")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.monserrat(weight: .extraBold, .size16))
+                    .font(.monserrat(weight: .semiBold, .size16))
                     .foregroundStyle(Color.fontRed)
                     .padding(.horizontal, 30)
             }
@@ -43,7 +43,7 @@ struct SeeOrderStatusView: View {
                 .resizable()
                 .frame(maxWidth: .infinity)
                 .frame(height: 19)
-                .padding(.horizontal, 30)
+                .padding(.horizontal, 60)
                 .padding(.top, 60)
             if arriveTo == .PaymentConfirmation {
                 Button {

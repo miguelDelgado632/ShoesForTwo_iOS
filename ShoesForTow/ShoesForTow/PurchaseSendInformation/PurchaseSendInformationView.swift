@@ -18,7 +18,7 @@ struct PurchaseSendInformationView: View {
             VStack {
                 Text("Datos de envío")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.monserrat(weight: .extraBold, .size16))
+                    .font(.monserrat(weight: .semiBold, .size16))
                     .foregroundStyle(Color.fontRed)
                     .padding(.horizontal, 30)
                 VStack(spacing: 11) {
@@ -33,7 +33,7 @@ struct PurchaseSendInformationView: View {
                 .padding(.horizontal, 30)
                 Text("Datos de pago")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.monserrat(weight: .extraBold, .size16))
+                    .font(.monserrat(weight: .semiBold, .size16))
                     .foregroundStyle(Color.fontRed)
                     .padding(.top, 36)
                     .padding(.horizontal, 30)

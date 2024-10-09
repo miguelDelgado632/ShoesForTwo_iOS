@@ -37,7 +37,7 @@ struct ShowGenderRegister: View {
                     }
                 }
             }
-           // Spacer()
+            Spacer()
         }
         .frame(alignment: .leading)
     }

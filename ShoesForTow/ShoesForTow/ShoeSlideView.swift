@@ -30,9 +30,11 @@ struct ShoeSlideView: View {
 
             VStack(spacing: .zero) {
               Text(shoe.product.name)
-                .font(.monserrat(weight: .medium, .size20))
+                .font(.monserrat(weight: .regular, .size20))
+                .foregroundStyle(Color.fontGray)
               Text("$\(shoe.product.price)")
-                .font(.monserrat(weight: .medium, .size20))
+                .font(.monserrat(weight: .regular, .size20))
+                .foregroundStyle(Color.fontGray)
             }
           }
           .offset(y: constants.contentOffset)

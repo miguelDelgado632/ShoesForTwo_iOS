@@ -14,40 +14,42 @@ struct RegisterView: View {
     @ObservedObject var presenter: RegisterPresenter = .init()
     
     var body: some View {
-        ScrollView {
-            ZStack {
+        ZStack {
+            Color.backColor
+                .ignoresSafeArea()
+            ScrollView {
                 VStack {
-                    TabBarCustom(title: "Crear cuenta")
+                    TabBarCustom(title: "")
+                    Text("Crear cuenta")
+                        .font(.monserrat(weight: .semiBold, .size16))
+                        .foregroundStyle(Color.fontRed)
+                        .padding(.top, 20)
                     TextFieldCustom(nameTextField: "Nombres", text: $presenter.name)
-                        .padding(.top, 35)
+                        .padding(.top, 30)
                         .padding(.horizontal, 30)
                     TextFieldCustom(nameTextField: "Apellidos", text: $presenter.apellido)
-                        .padding(.top, 11)
+                        .padding(.top, 6)
                         .padding(.horizontal, 30)
-                    TextField("Correo", text: $presenter.email)
-                        .font(.monserrat(weight: .light, .size16))
+                    TextFieldCustom(nameTextField: "Correo", text: $presenter.email)
                         .textContentType(.emailAddress)       // !IMPORTANT FOR EMAILS
                         .disableAutocorrection(true)          // !IMPORTANT FOR EMAILS
                         .textInputAutocapitalization(.never)  // !IMPORTANT FOR EMAILS
-                        .font(.monserrat(weight: .light, .size16))
-                        .foregroundStyle(Color.fontGray)
-                        .border(Color.fontGray)
-                        .textFieldStyle(.roundedBorder)
+                        .padding(.top, 6)
                         .padding(.horizontal, 30)
-                        .frame(height: 35)
-                        .padding(.top, 11)
                     SecureField("Contraseña", text: $presenter.password)
-                        .font(.monserrat(weight: .light, .size16))
-                        .foregroundStyle(Color.fontGray)
-                        .border(Color.fontGray)
-                        .textFieldStyle(.roundedBorder)
-                        .textContentType(.password)
+                        .padding(.leading, 10)
                         .frame(height: 35)
+                        .font(.monserrat(weight: .light, .size16))
+                        .background(Color.backColor)
+                        .foregroundStyle(Color.fontGray)
+                        .border(Color.fontGray, width: 0.7)
+                        .textContentType(.password)
                         .padding(.horizontal, 30)
-                        .padding(.top, 11)
+                        .padding(.top, 6)
                     Text("Género")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.monserrat(weight: .extraBold, .size14))
+                        .foregroundStyle(Color.fontGray)
                         .padding(.top, 34)
                         .padding(.horizontal, 30)
                     ShowGenderRegister(genders: .constant(["Hombre", "Mujer", "Otro"]),
@@ -63,6 +65,7 @@ struct RegisterView: View {
                         .frame(height: 35, alignment: .leading)
                         .font(.monserrat(weight: .extraBold, .size14))
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundStyle(Color.fontGray)
                         .padding(.horizontal, 30)
                         .padding(.top, 34)
                     ShowGenderRegister(genders: .constant(["Izquierdo", "Derecho"]),
@@ -97,10 +100,10 @@ struct RegisterView: View {
                     Text(presenter.errorText)
                 }
                 if presenter.isLoading {
-                  ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle())
-                    .scaleEffect(1.5)
-                    .padding()
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .scaleEffect(1.5)
+                        .padding()
                 }
             }
         }

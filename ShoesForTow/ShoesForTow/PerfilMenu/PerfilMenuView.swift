@@ -56,12 +56,12 @@ struct ImageTextMenu: View {
                 Button {
                   action(PerfilMenuData.allCases[index].destination)
                 } label: {
-                    HStack(spacing: 33) {
+                    HStack(spacing: 30) {
                         Image(imagesName[index])
                             .resizable()
-                            .frame(width: 60, height: 60)
+                            .frame(width: 50, height: 50)
                         Text(PerfilMenuData.allCases[index].rawValue)
-                            .font(.monserrat(weight: .regular, .size14))
+                            .font(.monserrat(weight: .regular, .size16))
                             .foregroundStyle(Color.fontGray)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)

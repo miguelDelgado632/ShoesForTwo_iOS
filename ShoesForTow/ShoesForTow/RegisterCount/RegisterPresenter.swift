@@ -117,7 +117,7 @@ final class RegisterPresenter: ObservableObject {
 }
 
 fileprivate struct SizeNumbersGender {
-  var hombre: [String] { ["25","25.5","26","26.5","27","27.5","28","28.5","29","29.5","30"] }
-  var mujer: [String] { ["22", "22.5", "23", "23.5","24","24.5","25","25.5","26","26.5","27"] }
-  var otro: [String] { ["22", "22.5", "23", "23.5","24","24.5","25","25.5","26","26.5","27","27.5","28","28.5","29","29.5","30"] }
+  var hombre: [String] { ["24 cm","24.5 cm","25 cm","25.5 cm","26 cm","26.5 cm","27 cm","27.5 cm","28 cm","28.5 cm","29 cm","29.5 cm","30 cm"] }
+  var mujer: [String] { ["22 cm", "22.5 cm", "23 cm", "23.5 cm","24 cm","24.5 cm","25 cm","25.5 cm","26 cm","26.5 cm","27 cm"] }
+  var otro: [String] { ["22 cm", "22.5 cm", "23 cm", "23.5 cm","24 cm","24.5 cm","25 cm","25.5 cm","26 cm","26.5 cm","27 cm","27.5 cm","28 cm","28.5 cm","29 cm","29.5 cm","30 cm"] }
 }

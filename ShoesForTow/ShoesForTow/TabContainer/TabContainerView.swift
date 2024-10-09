@@ -40,6 +40,7 @@ struct TabContainerView: View {
           .tag(3)
       }
       .navigationBarBackButtonHidden()
+      .padding(.top, 10)
       .accentColor(.fontPurple)
       .environmentObject(matchRouter)
       .environmentObject(profileRouter)

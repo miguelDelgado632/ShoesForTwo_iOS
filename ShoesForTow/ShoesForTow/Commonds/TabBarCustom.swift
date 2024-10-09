@@ -17,7 +17,7 @@ struct TabBarCustom: View {
 
   init(title: String,
        showBack: Bool = true,
-       titleFont: Font = .monserrat(weight: .extraBold, .size16),
+       titleFont: Font = .monserrat(weight: .semiBold, .size16),
        customRouter: (any RouterProtocol)? = nil) {
     self.title = title
     self.showBack = showBack
@@ -38,6 +38,7 @@ struct TabBarCustom: View {
                 Image(systemName: "chevron.backward")
                     .resizable()
                     .frame(width: 15, height: 25)
+                    .fontWeight(.ultraLight)
                     .aspectRatio(contentMode: .fit)
                     .foregroundStyle(Color.fontGray)
             }
@@ -49,7 +50,7 @@ struct TabBarCustom: View {
             Spacer()
             Rectangle()
                 .frame(width: 20, height: 20)
-                .foregroundStyle(Color.white)
+                .foregroundStyle(Color.backColor)
             
         }
         .frame(maxWidth: .infinity)

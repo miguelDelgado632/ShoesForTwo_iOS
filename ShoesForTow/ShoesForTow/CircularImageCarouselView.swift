@@ -25,7 +25,8 @@ struct CircularImageCarouselView: View {
                     action(systemImageNames[index].userId) // replace for user ID
                 } label: {
                     CircularImageView(systemImageName: systemImageNames[index].picture,
-                                    size: constants.size)
+                                    size: constants.size,
+                                    addBorder: false)
                 }
                 .scaleEffect(scale)
                 .animation(.spring(), value: scale) // Animate the scaling effect
@@ -69,7 +70,7 @@ struct CircularImageCarouselView: View {
 //}
 
 fileprivate struct CircularImageCarouselConstants {
-  var size: CGFloat { 50 }
+  var size: CGFloat { 45 }
   var maxScale: CGFloat { 1.5 }
   var maxHeight: CGFloat { 80 }
   var hStackSpacing: CGFloat { 30 }

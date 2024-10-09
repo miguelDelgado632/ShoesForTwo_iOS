@@ -23,9 +23,11 @@ struct InvitationsView: View {
               VStack(spacing: 5) {
                 Text("Rogelio Cruz")
                   .font(.monserrat(weight: .semiBold, .size14))
+                  .foregroundStyle(Color.fontGray)
                   .frame(maxWidth: .infinity, alignment: .leading)
                 Text("Converse 1")
                   .font(.monserrat(weight: .regular, .size14))
+                  .foregroundStyle(Color.fontGray)
                   .frame(maxWidth: .infinity, alignment: .leading)
                 PrimaryButton(action: {
 

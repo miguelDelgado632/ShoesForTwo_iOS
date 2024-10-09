@@ -11,34 +11,37 @@ struct LoginView: View {
     
     @EnvironmentObject var router: Router
     @ObservedObject var presenter: LoginViewPresenter = .init()
-    
+  
     var body: some View {
             ZStack {
+                Color.backColor
                 VStack {
                     Image("logoLogin_icon")
                         .resizable()
                         .frame(width: 137, height: 160)
                         .padding(.bottom, 64)
-                    VStack(spacing: 10) {
+                    VStack(spacing: 6) {
                         TextField("Correo", text: $presenter.email)
+                            .padding(.leading, 10)
+                            .frame(height: 35)
                             .font(.monserrat(weight: .light, .size16))
+                            .background(Color.backColor)
+                            .border(Color.fontGray, width: 0.7)
                             .textContentType(.emailAddress)       // !IMPORTANT FOR EMAILS
                             .disableAutocorrection(true)          // !IMPORTANT FOR EMAILS
                             .textInputAutocapitalization(.never)  // !IMPORTANT FOR EMAILS
-                            .font(.monserrat(weight: .light, .size16))
                             .foregroundStyle(Color.fontGray)
-                            .border(Color.fontGray)
-                            .textFieldStyle(.roundedBorder)
-                            .frame(height: 35)
                             .padding(.top, 11)
                             .padding(.horizontal, 30)
+                            
                         SecureField("Contraseña", text: $presenter.password)
-                            .font(.monserrat(weight: .light, .size16))
-                            .foregroundStyle(Color.fontGray)
-                            .border(Color.fontGray)
-                            .textFieldStyle(.roundedBorder)
-                            .textContentType(.password)
+                            .padding(.leading, 10)
                             .frame(height: 35)
+                            .font(.monserrat(weight: .light, .size16))
+                            .background(Color.backColor)
+                            .border(Color.fontGray, width: 0.7)
+                            .foregroundStyle(Color.fontGray)
+                            .textContentType(.password)
                             .padding(.top, 11)
                             .padding(.horizontal, 30)
                     }
@@ -70,7 +73,7 @@ struct LoginView: View {
                     
                     Spacer()
                 }
-                .padding(.top, 40)
+                .padding(.top, 130)
                 .alert("Alerta", isPresented: $presenter.showError) {
                     Button("OK") {}
                 } message: {
@@ -85,6 +88,7 @@ struct LoginView: View {
                         .padding()
                 }
             }
+            .ignoresSafeArea()
             .onAppear {
                 if !UserDefaults.standard.getUserID().isEmpty {
                     router.tabView = true

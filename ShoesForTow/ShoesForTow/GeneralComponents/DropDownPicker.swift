@@ -22,7 +22,7 @@ struct DropDownPicker: View {
     
     var body: some View {
         GeometryReader {
-            let size = $0.size
+            let _ = $0.size
             
             VStack(spacing: 0) {
                 ScrollView {
@@ -32,7 +32,7 @@ struct DropDownPicker: View {
                 }
                 
                 HStack {
-                    Text(selection == nil ? "Select" : selection!)
+                    Text(selection == nil ? "Talla de calzado" : selection!)
                         .font(.monserrat(weight: .light, .size16))
                         .foregroundColor(Color.fontGray)
                     
@@ -46,7 +46,8 @@ struct DropDownPicker: View {
                 }
                 .padding(.horizontal, 15)
                 .frame(width: maxWidth, height: 35)
-                .background(.white)
+                .foregroundStyle(Color.fontGray)
+                .background(Color.backColor)
                 .contentShape(.rect)
                 .onTapGesture {
                     index += 1
@@ -65,11 +66,11 @@ struct DropDownPicker: View {
                 .frame(height: tapButton ? 100 : 40, alignment: state == .top ? .bottom : .top)
             }
             .clipped()
-            .background(.white)
+            .background(Color.backColor)
             .overlay {
                 RoundedRectangle(cornerRadius: 0)
                     .stroke(Color.white)
-                    .border(Color.fontGray)
+                    .border(Color.fontGray, width: 0.7)
             }
             .frame(height:  tapButton ? 100 : 40, alignment: state == .top ? .bottom : .top)
             //.frame(height: size.height, alignment: state == .top ? .bottom : .top)
