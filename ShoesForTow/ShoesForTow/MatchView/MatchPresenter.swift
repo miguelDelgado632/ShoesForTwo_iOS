@@ -6,10 +6,61 @@
 //
 
 import SwiftUI
+import Combine
 
 final class MatchPresenter: ObservableObject {
 
-  init() { }
+    @Published var isLoading: Bool = false
+    @Published var showError: Bool = false
+    @Published var userOne: UserMatchDataModel?
+    @Published var userTwo: UserMatchDataModel?
+    
+    private let service: MatchService = .init()
+    var productId: String
+    var errorText: String = ""
+    private var cancellables: Set<AnyCancellable> = .init()
+    
+
+  init(productId: String) {
+      self.productId = productId
+      getData()
+  }
+
+    private func getData() {
+      isLoading = true
+      service.getData(idProduct: productId)
+        .receive(on: DispatchQueue.main)
+        .sink { [weak self] completion in
+            guard let self = self else { return }
+            switch completion {
+            case .finished:
+                print("Finished")
+            case .failure(let failure):
+                if let error = failure as? NetworkError {
+                    switch error {
+                    case .invalidResponse(let errorRequest):
+                        self.errorText = errorRequest.message
+                    default:
+                        break
+                    }
+                }
+                self.handleError()
+            }
+          self.isLoading = false
+        } receiveValue: { [weak self] users in
+          guard let self = self else { return }
+            print("USERS MATCH \(users)")
+            userOne = users.data?.matches.compactMap({ $0.userOne }).first
+            userTwo = users.data?.matches.compactMap({ $0.userTwo }).first
+           self.isLoading = false
+        }
+        .store(in: &cancellables)
+    }
+
+      private func handleError() {
+        showError = true
+        isLoading = false
+      }
 
   func goToSharedInWhatsApp(network: SharedNetwork) {
     let message = "First Whatsapp Share & https://www.google.co.in"

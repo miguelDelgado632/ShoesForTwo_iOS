@@ -14,7 +14,7 @@ enum DataEndpoint: APIEndpoint {
 
   // MARK: - MATCH
   case productsInfo(ProductsInfoRequestModel)
-  case inviteMatch
+  case inviteMatch(LikesProductRequestModel)
   case purchaseInfo
   case paymentConfirmation
   case otherUserProfile
@@ -39,7 +39,7 @@ enum DataEndpoint: APIEndpoint {
     case .productsInfo:
       return "/productos"
     case .inviteMatch:
-      return ""
+      return "/match"
     case .purchaseInfo:
       return ""
     case .paymentConfirmation:
@@ -76,6 +76,8 @@ enum DataEndpoint: APIEndpoint {
     case .productsInfo(let data):
       return convertToURLQueryItems(from: data)
     case .favorites(let data):
+      return convertToURLQueryItems(from: data)
+    case .inviteMatch(let data):
       return convertToURLQueryItems(from: data)
     default:
       return nil

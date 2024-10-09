@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 public enum MatchDestination: Encodable, Hashable {
-  case matchView
+  case matchView(String)
   case otherUserProfile(String)
   case purchaseSendInformationView(String)
   case completePurchase(String)

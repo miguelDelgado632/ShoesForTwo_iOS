@@ -23,12 +23,15 @@ final class HomeMatchPresenter: ObservableObject {
   @Published var users: [ShoeProductFavorite] = []
   @Published var isLoading: Bool = false
   @Published var showError: Bool = false
+  @Published var productId: String = ""
 
   private var currentFilter: HomeMatchFilterType = .all
   private var cancellables: Set<AnyCancellable> = .init()
   private let service: HomeMatchService = .init()
 
   var errorText: String = ""
+
+ 
 
   init() {
     getData()
@@ -44,13 +47,14 @@ final class HomeMatchPresenter: ObservableObject {
       .sink { newValue in
         let otherUsers = self.shoeProducts[newValue].favorites//.compactMap({ $0.userId })
         self.users = otherUsers
+        self.productId = self.shoeProducts[self.currentSelection].product.productId
       }
       .store(in: &cancellables)
   }
 
   func fetchLikes() {
     isLoading = true
-      let productId = shoeProducts[currentSelection].product.productId
+      //let productId = shoeProducts[currentSelection].product.productId
       service.fectchLikes(idProduct: productId)
           .receive(on: DispatchQueue.main)
           .sink { [weak self] completion in

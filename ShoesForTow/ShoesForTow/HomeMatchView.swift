@@ -15,56 +15,61 @@ struct HomeMatchView: View {
   private let texts: HomeTexts = .init()
   private let constants: HomeConstants = .init()
 
-  var body: some View {
-    NavigationStack(path: $router.navPath) {
-      ZStack {
-
-        if presenter.isLoading {
-          ProgressView()
-            .progressViewStyle(CircularProgressViewStyle())
-            .scaleEffect(1.5)
-            .padding()
-        } else if !presenter.shoeProducts.isEmpty {
-          VStack(alignment: .center, spacing: .zero) {
-            filtersView
-            Spacer()
-            shoeSelectorView
-            Spacer()
-            mainButtonView
-            Spacer()
-          }
-          .alert("Alerta", isPresented: $presenter.showError) {
-                    Button("OK") {}
-                } message: {
-                    Text(presenter.errorText)
+    var body: some View {
+        ZStack {
+            Color.red
+                .ignoresSafeArea()
+        NavigationStack(path: $router.navPath) {
+            ZStack {
+                if presenter.isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .scaleEffect(1.5)
+                        .padding()
+                } else if !presenter.shoeProducts.isEmpty {
+                    VStack(alignment: .center, spacing: .zero) {
+                        filtersView
+                        Spacer()
+                        shoeSelectorView
+                        Spacer()
+                        mainButtonView
+                        Spacer()
+                    }
+                    .background(Color.backColor)
+                    .alert("Alerta", isPresented: $presenter.showError) {
+                        Button("OK") {}
+                    } message: {
+                        Text(presenter.errorText)
+                    }
+                    if presenter.isLoading {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .scaleEffect(1.5)
+                            .padding()
+                    }
+                    
                 }
-            if presenter.isLoading {
-              ProgressView()
-                .progressViewStyle(CircularProgressViewStyle())
-                .scaleEffect(1.5)
-                .padding()
             }
-            
+            .navigationDestination(for: MatchDestination.self) { destination in
+                switch destination {
+                case .matchView(let userId):
+                    let presenter = MatchPresenter(productId: userId)
+                    MatchView(presenter: presenter)
+                case .otherUserProfile(let userId):
+                    OtherUserProfileView(userId: userId, data: .testData())
+                case .completePurchase(let shoeName):
+                    CompletePurchaseView(shoeName: shoeName)
+                case .purchaseSendInformationView(let shoeName):
+                    PurchaseSendInformationView(shoeName: shoeName)
+                case .paymentConfirmation(let shoeName):
+                    PaymentConfirmationView(shoeName: shoeName)
+                case .seeOrderStatus(let shoeName, let arriveTo):
+                    SeeOrderStatusView(shoeName: shoeName, arriveTo: arriveTo)
+                }
+            }
         }
-      }
-      .navigationDestination(for: MatchDestination.self) { destination in
-        switch destination {
-        case .matchView:
-          MatchView()
-        case .otherUserProfile(let userId):
-          OtherUserProfileView(userId: userId, data: .testData())
-        case .completePurchase(let shoeName):
-          CompletePurchaseView(shoeName: shoeName)
-        case .purchaseSendInformationView(let shoeName):
-          PurchaseSendInformationView(shoeName: shoeName)
-        case .paymentConfirmation(let shoeName):
-          PaymentConfirmationView(shoeName: shoeName)
-        case .seeOrderStatus(let shoeName, let arriveTo):
-          SeeOrderStatusView(shoeName: shoeName, arriveTo: arriveTo)
-        }
-      }
+        .navigationViewStyle(.stack)
     }
-    .navigationViewStyle(.stack)
   }
 
   private var filtersView: some View {
@@ -132,7 +137,7 @@ struct HomeMatchView: View {
       .buttonStyle(.plain)
       Spacer()
       Button(action: {
-        router.navigate(to: .matchView)
+          router.navigate(to: .matchView(presenter.productId))
       }, label: {
           VStack {
               CircularImageView(imageName: "icono_match_circular",

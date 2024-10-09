@@ -11,6 +11,7 @@ struct MatchShoeDetailView: View {
   let name: String
   let userImage: String
   let shoeImage: TestImages
+  var shoeImageURL: String? = nil
   var shoeName: String? = nil
   var shoePrice: String? = nil
   let backgroundColor: Color
@@ -30,7 +31,8 @@ struct MatchShoeDetailView: View {
       }
       .offset(y: componentSize * constants.userImageOffsetMultiplier)
 
-      ShoeDetailView(image: shoeImage,
+        ShoeDetailView(image: shoeImage,
+                       imageUrl: shoeImageURL,
                      name: shoeName,
                      price: shoePrice,
                      backgroundColor: backgroundColor,

@@ -28,6 +28,7 @@ struct TabContainerView: View {
           .tag(1)
 
         HomeMatchView()
+          .background(Color.red)
           .tabItem {
             makeTabItem(icon: "icono_match", title: texts.matchTitle)
           }
@@ -40,6 +41,7 @@ struct TabContainerView: View {
           .tag(3)
       }
       .navigationBarBackButtonHidden()
+      .background(Color.red)
       .padding(.top, 10)
       .accentColor(.fontPurple)
       .environmentObject(matchRouter)

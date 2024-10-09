@@ -10,7 +10,7 @@ import SwiftUI
 struct ShoeDetailView: View {
 
   let image: TestImages
-  //  let image: String
+  var imageUrl: String? = nil
   var name: String?
   var side: String?
   var price: String?
@@ -27,10 +27,17 @@ struct ShoeDetailView: View {
 
   var body: some View {
     VStack(alignment: .center, spacing: .zero) {
-      Image(image.rawValue)
-        .resizable()
-        .aspectRatio(contentMode: .fit)
-        .frame(width: imageSize, height: imageSize)
+    
+        if let imageUrl = imageUrl {
+            ImageDownloaderView(imageUrl: imageUrl)
+            .frame(width: imageSize, height: imageSize)
+            .clipShape(Circle())
+        } else {
+            Image(image.rawValue)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: imageSize, height: imageSize)
+        }
 
       VStack(spacing: .zero) {
         if let name = name {
@@ -59,5 +66,5 @@ struct ShoeDetailView: View {
 }
 
 #Preview {
-  ShoeDetailView(image: .rightShoeTest)
+    ShoeDetailView(image: .rightShoeTest, imageUrl: "")
 }

@@ -29,6 +29,7 @@ struct ShoesForTowApp: App {
       .environmentObject(router)
       .fullScreenCover(isPresented: $router.tabView) {
         TabContainerView()
+        .background(Color.backColor)
         .environmentObject(router)
       }
     }
