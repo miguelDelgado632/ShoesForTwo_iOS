@@ -113,6 +113,8 @@ struct FrameGetter: ViewModifier {
     @Binding var frame: CGRect
     
     func body(content: Content) -> some View {
+        Color.backColor
+            .ignoresSafeArea()
         content
             .background(
                 GeometryReader { proxy -> AnyView in

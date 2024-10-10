@@ -17,6 +17,8 @@ struct MatchView: View {
     
     var body: some View {
         ZStack {
+            Color.backColor
+                .ignoresSafeArea()
             if presenter.isLoading {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
@@ -98,6 +100,7 @@ struct MatchView: View {
                         }
                         Spacer()
                     }
+                    .background(Color.backColor)
                     .navigationBarBackButtonHidden()
                 }
                 .navigationBarBackButtonHidden()

@@ -20,11 +20,13 @@ struct MatchInvitationView: View {
     var body: some View {
       GeometryReader { geometry in
         ZStack {
+            Color.backColor
+                .ignoresSafeArea()
           Rectangle()
             .frame(maxWidth: .infinity)
             .frame(height: constants.backgroundHeight)
-            .border(Color.fontGray)
-            .foregroundStyle(Color.white)
+            .border(Color.fontGray, width: 0.7)
+            .foregroundStyle(Color.backColor)
             .padding(.horizontal, constants.backgroudHorizontalPadding)
 
           VStack {

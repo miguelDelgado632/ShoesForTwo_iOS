@@ -16,11 +16,10 @@ struct HomeMatchView: View {
   private let constants: HomeConstants = .init()
 
     var body: some View {
-        ZStack {
-            Color.red
-                .ignoresSafeArea()
         NavigationStack(path: $router.navPath) {
             ZStack {
+                Color.backColor
+                    .ignoresSafeArea()
                 if presenter.isLoading {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle())
@@ -40,12 +39,6 @@ struct HomeMatchView: View {
                         Button("OK") {}
                     } message: {
                         Text(presenter.errorText)
-                    }
-                    if presenter.isLoading {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle())
-                            .scaleEffect(1.5)
-                            .padding()
                     }
                     
                 }
@@ -69,7 +62,6 @@ struct HomeMatchView: View {
             }
         }
         .navigationViewStyle(.stack)
-    }
   }
 
   private var filtersView: some View {
