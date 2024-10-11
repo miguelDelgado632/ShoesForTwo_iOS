@@ -30,7 +30,6 @@ final class HomeMatchPresenter: ObservableObject {
   private let service: HomeMatchService = .init()
 
   var errorText: String = ""
-
  
 
   init() {
@@ -47,14 +46,24 @@ final class HomeMatchPresenter: ObservableObject {
       .sink { newValue in
         let otherUsers = self.shoeProducts[newValue].favorites//.compactMap({ $0.userId })
         self.users = otherUsers
-        self.productId = self.shoeProducts[self.currentSelection].product.productId
+        self.productId = self.shoeProducts[newValue].product.productId
+        self.addOrRemoveUserIconOfFavorites(status: self.likesFromUser[newValue])
       }
       .store(in: &cancellables)
   }
 
+    func addOrRemoveUserIconOfFavorites(status: Bool) {
+      
+         if status {
+             self.users.append(ShoeProductFavorite(productId: self.productId, userId: UserDefaults.standard.getUserID(), picture: "http://proyectos-ddbmexico.com/Shoes/assets/perfil/roberto.png"))
+         } else {
+             let currentUser = ShoeProductFavorite(productId: self.productId, userId: UserDefaults.standard.getUserID(), picture: "http://proyectos-ddbmexico.com/Shoes/assets/perfil/roberto.png")
+             self.users = self.users.filter( { $0 !=  currentUser})
+         }
+
+    }
+
   func fetchLikes() {
-    isLoading = true
-      //let productId = shoeProducts[currentSelection].product.productId
       service.fectchLikes(idProduct: productId)
           .receive(on: DispatchQueue.main)
           .sink { [weak self] completion in
@@ -73,13 +82,12 @@ final class HomeMatchPresenter: ObservableObject {
                   }
                   self.handleError()
               }
-              self.isLoading = false
           } receiveValue: { [weak self] shoeProducts in
               guard let self = self else { return }
               let valueChange = self.likesFromUser[self.currentSelection]
               self.likesFromUser[self.currentSelection] = !valueChange
               print("este es mi m2 con servicio like \(self.likesFromUser)")
-              self.isLoading = false
+              setupObservers()
           }
           .store(in: &cancellables)
   }

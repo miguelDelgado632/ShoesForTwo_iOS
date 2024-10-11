@@ -14,6 +14,8 @@ final class MatchPresenter: ObservableObject {
     @Published var showError: Bool = false
     @Published var userOne: UserMatchDataModel?
     @Published var userTwo: UserMatchDataModel?
+    @Published var userOneGuest: GuestUserInfo?
+    @Published var userTwoGuest: GuestUserInfo?
     
     private let service: MatchService = .init()
     var productId: String
@@ -25,6 +27,44 @@ final class MatchPresenter: ObservableObject {
       self.productId = productId
       getData()
   }
+
+    func sendInvitation(_ completion: @escaping () -> Void) {
+        let request = SendInvitationRequestModel(id_user_one: userOne?.userId ?? "",
+                                                 id_producto_one: userOne?.idProducto ?? "",
+                                                 id_user_two: userTwo?.userId ?? "",
+                                                 id_producto_two: userTwo?.idProducto ?? "")
+        
+      isLoading = true
+      service.sendInvitation(for: request)
+        .receive(on: DispatchQueue.main)
+        .sink { [weak self] completion in
+            guard let self = self else { return }
+            switch completion {
+            case .finished:
+                print("Finished")
+            case .failure(let failure):
+                if let error = failure as? NetworkError {
+                    switch error {
+                    case .invalidResponse(let errorRequest):
+                        self.errorText = errorRequest.message
+                    default:
+                        break
+                    }
+                }
+                self.handleError()
+            }
+          self.isLoading = false
+        } receiveValue: { [weak self] guestUsers in
+          guard let self = self else { return }
+           print("Usuarios Invitados data \(guestUsers)")
+            completion()
+            userOneGuest = guestUsers.data?.invite.compactMap( { $0.userOne }).first
+            userTwoGuest = guestUsers.data?.invite.compactMap( { $0.userTwo }).first
+           self.isLoading = false
+        }
+        .store(in: &cancellables)
+        
+    }
 
     private func getData() {
       isLoading = true

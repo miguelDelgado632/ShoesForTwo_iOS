@@ -80,6 +80,7 @@ public struct Popup<PopupContent>: ViewModifier where PopupContent: View {
                 .frameGetter($presenterContentRect)
         }
         .overlay(sheet())
+        .navigationBarBackButtonHidden()
     }
     
     func sheet() -> some View {
@@ -95,6 +96,7 @@ public struct Popup<PopupContent>: ViewModifier where PopupContent: View {
                 .offset(x: 0, y: currentOffset)
                 .animation(Animation.easeOut(duration: 0.3), value: currentOffset)
         }
+        .navigationBarBackButtonHidden()
     }
     
     private func dismiss() {
@@ -127,5 +129,6 @@ struct FrameGetter: ViewModifier {
                     }
                 return AnyView(EmptyView())
             })
+            .navigationBarBackButtonHidden()
     }
 }

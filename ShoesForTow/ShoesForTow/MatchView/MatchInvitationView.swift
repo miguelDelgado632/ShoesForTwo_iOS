@@ -9,10 +9,9 @@ import SwiftUI
 
 struct MatchInvitationView: View {
 
-  let userName: String
-  let userImage: String
-  let userMatchedName: String
-  let userMatchedImage: String
+
+  @Binding var userOne: GuestUserInfo?
+  @Binding var userTwo: GuestUserInfo?
 
   private let constants: MatchInvitationConstants = .init()
   private let texts: MatchInvitationTexts = .init()
@@ -30,7 +29,7 @@ struct MatchInvitationView: View {
             .padding(.horizontal, constants.backgroudHorizontalPadding)
 
           VStack {
-            Text(String(format: texts.invitationSent, userName))
+              Text(String(format: texts.invitationSent, userTwo?.name ?? ""))//userName))
               .frame(minHeight: constants.titleMinHeight)
               .font(.monserrat(weight: .regular, .size20))
               .foregroundStyle(Color.fontPurple)
@@ -38,17 +37,19 @@ struct MatchInvitationView: View {
               .padding(.horizontal, constants.titleHorizontalPadding)
 
             HStack(spacing: constants.shoesMatchSpacing) {
-              MatchShoeDetailView(name: userName,
-                                  userImage: userImage,
+                MatchShoeDetailView(name: userOne?.name ?? "",//userName,
+                                    userImage: userOne?.photo ?? "",
                                   shoeImage: .leftShoeTest,
-                                  backgroundColor: .fontPurple,
+                                  shoeImageURL: userOne?.imgProduct ?? "",
+                                    backgroundColor: .fontRed,
                                   componentSize: geometry.size.width * constants.shoeDetailMultiplier,
                                   opacity: constants.leftShoeDetailOpacity)
 
-              MatchShoeDetailView(name: userMatchedName,
-                                  userImage: userMatchedImage,
+                MatchShoeDetailView(name: userTwo?.name ?? "",//userMatchedName,
+                                    userImage: userTwo?.photo ?? "",//userMatchedImage,
                                   shoeImage: .rightShoeTest,
-                                  backgroundColor: .fontGray,
+                                  shoeImageURL: userTwo?.imgProduct ?? "",
+                                    backgroundColor: .fontPurple,
                                   componentSize: geometry.size.width * constants.shoeDetailMultiplier,
                                   opacity: constants.rightShoeDetailOpacity)
             }
@@ -71,7 +72,7 @@ struct MatchInvitationView: View {
 }
 
 #Preview {
-  MatchInvitationView(userName: "usuario 1", userImage: "person", userMatchedName: "usuario 2", userMatchedImage: "person.fill")
+    MatchInvitationView(userOne:.constant(GuestUserInfo(idProduct: "dsad", nameProdcut: "dsad", costProduct: "dsad", imgProduct: "dsad", idUser: "dsad", name: "dsad", photo: "dsad")), userTwo: .constant( GuestUserInfo(idProduct: "dsad", nameProdcut: "dsad", costProduct: "dsad", imgProduct: "dsad", idUser: "dsad", name: "dsad", photo: "dsad")))
 }
 
 private struct MatchInvitationConstants {

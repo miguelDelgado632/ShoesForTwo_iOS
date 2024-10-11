@@ -10,6 +10,7 @@
 		4364B5DF2CB26DF100949B13 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364B5DE2CB26DF100949B13 /* UserDefaults+Extensions.swift */; };
 		43661D742CB66A33007DF515 /* MatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43661D732CB66A33007DF515 /* MatchService.swift */; };
 		43661D762CB66B7F007DF515 /* UsersMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43661D752CB66B7F007DF515 /* UsersMatchModel.swift */; };
+		43661D792CB992FC007DF515 /* SendInvitationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43661D782CB992FC007DF515 /* SendInvitationResponseModel.swift */; };
 		43B2224B2C9F6B660035B655 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2224A2C9F6B660035B655 /* ImagePickerView.swift */; };
 		43B2224E2C9F6C950035B655 /* PickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2224D2C9F6C950035B655 /* PickerCoordinator.swift */; };
 		43B222502C9F7FC80035B655 /* PHPickerSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2224F2C9F7FC70035B655 /* PHPickerSwiftUI.swift */; };
@@ -104,6 +105,7 @@
 		4364B5DE2CB26DF100949B13 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		43661D732CB66A33007DF515 /* MatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchService.swift; sourceTree = "<group>"; };
 		43661D752CB66B7F007DF515 /* UsersMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersMatchModel.swift; sourceTree = "<group>"; };
+		43661D782CB992FC007DF515 /* SendInvitationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInvitationResponseModel.swift; sourceTree = "<group>"; };
 		43B2224A2C9F6B660035B655 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		43B2224D2C9F6C950035B655 /* PickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCoordinator.swift; sourceTree = "<group>"; };
 		43B2224F2C9F7FC70035B655 /* PHPickerSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPickerSwiftUI.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				43661D752CB66B7F007DF515 /* UsersMatchModel.swift */,
+				43661D782CB992FC007DF515 /* SendInvitationResponseModel.swift */,
 			);
 			path = UsersMatchModel;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				C125C3FD2CAD9E4C0020CEF3 /* RegistrationModels.swift in Sources */,
 				43BC29042C9BE8270069C6CD /* Color+Extension.swift in Sources */,
 				43BC290B2C9D13D60069C6CD /* TabBarCustom.swift in Sources */,
+				43661D792CB992FC007DF515 /* SendInvitationResponseModel.swift in Sources */,
 				C105080E2C9E00F400B22737 /* ShoeModel.swift in Sources */,
 				C10508082C9B6ED600B22737 /* ShoeSlideView.swift in Sources */,
 				C125C4062CADB3CE0020CEF3 /* FavoritesPresenter.swift in Sources */,

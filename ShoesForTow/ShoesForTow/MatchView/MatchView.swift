@@ -54,7 +54,9 @@ struct MatchView: View {
                         }
                         
                         Button {
-                            showingPopup = true
+                            presenter.sendInvitation {
+                                self.showingPopup = true
+                            }
                         } label: {
                             
                             Group {
@@ -105,10 +107,8 @@ struct MatchView: View {
                 }
                 .navigationBarBackButtonHidden()
                 .popup(isPresented: $showingPopup, tapAction: popUpTapped) {
-                    MatchInvitationView(userName: "usuario 1",
-                                        userImage: "person",
-                                        userMatchedName:  "usuario 2",
-                                        userMatchedImage: "person.fill")
+                    MatchInvitationView(userOne: $presenter.userOneGuest,
+                                        userTwo: $presenter.userTwoGuest)
                 }
                 .alert("Alerta", isPresented: $presenter.showError) {
                     Button("OK") {}
