@@ -30,7 +30,6 @@ struct HomeMatchView: View {
                         filtersView
                         Spacer()
                         shoeSelectorView
-                        Spacer()
                         mainButtonView
                         Spacer()
                     }
@@ -80,14 +79,14 @@ struct HomeMatchView: View {
     }
     .padding(.horizontal, constants.filtersHorizontalPadding)
     .padding(.top, constants.filtersTopPadding)
+    .padding(.bottom, constants.filtersBottomPadding)
   }
 
   private var shoeSelectorView: some View {
     VStack(spacing: constants.shoeSelectorVerticalSpacing) {
       Text(texts.alsoLikedBy)
-        .font(.monserrat(weight: .semiBold, .size20))
+        .font(.monserrat(weight: .semiBold, .size16))
         .foregroundColor(.fontRed)
-        .padding(.bottom, constants.alsoLikedTitleBottonPadding)
 
       CircularImageCarouselView(
         systemImageNames: $presenter.users,
@@ -96,16 +95,19 @@ struct HomeMatchView: View {
         }
       )
         .frame(height: constants.usersCarouselHeight)
+       // .background(Color.red) Color test for carousel of users
 
       ShoeSlideView(currentSelection: $presenter.currentSelection,
                     shoes: $presenter.shoeProducts)
+      //.background(Color.green) Color test for carousel of big circle
 
       AnglesComponentView(images: $presenter.shoeProducts[presenter.currentSelection].product.images)
         .offset(y: constants.anglesComponentOffset)
+      //  .background(Color.yellow) background color mini tennis
     }
-    .frame(height: constants.shoeSelectorHeight)
+    //.background(Color.green) background color for big component
   }
-//presenter.shoeProducts[presenter.currentSelection].likesId.isEmpty
+
   private var mainButtonView: some View {
     HStack {
       Spacer()
@@ -124,9 +126,11 @@ struct HomeMatchView: View {
                   .font(Font.monserrat(weight: .regular, .size14))
                   .foregroundStyle(Color.fontGray)
           }
+         // .background(Color.black)
 
       })
       .buttonStyle(.plain)
+      //.background(Color.red) test color for bottom
       Spacer()
       Button(action: {
           router.navigate(to: .matchView(presenter.productId))
@@ -143,6 +147,8 @@ struct HomeMatchView: View {
       .buttonStyle(.plain)
       Spacer()
     }
+    .frame(height: 64)
+    //.background(Color.blue) color test of complete component background
   }
 }
 
@@ -159,12 +165,13 @@ fileprivate struct HomeTexts {
 
 fileprivate struct HomeConstants {
   var filtersHorizontalPadding: CGFloat { 24 }
-  var filtersTopPadding: CGFloat { 16 }
+  var filtersTopPadding: CGFloat { 8 }
+  var filtersBottomPadding: CGFloat { 30 }
   var selectionIconsWidth: CGFloat { 106 }
-  var shoeSelectorVerticalSpacing: CGFloat { 8 }
-  var alsoLikedTitleBottonPadding: CGFloat { 8 }
+    var shoeSelectorVerticalSpacing: CGFloat { 0 } //8 }
+  var alsoLikedTitleBottonPadding: CGFloat { 4 }
   var shoeSelectorHeight: CGFloat { 500 }
   var anglesComponentOffset: CGFloat { -35 }
-  var usersCarouselHeight: CGFloat { 80 }
-  var mainButtonsSize: CGFloat { 60 }
+  var usersCarouselHeight: CGFloat { 60 }
+  var mainButtonsSize: CGFloat { 50 }
 }

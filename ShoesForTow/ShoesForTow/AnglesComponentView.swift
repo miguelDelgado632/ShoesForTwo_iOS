@@ -58,9 +58,10 @@ fileprivate struct ButtomImageView: View {
     Button(action: action,
            label: {
       ImageDownloaderView(imageUrl: image)
+        .background(Color.backColor)
         .frame(width: size, height: size)
         .clipShape(Circle())
-        .overlay(Circle().stroke(Color.black, lineWidth: 1))
+        .overlay(Circle().stroke(Color.fontPurple, lineWidth: 0.7))
     })
     .buttonStyle(.plain)
   }
@@ -78,5 +79,5 @@ fileprivate struct AnglesComponentConstants {
   var indexZero: Int { .zero }
   var indexOne: Int { 1 }
   var indexTwo: Int { 2 }
-  var lateralImagesOffset: CGFloat { -10 }
+  var lateralImagesOffset: CGFloat { -20 }
 }

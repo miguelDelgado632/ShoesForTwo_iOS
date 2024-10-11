@@ -11,8 +11,8 @@ struct PrimaryButton: View {
   let action: () -> Void
   let title: String
   let width: CGFloat
-  var height: CGFloat = 30
-  var font: Font = .monserrat(weight: .light, .size20)
+  var height: CGFloat = 25
+  var font: Font = .monserrat(weight: .light, .size16)
 
   private let constants: PrimaryButtonConstants = .init()
 

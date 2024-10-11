@@ -20,28 +20,27 @@ struct ShoeSlideView: View {
       TabView(selection: $currentSelection) {
         ForEach(shoes.indices, id: \.self) { index in
           let shoe: ShoeProductElementModel = shoes[index]
-          VStack(spacing: .zero) {
-//            Image(systemName: shoe.images[constants.middleImageIndex])
-//              .resizable()
-//              .frame(width: constants.imageSize, height: constants.imageSize)
-
+          VStack(spacing: 10) {
             ImageDownloaderView(imageUrl: shoe.product.images[constants.middleImageIndex])
-              .frame(width: constants.imageSize, height: constants.imageSize)
+              .frame(width: constants.imageSize, height: constants.imageHeight)
+           //   .background(Color.red) Test Color for background of tennis
+              .padding(.top, 10)
 
             VStack(spacing: .zero) {
               Text(shoe.product.name)
-                .font(.monserrat(weight: .regular, .size20))
+                .font(.monserrat(weight: .regular, .size17))
                 .foregroundStyle(Color.fontGray)
               Text("$\(shoe.product.price)")
-                .font(.monserrat(weight: .regular, .size20))
+                .font(.monserrat(weight: .regular, .size17))
                 .foregroundStyle(Color.fontGray)
             }
           }
+          //.background(Color.blue)  Test Color for background of tennis and texts
           .offset(y: constants.contentOffset)
           .frame(width: constants.contentSize, height: constants.contentSize)
           .overlay(
             Circle()
-              .stroke(Color.black, lineWidth: constants.contentStrokeWidth)
+              .stroke(Color.fontPurple, lineWidth: constants.contentStrokeWidth)
           )
           .onTapGesture {
             print("shoe selected at: \(currentSelection)")
@@ -50,6 +49,7 @@ struct ShoeSlideView: View {
         }
       }
       .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+      .frame(height: constants.heightFromTabView)
     }
   }
 }
@@ -70,14 +70,16 @@ private struct LateralArrowsView: View {
         .resizable()
         .frame(width: 15, height: 40)
     }
-    .padding(.horizontal, 16)
+    .padding(.horizontal, 32)
   }
 }
 
 fileprivate struct ShoeSlideConstants {
   var middleImageIndex: Int { 1 }
   var imageSize: CGFloat { 200 }
+  var imageHeight: CGFloat { 100 }
   var contentOffset: CGFloat { -15 }
-  var contentSize: CGFloat { 300 }
-  var contentStrokeWidth: CGFloat { 1 }
+  var contentSize: CGFloat { 270 }
+  var contentStrokeWidth: CGFloat { 0.7 }
+  var heightFromTabView: CGFloat { 280 }
 }

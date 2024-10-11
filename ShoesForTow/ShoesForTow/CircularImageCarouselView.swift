@@ -70,8 +70,8 @@ struct CircularImageCarouselView: View {
 //}
 
 fileprivate struct CircularImageCarouselConstants {
-  var size: CGFloat { 45 }
+  var size: CGFloat { 34 }
   var maxScale: CGFloat { 1.5 }
-  var maxHeight: CGFloat { 80 }
+  var maxHeight: CGFloat { 70 }
   var hStackSpacing: CGFloat { 30 }
 }
