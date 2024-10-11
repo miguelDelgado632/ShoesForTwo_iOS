@@ -55,6 +55,7 @@ struct MatchInvitationView: View {
             }
           }
         }
+        .navigationBarBackButtonHidden()
         .overlay {
           Button(action: {}) {
             Image(systemName: constants.closeButtonImage)

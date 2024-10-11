@@ -22,6 +22,7 @@ struct MatchView: View {
             if presenter.isLoading {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
+                    .navigationBarBackButtonHidden()
                     .scaleEffect(1.5)
                     .padding()
             } else {

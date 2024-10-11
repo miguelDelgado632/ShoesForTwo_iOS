@@ -23,6 +23,7 @@ struct HomeMatchView: View {
                 if presenter.isLoading {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle())
+                        .navigationBarBackButtonHidden()
                         .scaleEffect(1.5)
                         .padding()
                 } else if !presenter.shoeProducts.isEmpty {
@@ -42,6 +43,7 @@ struct HomeMatchView: View {
                     
                 }
             }
+            .navigationBarBackButtonHidden()
             .navigationDestination(for: MatchDestination.self) { destination in
                 switch destination {
                 case .matchView(let userId):

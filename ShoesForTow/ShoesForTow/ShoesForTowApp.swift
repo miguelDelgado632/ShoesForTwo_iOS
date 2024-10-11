@@ -31,6 +31,7 @@ struct ShoesForTowApp: App {
         TabContainerView()
         .background(Color.backColor)
         .environmentObject(router)
+        .navigationBarBackButtonHidden()
       }
     }
   }
