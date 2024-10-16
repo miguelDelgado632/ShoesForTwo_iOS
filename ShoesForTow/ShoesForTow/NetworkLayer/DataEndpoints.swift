@@ -70,12 +70,28 @@ enum DataEndpoint: APIEndpoint {
     ["Content-Type": "application/json"]
   }
 
+    var body: [String: Any]? {
+        switch self {
+        case .register(let data):
+            return ["nombre": data.nombre,
+                    "apellidos": data.apellidos,
+                    "email": data.email,
+                    "password": data.password,
+                    "genero": data.genero,
+                    "talla": data.talla,
+                    "pie": data.pie,
+                    "foto": data.foto]
+        default:
+            return nil
+        }
+    }
+
   var parameters: [URLQueryItem]? {
     switch self {
     case .login(let data):
       return convertToURLQueryItems(from: data)
-    case .register(let data):
-        return convertToURLQueryItems(from: data)
+    case .register(_):
+        return nil//convertToURLQueryItems(from: data)
     case .productsInfo(let data):
       return convertToURLQueryItems(from: data)
     case .favorites(let data):

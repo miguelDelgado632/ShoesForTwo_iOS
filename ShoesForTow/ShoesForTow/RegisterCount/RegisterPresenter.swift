@@ -47,6 +47,9 @@ final class RegisterPresenter: ObservableObject {
   init() { }
 
   func register(_ completion: @escaping () -> Void) {
+      isLoading = true
+      let foto64 = selectedImage?.toPngString() ?? ""
+      
       if checkValuesInTextField {
           let data: RegistrationRequestModel = .init(
             nombre: name,
@@ -56,10 +59,10 @@ final class RegisterPresenter: ObservableObject {
             genero: numberGender,
             talla: shoesSize ?? "24",
             pie: valueSelectFoot,
-            foto: selectedImage?.toPngString() ?? "")
+            foto: foto64)
 
           
-          isLoading = true
+          
           service.register(data: data)
               .subscribe(on: RunLoop.main)
               .sink {  [weak self] completion in
@@ -79,9 +82,13 @@ final class RegisterPresenter: ObservableObject {
                       }
               } receiveValue: { [weak self] response in
                   if response.status == 200 {
-                      var idUser = response.data?.first?.idUser
-                      if let id = idUser {
-                          UserDefaults.standard.setIdUser(for: id)
+                      let idUser = response.data?.first?.idUser
+                      let userPhoto = response.data?.first?.photo
+                      if let id = idUser, let photo = userPhoto {
+//                          UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userID.rawValue)
+//                          UserDefaults.standard.setIdUser(for: id)
+//                          UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userPhoto.rawValue)
+//                          UserDefaults.standard.setUserPhoto(for: photo)
                           completion()
                           self?.isLoading = false
                       } else {
@@ -96,6 +103,7 @@ final class RegisterPresenter: ObservableObject {
               .store(in: &cancellables)
       } else {
           errorText = "Campos Invalidos"
+          self.isLoading = false
       }
   }
 

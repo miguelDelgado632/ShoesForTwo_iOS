@@ -21,8 +21,11 @@ struct RegistrationRequestModel: Encodable {
 
 struct RegistrationResponseModel: Codable {
     var idUser: String
+    var photo: String
+
 
     enum CodingKeys: String, CodingKey {
       case idUser = "id_user"
+      case photo = "foto"
     }
 }

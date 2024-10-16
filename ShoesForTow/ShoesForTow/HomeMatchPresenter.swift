@@ -44,8 +44,10 @@ final class HomeMatchPresenter: ObservableObject {
   private func setupObservers() {
     $currentSelection
       .sink { newValue in
-        let otherUsers = self.shoeProducts[newValue].favorites//.compactMap({ $0.userId })
-        self.users = otherUsers
+          if !self.shoeProducts[newValue].favorites.isEmpty {
+              let otherUsers = self.shoeProducts[newValue].favorites//.compactMap({ $0.userId })
+              self.users = otherUsers
+          }
         self.productId = self.shoeProducts[newValue].product.productId
         self.addOrRemoveUserIconOfFavorites(status: self.likesFromUser[newValue])
       }
@@ -55,10 +57,12 @@ final class HomeMatchPresenter: ObservableObject {
     func addOrRemoveUserIconOfFavorites(status: Bool) {
       
          if status {
-             self.users.append(ShoeProductFavorite(productId: self.productId, userId: UserDefaults.standard.getUserID(), picture: "http://proyectos-ddbmexico.com/Shoes/assets/perfil/roberto.png"))
+             let currentUser = ShoeProductFavorite(productId: self.productId, userId: UserDefaults.standard.getUserID(), picture: UserDefaults.standard.getUserPhoto())
+             self.users = self.users.filter( { $0.userId != currentUser.userId })
+             self.users.append(currentUser)
          } else {
-             let currentUser = ShoeProductFavorite(productId: self.productId, userId: UserDefaults.standard.getUserID(), picture: "http://proyectos-ddbmexico.com/Shoes/assets/perfil/roberto.png")
-             self.users = self.users.filter( { $0 !=  currentUser})
+             let currentUser = ShoeProductFavorite(productId: self.productId, userId: UserDefaults.standard.getUserID(), picture: UserDefaults.standard.getUserPhoto())
+             self.users = self.users.filter( { $0.userId != currentUser.userId })
          }
 
     }

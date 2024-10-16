@@ -121,7 +121,9 @@ struct MatchView: View {
     }
     
     private func popUpTapped() {
-        router.navigate(to: .completePurchase("Converse 1"))
+        if let user = presenter.userOneGuest {
+            router.navigate(to: .completePurchase(user))
+        }
     }
 }
 

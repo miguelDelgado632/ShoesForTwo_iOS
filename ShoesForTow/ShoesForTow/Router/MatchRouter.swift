@@ -11,8 +11,8 @@ import SwiftUI
 public enum MatchDestination: Encodable, Hashable {
   case matchView(String)
   case otherUserProfile(String)
-  case purchaseSendInformationView(String)
-  case completePurchase(String)
+  case purchaseSendInformationView(GuestUserInfo)
+  case completePurchase(GuestUserInfo)
   case paymentConfirmation(String)
   case seeOrderStatus(String, ArriveTo)
 }

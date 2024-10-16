@@ -13,6 +13,7 @@ protocol APIEndpoint {
   var method: HTTPMethod { get }
   var headers: [String: String]? { get }
   var parameters: [URLQueryItem]? { get }
+  var body: [String: Any]? { get }
 }
 
 enum HTTPMethod: String {

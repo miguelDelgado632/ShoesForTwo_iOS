@@ -21,8 +21,8 @@ struct ShoesForTowApp: App {
               RegisterView()
             case .tabHomeView:
               TabContainerView()
-            case .termsConditions:
-                LinkWebView(url: "https://proyectos-ddbmexico.com/Shoes/politicas.html")
+//            case .termsConditions:
+//                LinkWebView(url: "https://proyectos-ddbmexico.com/Shoes/politicas.html")
             }
           }
       }

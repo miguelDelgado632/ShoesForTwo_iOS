@@ -10,8 +10,9 @@ import SwiftUI
 struct PurchaseSendInformationView: View {
     
     @ObservedObject var presenter: PurchaseSendInformationPresenter = .init()
+    @FocusState private var activeTF: ActiveKeyboardField!
     @EnvironmentObject var router: MatchRouter
-    let shoeName: String
+    let shoeData: GuestUserInfo
     
     var body: some View {
         ZStack {
@@ -41,17 +42,43 @@ struct PurchaseSendInformationView: View {
                         .padding(.top, 36)
                         .padding(.horizontal, 30)
                     VStack(spacing: 10) {
-                        TextFieldCustom(nameTextField: "Número de tarjeta", text: $presenter.cardNumber)
+                        
+                        TextFieldCustom(nameTextField: "Número de tarjeta", text: .init(get: {
+                            presenter.cardNumber
+                        }, set: { value in
+                            presenter.cardNumber = ""
+                            let startIndex = value.startIndex
+                            for index in 0..<value.count {
+                                let stringIndex = value.index(startIndex, offsetBy: index)
+                                presenter.cardNumber += String(value[stringIndex])
+                                
+                                if (index + 1) % 5 == 0 && value[stringIndex] != " " {
+                                    presenter.cardNumber.insert(" ", at: stringIndex)
+                                }
+                            }
+                            if value.last == " " {
+                                presenter.cardNumber.removeLast()
+                            }
+                            presenter.cardNumber = String(presenter.cardNumber.prefix (19))
+                            
+                        }))
+                            .keyboardType(.numberPad)
+                            .focused($activeTF, equals: .cardNumber)
                             .padding(.top, 42)
                         TextFieldCustom(nameTextField: "Nombre de la tarjeta", text: $presenter.cardName)
+                            .focused($activeTF, equals: .cardHolderName)
                         HStack(spacing: 20) {
                             TextFieldCustom(nameTextField: "Fecha", text: $presenter.date)
+                                .keyboardType(.numberPad)
+                                .focused($activeTF, equals: .expirationDate)
                             TextFieldCustom(nameTextField: "CVV", text: $presenter.cvv)
+                                .keyboardType(.numberPad)
+                                .focused($activeTF, equals: .cvv)
                         }
                     }
                     .padding(.horizontal, 30)
                     Button {
-                        router.navigate(to: .paymentConfirmation(shoeName))
+                        router.navigate(to: .paymentConfirmation(shoeData.name))
                     } label: {
                         Text("Aceptar")
                             .font(.monserrat(weight: .light, .size16))
@@ -70,5 +97,12 @@ struct PurchaseSendInformationView: View {
 }
 
 #Preview {
-    PurchaseSendInformationView(shoeName: "Converse 1")
+    PurchaseSendInformationView(shoeData: GuestUserInfo(idProduct: "1212332", nameProdcut: "hola", costProduct: "23323232", imgProduct: "", idUser: "fsfsdf", name: "nike", productFoot: "izquierdo", photo: ""))
+}
+
+enum ActiveKeyboardField {
+    case cardNumber
+    case cardHolderName
+    case expirationDate
+    case cvv
 }

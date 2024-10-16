@@ -48,9 +48,12 @@ final class LoginViewPresenter: ObservableObject {
           receiveValue: { [weak self] response in
             if response.status == 200 {
                 var idUser = response.data?.first?.idUser
-                if let id = idUser {
+                var photo = response.data?.first?.photo
+                if let id = idUser, let photo = photo{
                     UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userID.rawValue)
                     UserDefaults.standard.setIdUser(for: id)
+                    UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userPhoto.rawValue)
+                    UserDefaults.standard.setUserPhoto(for: photo)
                     completion()
                     self?.isLoading = false
                 } else {

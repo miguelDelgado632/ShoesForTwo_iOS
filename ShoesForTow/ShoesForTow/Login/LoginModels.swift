@@ -16,9 +16,11 @@ struct Response<T: Codable>: Codable {
 // MARK: - RESPONSE
 struct LoginResponseModel: Codable {
   let idUser: String
+  var photo: String
 
   enum CodingKeys: String, CodingKey {
     case idUser = "id_user"
+    case photo = "foto"
   }
 }
 

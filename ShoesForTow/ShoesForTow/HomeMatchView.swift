@@ -51,10 +51,10 @@ struct HomeMatchView: View {
                     MatchView(presenter: presenter)
                 case .otherUserProfile(let userId):
                     OtherUserProfileView(userId: userId, data: .testData())
-                case .completePurchase(let shoeName):
-                    CompletePurchaseView(shoeName: shoeName)
-                case .purchaseSendInformationView(let shoeName):
-                    PurchaseSendInformationView(shoeName: shoeName)
+                case .completePurchase(let shoeData):
+                    CompletePurchaseView(shoeData: shoeData)
+                case .purchaseSendInformationView(let shoeData):
+                    PurchaseSendInformationView(shoeData: shoeData)
                 case .paymentConfirmation(let shoeName):
                     PaymentConfirmationView(shoeName: shoeName)
                 case .seeOrderStatus(let shoeName, let arriveTo):

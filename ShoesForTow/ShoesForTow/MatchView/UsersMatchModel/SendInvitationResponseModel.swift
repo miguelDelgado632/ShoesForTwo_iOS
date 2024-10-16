@@ -22,7 +22,7 @@ struct GuestUsersData: Codable {
     }
 }
 
-struct GuestUserInfo: Codable {
+public struct GuestUserInfo: Codable, Hashable {
     var idProduct: String
     var nameProdcut: String
     var costProduct: String

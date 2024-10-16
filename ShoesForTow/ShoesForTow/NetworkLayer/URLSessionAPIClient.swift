@@ -16,7 +16,6 @@ class URLSessionAPIClient<EndpointType: APIEndpoint>: APIClient {
     let url = endpoint.baseURL.appendingPathComponent(endpoint.path)
     var request = URLRequest(url: url)
     request.httpMethod = endpoint.method.rawValue
-
     endpoint.headers?.forEach { request.addValue($0.value, forHTTPHeaderField: $0.key) }
 
     if let params = endpoint.parameters {
@@ -26,6 +25,11 @@ class URLSessionAPIClient<EndpointType: APIEndpoint>: APIClient {
         request.url = newUrl
       }
     }
+
+      if let body = endpoint.body {
+          let parameters = try? JSONSerialization.data(withJSONObject: body)
+          request.httpBody = parameters
+      }
 
     let curlCommand = generateCurlCommand(from: request)
     print("👻👻👻👻👻👻👻👻👻👻👻👻CURL👻👻👻👻👻👻👻👻👻👻👻👻👻👻")

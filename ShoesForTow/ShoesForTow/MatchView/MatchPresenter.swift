@@ -33,8 +33,6 @@ final class MatchPresenter: ObservableObject {
                                                  id_producto_one: userOne?.idProducto ?? "",
                                                  id_user_two: userTwo?.userId ?? "",
                                                  id_producto_two: userTwo?.idProducto ?? "")
-        
-      isLoading = true
       service.sendInvitation(for: request)
         .receive(on: DispatchQueue.main)
         .sink { [weak self] completion in
@@ -53,17 +51,14 @@ final class MatchPresenter: ObservableObject {
                 }
                 self.handleError()
             }
-          self.isLoading = false
         } receiveValue: { [weak self] guestUsers in
           guard let self = self else { return }
            print("Usuarios Invitados data \(guestUsers)")
             completion()
             userOneGuest = guestUsers.data?.invite.compactMap( { $0.userOne }).first
             userTwoGuest = guestUsers.data?.invite.compactMap( { $0.userTwo }).first
-           self.isLoading = false
         }
         .store(in: &cancellables)
-        
     }
 
     private func getData() {

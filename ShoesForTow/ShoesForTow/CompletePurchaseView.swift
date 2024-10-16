@@ -10,7 +10,7 @@ import SwiftUI
 struct CompletePurchaseView: View {
     
     @EnvironmentObject var router: MatchRouter
-    let shoeName: String
+    let shoeData: GuestUserInfo
     
     private let constants: CompletePurchaseConstants = .init()
     
@@ -20,15 +20,16 @@ struct CompletePurchaseView: View {
                 .ignoresSafeArea()
             VStack {
                 ShoeDetailView(image: .leftShoeTest,
-                               name: shoeName,
-                               side: "izquierdo",
-                               price: "$600",
+                               imageUrl: shoeData.imgProduct,
+                               name: shoeData.nameProdcut,
+                               side: shoeData.productFoot,
+                               price: "$ \(shoeData.costProduct)",
                                backgroundOpacity: constants.shoeOpacity,
                                titleFont: .monserrat(weight: .regular, .size12),
                                subtitleFont: .monserrat(weight: .regular, .size16))
                 
                 PrimaryButton(action: {
-                    router.navigate(to: .purchaseSendInformationView(shoeName))
+                    router.navigate(to: .purchaseSendInformationView(shoeData))
                 },
                               title: constants.buttonTitle,
                               width: constants.buttonWidth,
@@ -42,7 +43,7 @@ struct CompletePurchaseView: View {
 }
 
 #Preview {
-    CompletePurchaseView(shoeName: "ConverseshoeName")
+    CompletePurchaseView(shoeData: GuestUserInfo(idProduct: "PRODUCTO", nameProdcut: "nike", costProduct: "$500", imgProduct: "", idUser: "423423", name: "hola", productFoot: "izquierdo", photo: ""))
 }
 
 private struct CompletePurchaseConstants {

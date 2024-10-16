@@ -24,7 +24,7 @@ struct CheckTermsAndConditions: View {
                     .foregroundStyle(checkTermisAndConditios ? Color.fontGray : Color.white)
             }
             Button {
-                router.navigate(to: .termsConditions)
+                router.navigateBack() // aquiva terminos
             } label: {
                 Text("Términos y condiciones")
                     .font(.monserrat(weight: .light, .size14))
