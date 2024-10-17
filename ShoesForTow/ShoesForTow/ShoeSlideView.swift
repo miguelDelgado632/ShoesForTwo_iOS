@@ -28,10 +28,10 @@ struct ShoeSlideView: View {
 
             VStack(spacing: .zero) {
               Text(shoe.product.name)
-                .font(.monserrat(weight: .regular, .size17))
+                .font(.monserrat(weight: .regular, .size15))
                 .foregroundStyle(Color.fontGray)
               Text("$\(shoe.product.price)")
-                .font(.monserrat(weight: .regular, .size17))
+                .font(.monserrat(weight: .regular, .size15))
                 .foregroundStyle(Color.fontGray)
             }
           }

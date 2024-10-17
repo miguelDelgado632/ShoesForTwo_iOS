@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ImageGridView: View {
 
-  let data: [ImageGridModel]
+  let data: [ImageGridModel] = []
+  let correctData: [LikesGridModel]
   var title: String = "Likes"
 
   // Define a 3-column grid layout
@@ -31,17 +32,15 @@ struct ImageGridView: View {
 
         ScrollView {
           LazyVGrid(columns: columns, spacing: 8) {
-            ForEach(data, id: \.self) { shoe in
+            ForEach(correctData, id: \.self) { shoe in
               VStack {
-                ShoeDetailView(image: .leftShoeTest, componentSize: (geometry.size.width / 3) - 16)
-                Text(shoe.title)
+                  ShoeDetailView(image: .leftShoeTest, imageUrl: shoe.image, componentSize: (geometry.size.width / 3) - 16)
+                Text(shoe.name)
                   .font(.monserrat(weight: .regular, .size14))
                   .foregroundStyle(Color.fontGray)
-                if let subTitle = shoe.subTitle {
-                  Text(subTitle)
+                  Text("$\(shoe.cost)")
                     .font(.monserrat(weight: .regular, .size16))
                     .foregroundStyle(Color.fontGray)
-                }
               }
             }
           }
@@ -52,8 +51,8 @@ struct ImageGridView: View {
   }
 }
 
-struct ImageGridView_Previews: PreviewProvider {
-  static var previews: some View {
-    ImageGridView(data: [ImageGridModel].testData())
-  }
-}
+//struct ImageGridView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    ImageGridView(data: [ImageGridModel].testData())
+//  }
+//}

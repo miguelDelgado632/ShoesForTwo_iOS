@@ -16,6 +16,7 @@ struct MatchShoeDetailView: View {
   var shoePrice: String? = nil
   let backgroundColor: Color
   let componentSize: CGFloat
+  let sizeBigCircle: CGFloat
   let opacity: CGFloat
 
   private let constants: MatchShoeDetailConstants = .init()
@@ -36,15 +37,15 @@ struct MatchShoeDetailView: View {
                      name: shoeName,
                      price: shoePrice,
                      backgroundColor: backgroundColor,
-                     componentSize: componentSize,
+                     componentSize: sizeBigCircle, //componentSize,
                      backgroundOpacity: opacity)
     }
   }
 }
 
-#Preview {
-  MatchShoeDetailView(name: "test", userImage: "person", shoeImage: .leftShoeTest, shoeName: "converse", shoePrice: "$600", backgroundColor: .red, componentSize: 200, opacity: 0.15)
-}
+//#Preview {
+//  MatchShoeDetailView(name: "test", userImage: "person", shoeImage: .leftShoeTest, shoeName: "converse", shoePrice: "$600", backgroundColor: .red, componentSize: 200, opacity: 0.15)
+//}
 
 private struct MatchShoeDetailConstants {
   var userVerticalSpacing: CGFloat { 8 }

@@ -42,8 +42,9 @@ struct MatchInvitationView: View {
                                   shoeImage: .leftShoeTest,
                                   shoeImageURL: userOne?.imgProduct ?? "",
                                     backgroundColor: .fontRed,
-                                  componentSize: geometry.size.width * constants.shoeDetailMultiplier,
-                                  opacity: constants.leftShoeDetailOpacity)
+                                    componentSize: geometry.size.width * constants.shoeDetailMultiplier,
+                                    sizeBigCircle: geometry.size.width * constants.shoeDetailMultiplier,
+                                    opacity: constants.leftShoeDetailOpacity)
 
                 MatchShoeDetailView(name: userTwo?.name ?? "",//userMatchedName,
                                     userImage: userTwo?.photo ?? "",//userMatchedImage,
@@ -51,6 +52,7 @@ struct MatchInvitationView: View {
                                   shoeImageURL: userTwo?.imgProduct ?? "",
                                     backgroundColor: .fontPurple,
                                   componentSize: geometry.size.width * constants.shoeDetailMultiplier,
+                                    sizeBigCircle: geometry.size.width * constants.shoeDetailMultiplier,
                                   opacity: constants.rightShoeDetailOpacity)
             }
           }

@@ -40,7 +40,8 @@ struct MatchView: View {
                                                 shoeName: presenter.userOne?.productName,
                                                 shoePrice: "$ \(String(describing: presenter.userOne?.productCost ?? ""))",
                                                 backgroundColor: .fontRed,
-                                                componentSize: geometry.size.width * constants.shoeDetailMultiplier,
+                                                componentSize: geometry.size.width * 0.4,
+                                                sizeBigCircle: geometry.size.width * 0.47,//constants.shoeDetailMultiplier,
                                                 opacity: constants.leftShoeDetailOpacity)
                             
                             MatchShoeDetailView(name: presenter.userTwo?.name ?? "",
@@ -50,7 +51,8 @@ struct MatchView: View {
                                                 shoeName: presenter.userTwo?.productName,
                                                 shoePrice: "$ \(String(describing: presenter.userTwo?.productCost ?? ""))",
                                                 backgroundColor: .fontPurple,
-                                                componentSize: geometry.size.width * constants.shoeDetailMultiplier,
+                                                componentSize: geometry.size.width * 0.4,//constants.shoeDetailMultiplier,
+                                                sizeBigCircle: geometry.size.width * 0.47,
                                                 opacity: constants.rightShoeDetailOpacity)
                         }
                         
@@ -74,7 +76,8 @@ struct MatchView: View {
                                     .foregroundColor(.backgroundColor)
                             )
                         }
-                        .padding(.horizontal, constants.invitationHorizontalPadding)
+                        //.padding(.horizontal, constants.invitationHorizontalPadding)
+                        .frame(width: 250)
                         .frame(minHeight: constants.invitationButtonMinHeight)
                         
                         Spacer()

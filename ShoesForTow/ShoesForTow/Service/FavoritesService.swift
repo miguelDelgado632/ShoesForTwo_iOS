@@ -6,17 +6,13 @@
 //
 
 import Combine
+import Foundation
 
 final class FavoritesService {
   private let apiClient = URLSessionAPIClient<DataEndpoint>()
 
-  func getData() -> AnyPublisher<Response<[ImageGridModel]>, Error> {
-    //    apiClient.request(.likes)
-    let response = Response(status: 200,
-                            message: nil,
-                            data: [ImageGridModel].testData(numOfData: 30))
-    return Just(response)
-      .setFailureType(to: Error.self)
-      .eraseToAnyPublisher()
+  func getData() -> AnyPublisher<Response<LikeUsersModel>, Error> {
+      apiClient.request(.likes(LikesGridRequest(id_user: UserDefaults.standard.getUserID())))
+          .eraseToAnyPublisher()
   }
 }

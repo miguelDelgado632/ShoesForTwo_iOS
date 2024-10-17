@@ -17,9 +17,9 @@ struct ShoeDetailView: View {
   var backgroundColor: Color = .fontPurple
   var componentSize: CGFloat = 300
   var backgroundOpacity: CGFloat = 0.2
-  var titleFont: Font = .monserrat(weight: .regular, .size14)
+  var titleFont: Font = .monserrat(weight: .regular, .size12)
   var subtitleFont: Font = .monserrat(weight: .regular, .size12)
-  var footerFont: Font = .monserrat(weight: .regular, .size16)
+  var footerFont: Font = .monserrat(weight: .regular, .size14)
 
   private var imageSize: CGFloat {
     componentSize * 0.63

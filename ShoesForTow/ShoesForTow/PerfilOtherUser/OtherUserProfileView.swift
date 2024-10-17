@@ -33,7 +33,7 @@ struct OtherUserProfileView: View {
         createInfoTexts(title: texts.lookingForShoe, value: "Derecho")
           .padding(.bottom, constants.infoBottomPadding)
 
-        ImageGridView(data: data)
+         // ImageGridView(data: data)
       }
     }
     .navigationBarBackButtonHidden()
@@ -50,9 +50,9 @@ struct OtherUserProfileView: View {
   }
 }
 
-#Preview {
-  OtherUserProfileView(userId: "person.fill", data: .testData())
-}
+//#Preview {
+//  OtherUserProfileView(userId: "person.fill", data: .testData())
+//}
 
 private struct OtherUserProfileCosntants {
   var contentSpacing: CGFloat { 8 }

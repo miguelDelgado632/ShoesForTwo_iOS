@@ -29,7 +29,6 @@ struct HomeMatchView: View {
                 } else if !presenter.shoeProducts.isEmpty {
                     VStack(alignment: .center, spacing: .zero) {
                         filtersView
-                        Spacer()
                         shoeSelectorView
                         mainButtonView
                         Spacer()

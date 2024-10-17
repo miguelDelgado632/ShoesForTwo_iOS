@@ -48,9 +48,11 @@ struct TabBarCustom: View {
                 .font(titleFont)
                 .foregroundStyle(Color.fontRed)
             Spacer()
-            Rectangle()
-                .frame(width: 20, height: 20)
-                .foregroundStyle(Color.backColor)
+            if showBack {
+                Rectangle()
+                    .frame(width: 20, height: 20)
+                    .foregroundStyle(Color.backColor)
+            }
             
         }
         .frame(maxWidth: .infinity)
