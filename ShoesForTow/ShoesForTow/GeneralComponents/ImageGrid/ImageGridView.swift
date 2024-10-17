@@ -24,11 +24,11 @@ struct ImageGridView: View {
     GeometryReader { geometry in
       VStack {
         Text(title)
-          .font(.monserrat(weight: .semiBold, .size16))
+          .font(.monserrat(weight: .regular, .size16))
           .foregroundStyle(Color.fontRed)
           .frame(maxWidth: .infinity, alignment: .leading)
           .padding(.top, 20)
-          .padding(.bottom, 33)
+          .padding(.bottom, 22)
 
         ScrollView {
           LazyVGrid(columns: columns, spacing: 8) {

@@ -19,7 +19,7 @@ enum DataEndpoint: APIEndpoint {
   case likes(LikesGridRequest)
   case purchaseInfo
   case paymentConfirmation
-  case otherUserProfile
+  case otherUserProfile(LikesGridRequest)
   case favorites(LikesProductRequestModel)
 
   //MARK: - PROFILE
@@ -51,7 +51,7 @@ enum DataEndpoint: APIEndpoint {
     case .paymentConfirmation:
       return ""
     case .otherUserProfile:
-      return ""
+      return "/perfilTwo"
     case .favorites:
       return "/favoritos"
     case .profile:
@@ -103,6 +103,8 @@ enum DataEndpoint: APIEndpoint {
       return convertToURLQueryItems(from: data)
     case .likes(let data):
       return convertToURLQueryItems(from: data)
+    case .otherUserProfile(let data):
+        return convertToURLQueryItems(from: data)
     default:
       return nil
     }

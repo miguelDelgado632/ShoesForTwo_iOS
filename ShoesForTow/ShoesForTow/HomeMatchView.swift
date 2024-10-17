@@ -49,7 +49,7 @@ struct HomeMatchView: View {
                     let presenter = MatchPresenter(productId: userId)
                     MatchView(presenter: presenter)
                 case .otherUserProfile(let userId):
-                    OtherUserProfileView(userId: userId, data: .testData())
+                    OtherUserProfileView()
                 case .completePurchase(let shoeData):
                     CompletePurchaseView(shoeData: shoeData)
                 case .purchaseSendInformationView(let shoeData):
