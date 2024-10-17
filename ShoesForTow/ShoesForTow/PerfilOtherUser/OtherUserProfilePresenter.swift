@@ -10,9 +10,9 @@ import SwiftUI
 import Combine
 
 final class OtherUserProfilePresenter: ObservableObject {
-
+    
     private let service: OtherUserProfileService = .init()
-
+    
     @Published var isLoading: Bool = false
     @Published var showError: Bool = false
     @Published var likes: [LikesGridModel] = []
@@ -24,10 +24,10 @@ final class OtherUserProfilePresenter: ObservableObject {
     init() {
         getData()
     }
-
+    
     func getData() {
-      isLoading = true
-      service.getData()
+        isLoading = true
+        service.getData()
             .sink { [weak self] completion in
                 guard let self = self else { return }
                 switch completion {
@@ -45,14 +45,15 @@ final class OtherUserProfilePresenter: ObservableObject {
                     self.handleError()
                 }
             } receiveValue: { [weak self] otherUserData in
-              guard let self = self else { return }
+                guard let self = self else { return }
                 self.profileData = otherUserData.data?.perfilTwo.first?.profile
                 self.likes = otherUserData.data?.perfilTwo.first?.likes.first ?? []
                 isLoading = false
             }
             .store(in: &cancellables)
     }
-      private func handleError() {
+    private func handleError() {
         showError = true
         isLoading = false
-      }}
+    }
+}

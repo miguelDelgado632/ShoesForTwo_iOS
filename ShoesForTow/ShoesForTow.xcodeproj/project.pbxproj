@@ -10,6 +10,8 @@
 		434D51A22CC15E15004610E9 /* OtherUserProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51A12CC15E15004610E9 /* OtherUserProfilePresenter.swift */; };
 		434D51A52CC15EDD004610E9 /* OtherUserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51A42CC15EDD004610E9 /* OtherUserProfileService.swift */; };
 		434D51A82CC15FCD004610E9 /* OtherUserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51A72CC15FCD004610E9 /* OtherUserProfileModel.swift */; };
+		434D51AB2CC16AD9004610E9 /* ProfilePrincipleUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51AA2CC16AD9004610E9 /* ProfilePrincipleUserModel.swift */; };
+		434D51AE2CC16CD7004610E9 /* ProfilePrincipleUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51AD2CC16CD7004610E9 /* ProfilePrincipleUserService.swift */; };
 		4364B5DF2CB26DF100949B13 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364B5DE2CB26DF100949B13 /* UserDefaults+Extensions.swift */; };
 		43661D742CB66A33007DF515 /* MatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43661D732CB66A33007DF515 /* MatchService.swift */; };
 		43661D762CB66B7F007DF515 /* UsersMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43661D752CB66B7F007DF515 /* UsersMatchModel.swift */; };
@@ -108,6 +110,8 @@
 		434D51A12CC15E15004610E9 /* OtherUserProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserProfilePresenter.swift; sourceTree = "<group>"; };
 		434D51A42CC15EDD004610E9 /* OtherUserProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserProfileService.swift; sourceTree = "<group>"; };
 		434D51A72CC15FCD004610E9 /* OtherUserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserProfileModel.swift; sourceTree = "<group>"; };
+		434D51AA2CC16AD9004610E9 /* ProfilePrincipleUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePrincipleUserModel.swift; sourceTree = "<group>"; };
+		434D51AD2CC16CD7004610E9 /* ProfilePrincipleUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePrincipleUserService.swift; sourceTree = "<group>"; };
 		4364B5DE2CB26DF100949B13 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		43661D732CB66A33007DF515 /* MatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchService.swift; sourceTree = "<group>"; };
 		43661D752CB66B7F007DF515 /* UsersMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersMatchModel.swift; sourceTree = "<group>"; };
@@ -232,6 +236,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		434D51A92CC16AA4004610E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				434D51AA2CC16AD9004610E9 /* ProfilePrincipleUserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		434D51AC2CC16C7C004610E9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				434D51AD2CC16CD7004610E9 /* ProfilePrincipleUserService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		43661D722CB66A14007DF515 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +291,8 @@
 		43B222642CA01BEB0035B655 /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
+				434D51AC2CC16C7C004610E9 /* Service */,
+				434D51A92CC16AA4004610E9 /* Model */,
 				43B222652CA01C140035B655 /* PerfilView.swift */,
 				43B222672CA01CC10035B655 /* PerfilPresenter.swift */,
 			);
@@ -715,6 +737,7 @@
 				C105081E2C9FC28100B22737 /* Image+Entensions.swift in Sources */,
 				43BC28E42C9A54450069C6CD /* ShoesForTow.xcdatamodeld in Sources */,
 				43B2227B2CA6870B0035B655 /* SeeOrderStatusView.swift in Sources */,
+				434D51AE2CC16CD7004610E9 /* ProfilePrincipleUserService.swift in Sources */,
 				C17A33092CAFBE2B0049525B /* ImageDownloaderView.swift in Sources */,
 				C10508262CA3868800B22737 /* CompletePurchaseView.swift in Sources */,
 				434D51A22CC15E15004610E9 /* OtherUserProfilePresenter.swift in Sources */,
@@ -753,6 +776,7 @@
 				43B2224B2C9F6B660035B655 /* ImagePickerView.swift in Sources */,
 				43BC28E12C9A54450069C6CD /* Persistence.swift in Sources */,
 				43BC29162C9DCD290069C6CD /* DropDownPicker.swift in Sources */,
+				434D51AB2CC16AD9004610E9 /* ProfilePrincipleUserModel.swift in Sources */,
 				C160C8842CA920AE00FF77EC /* TabContainerPresenter.swift in Sources */,
 				C160C8942CAA3D2F00FF77EC /* ProfileRouter.swift in Sources */,
 				C125C3FD2CAD9E4C0020CEF3 /* RegistrationModels.swift in Sources */,
