@@ -23,14 +23,14 @@ struct InvitationsView: View {
                         ForEach(presenter.invitationData, id: \.self) { data in
                             HStack(spacing: 23) {
                                 InvitationsCard(componentSize: geometry.size.width * 0.25,
-                                                imageOwner: data.myProduct.first?.productImage ?? "",
-                                                imageMatch: data.invitationProduct.first?.productImage ?? "")
+                                                imageOwner: data.leftImage,
+                                                imageMatch: data.rightImage)
                                 VStack(spacing: 5) {
-                                    Text(data.invitationProduct.first?.name ?? "")
+                                    Text(data.name)
                                         .font(.monserrat(weight: .semiBold, .size14))
                                         .foregroundStyle(Color.fontGray)
                                         .frame(maxWidth: .infinity, alignment: .leading)
-                                    Text(data.invitationProduct.first?.cost ?? "")
+                                    Text(data.productName)
                                         .font(.monserrat(weight: .regular, .size14))
                                         .foregroundStyle(Color.fontGray)
                                         .frame(maxWidth: .infinity, alignment: .leading)

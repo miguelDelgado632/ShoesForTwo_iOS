@@ -16,29 +16,18 @@ struct InvitationsModel: Codable {
 }
 
 struct InvitationsData: Codable, Hashable {
-    var userId: String
+    var leftImage: String
+    var rightImage: String
     var name: String
     var productId: String
-    var myProduct: [ProductsDataModel]
-    var invitationProduct: [ProductsDataModel]
+    var productName: String
 
     enum CodingKeys: String, CodingKey {
-        case userId = "id_user"
+        case leftImage = "imagen_left"
+        case rightImage = "imagen_right"
         case name = "nombre"
         case productId = "id_producto"
-        case myProduct = "mi_producto"
-        case invitationProduct = "producto_invitado"
+        case productName = "nombre_producto"
     }
 }
 
-struct ProductsDataModel: Codable, Hashable {
-    var productImage: String
-    var name: String?
-    var cost: String?
-
-    enum CodingKeys: String, CodingKey {
-        case productImage = "imagen_producto"
-        case name = "nombre"
-        case cost = "precio"
-    }
-}

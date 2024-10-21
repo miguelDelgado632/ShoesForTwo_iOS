@@ -21,13 +21,13 @@ final class OtherUserProfilePresenter: ObservableObject {
     var errorText: String = ""
     
     
-    init() {
-        getData()
+    init(userIdOtherProfile: String) {
+        getData(userIdOtherProfile: userIdOtherProfile)
     }
     
-    func getData() {
+    func getData(userIdOtherProfile: String) {
         isLoading = true
-        service.getData()
+        service.getData(userIdOtherProfile: userIdOtherProfile)
             .sink { [weak self] completion in
                 guard let self = self else { return }
                 switch completion {

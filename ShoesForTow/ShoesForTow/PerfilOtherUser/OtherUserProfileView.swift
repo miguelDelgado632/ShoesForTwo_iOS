@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OtherUserProfileView: View {
     
-    @ObservedObject var presenter: OtherUserProfilePresenter = .init()
+    @ObservedObject var presenter: OtherUserProfilePresenter
     
     private let constants: OtherUserProfileCosntants = .init()
     private let texts: OtherUserProfileTexts = .init()

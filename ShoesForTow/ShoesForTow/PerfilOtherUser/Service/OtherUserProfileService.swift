@@ -11,8 +11,8 @@ import Foundation
 final class OtherUserProfileService {
   private let apiClient = URLSessionAPIClient<DataEndpoint>()
 
-  func getData() -> AnyPublisher<Response<OtherUserProfileModel>, Error> {
-      apiClient.request(.otherUserProfile(LikesGridRequest(id_user: UserDefaults.standard.getUserID())))
+  func getData(userIdOtherProfile: String) -> AnyPublisher<Response<OtherUserProfileModel>, Error> {
+      apiClient.request(.otherUserProfile(LikesGridRequest(id_user: userIdOtherProfile)))
           .eraseToAnyPublisher()
   }
 }
