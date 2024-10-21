@@ -46,8 +46,8 @@ final class OtherUserProfilePresenter: ObservableObject {
                 }
             } receiveValue: { [weak self] otherUserData in
                 guard let self = self else { return }
-                self.profileData = otherUserData.data?.perfilTwo.first?.profile
-                self.likes = otherUserData.data?.perfilTwo.first?.likes.first ?? []
+                self.profileData = otherUserData.data?.perfilTwo.first
+                self.likes = otherUserData.data?.perfilTwo.first?.likes ?? []
                 isLoading = false
             }
             .store(in: &cancellables)

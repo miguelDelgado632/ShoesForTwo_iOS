@@ -24,9 +24,9 @@ enum DataEndpoint: APIEndpoint {
 
   //MARK: - PROFILE
   case profile(LikesGridRequest)
-  case shoppingCart
+  case shoppingCart(LikesGridRequest)
   case myOrders
-  case invitations
+  case invitations(LikesGridRequest)
 
   var baseURL: URL {
     return URL(string: "https://proyectos-ddbmexico.com/Shoes/api/v1/index.php")!
@@ -57,11 +57,11 @@ enum DataEndpoint: APIEndpoint {
     case .profile:
       return "/perfil"
     case .shoppingCart:
-      return ""
+      return "/carrito"
     case .myOrders:
       return ""
     case .invitations:
-      return ""
+      return "/invitaciones"
     }
   }
 
@@ -106,6 +106,10 @@ enum DataEndpoint: APIEndpoint {
     case .otherUserProfile(let data):
         return convertToURLQueryItems(from: data)
     case .profile(let data):
+        return convertToURLQueryItems(from: data)
+    case .shoppingCart(let data):
+        return convertToURLQueryItems(from: data)
+    case .invitations(let data):
         return convertToURLQueryItems(from: data)
     default:
       return nil

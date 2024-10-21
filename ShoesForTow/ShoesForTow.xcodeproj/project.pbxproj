@@ -12,6 +12,10 @@
 		434D51A82CC15FCD004610E9 /* OtherUserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51A72CC15FCD004610E9 /* OtherUserProfileModel.swift */; };
 		434D51AB2CC16AD9004610E9 /* ProfilePrincipleUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51AA2CC16AD9004610E9 /* ProfilePrincipleUserModel.swift */; };
 		434D51AE2CC16CD7004610E9 /* ProfilePrincipleUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51AD2CC16CD7004610E9 /* ProfilePrincipleUserService.swift */; };
+		434D51B12CC6B667004610E9 /* CarShopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51B02CC6B667004610E9 /* CarShopService.swift */; };
+		434D51B42CC6B874004610E9 /* CarShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51B32CC6B874004610E9 /* CarShopModel.swift */; };
+		434D51B72CC6BD2C004610E9 /* InvitationsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51B62CC6BD2C004610E9 /* InvitationsServices.swift */; };
+		434D51BA2CC6BED3004610E9 /* InvitationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51B92CC6BED3004610E9 /* InvitationsModel.swift */; };
 		4364B5DF2CB26DF100949B13 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364B5DE2CB26DF100949B13 /* UserDefaults+Extensions.swift */; };
 		43661D742CB66A33007DF515 /* MatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43661D732CB66A33007DF515 /* MatchService.swift */; };
 		43661D762CB66B7F007DF515 /* UsersMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43661D752CB66B7F007DF515 /* UsersMatchModel.swift */; };
@@ -112,6 +116,10 @@
 		434D51A72CC15FCD004610E9 /* OtherUserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserProfileModel.swift; sourceTree = "<group>"; };
 		434D51AA2CC16AD9004610E9 /* ProfilePrincipleUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePrincipleUserModel.swift; sourceTree = "<group>"; };
 		434D51AD2CC16CD7004610E9 /* ProfilePrincipleUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePrincipleUserService.swift; sourceTree = "<group>"; };
+		434D51B02CC6B667004610E9 /* CarShopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarShopService.swift; sourceTree = "<group>"; };
+		434D51B32CC6B874004610E9 /* CarShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarShopModel.swift; sourceTree = "<group>"; };
+		434D51B62CC6BD2C004610E9 /* InvitationsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsServices.swift; sourceTree = "<group>"; };
+		434D51B92CC6BED3004610E9 /* InvitationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsModel.swift; sourceTree = "<group>"; };
 		4364B5DE2CB26DF100949B13 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		43661D732CB66A33007DF515 /* MatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchService.swift; sourceTree = "<group>"; };
 		43661D752CB66B7F007DF515 /* UsersMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersMatchModel.swift; sourceTree = "<group>"; };
@@ -252,6 +260,38 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		434D51AF2CC6B5D8004610E9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				434D51B02CC6B667004610E9 /* CarShopService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		434D51B22CC6B85D004610E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				434D51B32CC6B874004610E9 /* CarShopModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		434D51B52CC6BCEE004610E9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				434D51B62CC6BD2C004610E9 /* InvitationsServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		434D51B82CC6BEB3004610E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				434D51B92CC6BED3004610E9 /* InvitationsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		43661D722CB66A14007DF515 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +390,8 @@
 		43B2227E2CA69CDD0035B655 /* CarShop */ = {
 			isa = PBXGroup;
 			children = (
+				434D51B22CC6B85D004610E9 /* Model */,
+				434D51AF2CC6B5D8004610E9 /* Services */,
 				43B2227F2CA69D060035B655 /* CarShopView.swift */,
 				43B222812CA69D1E0035B655 /* CarShopPresenter.swift */,
 			);
@@ -368,6 +410,8 @@
 		43B2228A2CA7E28F0035B655 /* Invitations */ = {
 			isa = PBXGroup;
 			children = (
+				434D51B82CC6BEB3004610E9 /* Model */,
+				434D51B52CC6BCEE004610E9 /* Services */,
 				43B2228B2CA7E2C50035B655 /* InvitationsView.swift */,
 				43B2228D2CA7E2DD0035B655 /* InvitationsPresenter.swift */,
 			);
@@ -721,12 +765,14 @@
 				C125C3F52CAC7A160020CEF3 /* LoginSerivice.swift in Sources */,
 				C160C8902CA9226600FF77EC /* ImageGridModel.swift in Sources */,
 				C10508202C9FCD6600B22737 /* ShoeDetailView.swift in Sources */,
+				434D51B42CC6B874004610E9 /* CarShopModel.swift in Sources */,
 				43B222632CA005730035B655 /* PerfilMenuPresenter.swift in Sources */,
 				43B2226B2CA292E80035B655 /* MatchPresenter.swift in Sources */,
 				43BC29092C9CD0850069C6CD /* Router.swift in Sources */,
 				43B222842CA6A1D40035B655 /* CardToBuy.swift in Sources */,
 				C160C8922CAA372600FF77EC /* OtherUserProfileView.swift in Sources */,
 				C10508062C9B4BE000B22737 /* CircularImageCarouselView.swift in Sources */,
+				434D51B72CC6BD2C004610E9 /* InvitationsServices.swift in Sources */,
 				C125C3FF2CADA0CB0020CEF3 /* FavoritesView.swift in Sources */,
 				43B222932CA7EE370035B655 /* HelpPresenter.swift in Sources */,
 				C125C3F22CAB8E3C0020CEF3 /* URLSessionAPIClient.swift in Sources */,
@@ -743,6 +789,7 @@
 				434D51A22CC15E15004610E9 /* OtherUserProfilePresenter.swift in Sources */,
 				43BC29012C9BE30F0069C6CD /* Font+Extensions.swift in Sources */,
 				C125C3EB2CAB8D500020CEF3 /* APIEndpointProperties+Methods.swift in Sources */,
+				434D51BA2CC6BED3004610E9 /* InvitationsModel.swift in Sources */,
 				C125C4032CADB39E0020CEF3 /* FavoritesService.swift in Sources */,
 				C160C8862CA9211F00FF77EC /* CustomNavigation.swift in Sources */,
 				43B2225C2C9FFF390035B655 /* RegisterPresenter.swift in Sources */,
@@ -764,6 +811,7 @@
 				43B222662CA01C140035B655 /* PerfilView.swift in Sources */,
 				C10508182C9E35D600B22737 /* CircularImageView.swift in Sources */,
 				43BC28E62C9A54450069C6CD /* ContentView.swift in Sources */,
+				434D51B12CC6B667004610E9 /* CarShopService.swift in Sources */,
 				C125C3F82CAC7D830020CEF3 /* LoginModels.swift in Sources */,
 				C105081C2C9FC10B00B22737 /* MatchView.swift in Sources */,
 				43B222912CA7EE170035B655 /* HelpView.swift in Sources */,

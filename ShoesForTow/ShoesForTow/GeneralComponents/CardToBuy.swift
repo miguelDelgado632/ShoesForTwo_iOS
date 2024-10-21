@@ -10,13 +10,14 @@ import SwiftUI
 struct CardToBuy: View {
     
     var nameShoes: String
+    var imageUrl: String
     var priceShoes: String
     var fontPrice: Font
     var colorFontPrice: Color
     var actionButton: () -> Void
     var body: some View {
         HStack(spacing: 29) {
-            ShoeDetailView(image: .leftShoeTest, backgroundColor: .fontRed, componentSize: 125, backgroundOpacity: 0.15)
+            ShoeDetailView(image: .leftShoeTest, imageUrl: imageUrl, backgroundColor: .fontRed, componentSize: 125, backgroundOpacity: 0.15)
             VStack {
                 Text(nameShoes)
                     .font(.monserrat(weight: .regular, .size14))
@@ -38,5 +39,5 @@ struct CardToBuy: View {
 }
 
 #Preview {
-    CardToBuy(nameShoes: "converse",priceShoes: "$600", fontPrice: Font.monserrat(weight: .black, .size14), colorFontPrice: .fontGray, actionButton: { })
+    CardToBuy(nameShoes: "converse", imageUrl: "",priceShoes: "$600", fontPrice: Font.monserrat(weight: .black, .size14), colorFontPrice: .fontGray, actionButton: { })
 }

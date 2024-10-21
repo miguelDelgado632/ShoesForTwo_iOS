@@ -8,18 +8,7 @@
 import Foundation
 
 struct OtherUserProfileModel: Codable {
-    var perfilTwo: [OtherUserData]
-    
-}
-
-struct OtherUserData: Codable {
-    var profile: PerfilTwoOtherUserData
-    var likes: [[LikesGridModel]]
-
-    enum CodingKeys: String, CodingKey {
-        case profile = "perfil"
-        case likes
-    }
+    var perfilTwo: [PerfilTwoOtherUserData]
     
 }
 
@@ -29,6 +18,7 @@ struct PerfilTwoOtherUserData: Codable {
     var size: String
     var food: String
     var photo: String
+    var likes: [LikesGridModel]?
 
     enum CodingKeys: String, CodingKey {
         case idUser = "id_user"
@@ -36,5 +26,6 @@ struct PerfilTwoOtherUserData: Codable {
         case size = "talla"
         case food = "pie"
         case photo = "foto"
+        case likes
     }
 }
