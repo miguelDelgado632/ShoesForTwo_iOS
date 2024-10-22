@@ -21,6 +21,7 @@ struct InvitationsData: Codable, Hashable {
     var name: String
     var productId: String
     var productName: String
+    var productCost: String
 
     enum CodingKeys: String, CodingKey {
         case leftImage = "imagen_left"
@@ -28,6 +29,7 @@ struct InvitationsData: Codable, Hashable {
         case name = "nombre"
         case productId = "id_producto"
         case productName = "nombre_producto"
+        case productCost = "precio"
     }
 }
 

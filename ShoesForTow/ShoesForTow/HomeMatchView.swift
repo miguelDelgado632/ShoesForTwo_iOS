@@ -54,9 +54,10 @@ struct HomeMatchView: View {
                 case .completePurchase(let shoeData):
                     CompletePurchaseView(shoeData: shoeData)
                 case .purchaseSendInformationView(let shoeData):
-                    PurchaseSendInformationView(shoeData: shoeData)
+                    let presenter = PurchaseSendInformationPresenter(productData: shoeData)
+                    PurchaseSendInformationView(presenter: presenter)
                 case .paymentConfirmation(let shoeName):
-                    PaymentConfirmationView(shoeName: shoeName)
+                    PaymentConfirmationView(shoeName: shoeName.productName)
                 case .seeOrderStatus(let shoeName, let arriveTo):
                     SeeOrderStatusView(shoeName: shoeName, arriveTo: arriveTo)
                 }

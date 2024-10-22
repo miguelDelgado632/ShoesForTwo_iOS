@@ -9,10 +9,9 @@ import SwiftUI
 
 struct PurchaseSendInformationView: View {
     
-    @ObservedObject var presenter: PurchaseSendInformationPresenter = .init()
+    @ObservedObject var presenter: PurchaseSendInformationPresenter
     @FocusState private var activeTF: ActiveKeyboardField!
     @EnvironmentObject var router: MatchRouter
-    let shoeData: GuestUserInfo
     
     var body: some View {
         ZStack {
@@ -71,14 +70,24 @@ struct PurchaseSendInformationView: View {
                             TextFieldCustom(nameTextField: "Fecha", text: $presenter.date)
                                 .keyboardType(.numberPad)
                                 .focused($activeTF, equals: .expirationDate)
-                            TextFieldCustom(nameTextField: "CVV", text: $presenter.cvv)
-                                .keyboardType(.numberPad)
+                
+                            TextFieldCustom(nameTextField: "CVV", text: .init(get: {
+                                presenter.cvv
+                            }, set: { value in
+                                presenter.cvv = value
+                                presenter.cvv = String(presenter.cvv.prefix(3))
+                                
+                            }))
                                 .focused($activeTF, equals: .cvv)
                         }
                     }
                     .padding(.horizontal, 30)
                     Button {
-                        router.navigate(to: .paymentConfirmation(shoeData.name))
+                        // It´ll be change when the payment funcionality it will done
+//                        presenter.getData { info in
+//                            router.navigate(to: .paymentConfirmation(info.productName))
+//                        }
+                        router.navigate(to: .paymentConfirmation(PurchaseSendInformationModel(orderNum: "9KWQZAS763", arriveDate: "20/10/2024", productName: "Nike SB", productCost: "2800", productFood: "Derecho", productImage: "http://proyectos-ddbmexico.com/Shoes/assets/productos/nike-right.png")) )
                     } label: {
                         Text("Aceptar")
                             .font(.monserrat(weight: .light, .size16))
@@ -94,10 +103,6 @@ struct PurchaseSendInformationView: View {
             }
         }
     }
-}
-
-#Preview {
-    PurchaseSendInformationView(shoeData: GuestUserInfo(idProduct: "1212332", nameProdcut: "hola", costProduct: "23323232", imgProduct: "", idUser: "fsfsdf", name: "nike", productFoot: "izquierdo", photo: ""))
 }
 
 enum ActiveKeyboardField {

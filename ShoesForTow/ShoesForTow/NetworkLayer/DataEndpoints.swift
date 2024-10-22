@@ -17,7 +17,7 @@ enum DataEndpoint: APIEndpoint {
   case inviteMatch(LikesProductRequestModel)
   case sendInvitation(SendInvitationRequestModel)
   case likes(LikesGridRequest)
-  case purchaseInfo
+  case purchaseInfo(PurchaseSendInformationRequestModel)
   case paymentConfirmation
   case otherUserProfile(LikesGridRequest)
   case favorites(LikesProductRequestModel)
@@ -47,7 +47,7 @@ enum DataEndpoint: APIEndpoint {
     case .likes:
         return "/likes"
     case .purchaseInfo:
-      return ""
+      return "/compra"
     case .paymentConfirmation:
       return ""
     case .otherUserProfile:
@@ -110,6 +110,8 @@ enum DataEndpoint: APIEndpoint {
     case .shoppingCart(let data):
         return convertToURLQueryItems(from: data)
     case .invitations(let data):
+        return convertToURLQueryItems(from: data)
+    case .purchaseInfo(let data):
         return convertToURLQueryItems(from: data)
     default:
       return nil

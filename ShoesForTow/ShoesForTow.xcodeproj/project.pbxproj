@@ -16,6 +16,8 @@
 		434D51B42CC6B874004610E9 /* CarShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51B32CC6B874004610E9 /* CarShopModel.swift */; };
 		434D51B72CC6BD2C004610E9 /* InvitationsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51B62CC6BD2C004610E9 /* InvitationsServices.swift */; };
 		434D51BA2CC6BED3004610E9 /* InvitationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51B92CC6BED3004610E9 /* InvitationsModel.swift */; };
+		434D51BD2CC83553004610E9 /* PurchaseSendInformationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51BC2CC83553004610E9 /* PurchaseSendInformationServices.swift */; };
+		434D51C02CC835D8004610E9 /* PurchaseSendInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D51BF2CC835D8004610E9 /* PurchaseSendInformationModel.swift */; };
 		4364B5DF2CB26DF100949B13 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364B5DE2CB26DF100949B13 /* UserDefaults+Extensions.swift */; };
 		43661D742CB66A33007DF515 /* MatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43661D732CB66A33007DF515 /* MatchService.swift */; };
 		43661D762CB66B7F007DF515 /* UsersMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43661D752CB66B7F007DF515 /* UsersMatchModel.swift */; };
@@ -120,6 +122,8 @@
 		434D51B32CC6B874004610E9 /* CarShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarShopModel.swift; sourceTree = "<group>"; };
 		434D51B62CC6BD2C004610E9 /* InvitationsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsServices.swift; sourceTree = "<group>"; };
 		434D51B92CC6BED3004610E9 /* InvitationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsModel.swift; sourceTree = "<group>"; };
+		434D51BC2CC83553004610E9 /* PurchaseSendInformationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSendInformationServices.swift; sourceTree = "<group>"; };
+		434D51BF2CC835D8004610E9 /* PurchaseSendInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSendInformationModel.swift; sourceTree = "<group>"; };
 		4364B5DE2CB26DF100949B13 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		43661D732CB66A33007DF515 /* MatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchService.swift; sourceTree = "<group>"; };
 		43661D752CB66B7F007DF515 /* UsersMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersMatchModel.swift; sourceTree = "<group>"; };
@@ -292,6 +296,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		434D51BB2CC8352A004610E9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				434D51BC2CC83553004610E9 /* PurchaseSendInformationServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		434D51BE2CC835AE004610E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				434D51BF2CC835D8004610E9 /* PurchaseSendInformationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		43661D722CB66A14007DF515 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +383,8 @@
 		43B2226F2CA3F08A0035B655 /* PurchaseSendInformation */ = {
 			isa = PBXGroup;
 			children = (
+				434D51BE2CC835AE004610E9 /* Model */,
+				434D51BB2CC8352A004610E9 /* Services */,
 				43B222702CA3F1600035B655 /* PurchaseSendInformationView.swift */,
 				43B222722CA3F5010035B655 /* PurchaseSendInformationPresenter.swift */,
 			);
@@ -785,6 +807,7 @@
 				43B2227B2CA6870B0035B655 /* SeeOrderStatusView.swift in Sources */,
 				434D51AE2CC16CD7004610E9 /* ProfilePrincipleUserService.swift in Sources */,
 				C17A33092CAFBE2B0049525B /* ImageDownloaderView.swift in Sources */,
+				434D51C02CC835D8004610E9 /* PurchaseSendInformationModel.swift in Sources */,
 				C10508262CA3868800B22737 /* CompletePurchaseView.swift in Sources */,
 				434D51A22CC15E15004610E9 /* OtherUserProfilePresenter.swift in Sources */,
 				43BC29012C9BE30F0069C6CD /* Font+Extensions.swift in Sources */,
@@ -835,6 +858,7 @@
 				C10508082C9B6ED600B22737 /* ShoeSlideView.swift in Sources */,
 				C125C4062CADB3CE0020CEF3 /* FavoritesPresenter.swift in Sources */,
 				43B222712CA3F1600035B655 /* PurchaseSendInformationView.swift in Sources */,
+				434D51BD2CC83553004610E9 /* PurchaseSendInformationServices.swift in Sources */,
 				43B2224E2C9F6C950035B655 /* PickerCoordinator.swift in Sources */,
 				C10508242CA372DB00B22737 /* MatchShoeDetailView.swift in Sources */,
 				C105081A2C9E43EF00B22737 /* HomeMatchPresenter.swift in Sources */,

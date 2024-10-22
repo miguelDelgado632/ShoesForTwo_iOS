@@ -13,7 +13,7 @@ public enum MatchDestination: Encodable, Hashable {
   case otherUserProfile(String)
   case purchaseSendInformationView(GuestUserInfo)
   case completePurchase(GuestUserInfo)
-  case paymentConfirmation(String)
+  case paymentConfirmation(PurchaseSendInformationModel)
   case seeOrderStatus(String, ArriveTo)
 }
 
